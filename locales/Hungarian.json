@@ -656,7 +656,7 @@
 		"setupButton": {
 			"no_voice_channel_button": "`⚠️` | You are not connected to a voice channel to use this button.",
 			"different_voice_channel_button": "`⚠️` | You are not connected to {channel} to use these buttons.",
-			"now_playing": "`🎶` Now Playing:",
+			"now_playing": "Now Playing:",
 			"live": "LIVE",
 			"requested_by": "Requested by: {requester}",
 			"no_dj_permission": "You need to have the DJ role to use this button.",

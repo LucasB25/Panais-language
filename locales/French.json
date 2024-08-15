@@ -596,7 +596,7 @@
 			"no_shuffle_song": "La file d’attente est vide."
 		},
 		"setupStart": {
-			"now_playing": "`🎶` | En cours de lecture :",
+			"now_playing": "En cours de lecture :",
 			"description": "[{title}]({uri}) par {author} • `[{length}]` - Demandé par <@{requester}>",
 			"error_searching": "Une erreur s'est produite lors de la recherche.",
 			"no_results": "Aucun résultat trouvé.",
