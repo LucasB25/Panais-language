@@ -1,222 +1,467 @@
 {
 	"cmd": {
 		"247": {
-			"description": "Configure the bot to stay in the voice channel."
+			"description": "Configure the bot to stay in the voice channel.",
+			"errors": {
+				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
+				"generic": "`❌` | An error occurred while executing this command."
+			},
+			"messages": {
+				"disabled": "`✅` | 24/7 mode has been **disabled**.",
+				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` | The bot will stay in the voice channel, even if there is no one left."
+			}
+		},
+		"ping": {
+			"description": "Displays the bot's ping.",
+			"content": "`🏓` | Pinging...",
+			"bot_latency": "Bot Latency:",
+			"api_latency": "API Latency:",
+			"requested_by": "Requested by: {author}"
+		},
+		"lavalink": {
+			"description": "Displays current Lavalink statistics.",
+			"title": "⚙️ Lavalink Stats",
+			"content": "Players: {players}\nPlaying Players: {playingPlayers}\nUptime: {uptime}\nCores: {cores} Core(s)\nMemory Usage: {used} / {reservable}\nSystem Load: {systemLoad}%\nLavalink Load: {lavalinkLoad}%"
+		},
+		"invite": {
+			"description": "Get the bot's invite link.",
+			"content": "You can invite me by clicking the button below!\nBugs or outages? Join the support server!"
+		},
+		"vote": {
+			"description": "Get the vote link.",
+			"content": "`👍` | Want to vote for Parsnip? Click the button below!"
+		},
+		"premium": {
+			"description": "Get the premium link.",
+			"content": "`✨` | Upgrade to premium to unlock more features and support the bot!"
+		},
+		"support": {
+			"description": "Get the invite link for the support server.",
+			"content": "Need help? Join the support server by clicking the button below!"
+		},
+		"clusters": {
+			"description": "Displays information about the shard clusters.",
+			"content": "The server is on Shard: **{shard}**",
+			"author": "🌐 Parsnip Shard Information",
+			"fields": "Total Stats",
+			"shardname": "Shard {index}",
+			"shardvalue": "Servers: {guildCount} \nUsers: {memberCounts} \nChannels: {channelCounts} \nUptime: {uptimes} \nLatency: {pings} ms",
+			"totalinfo": "Total Servers: {totalGuilds} \nTotal Users: {totalUsers} \nTotal Channels: {totalChannels} \nUptime: {totalUptime} \nAverage Ping: {avgPing} ms"
+		},
+		"roleinfo": {
+			"description": "Displays information about a role.",
+			"options": {
+				"role": "Choose a role to get its information."
+			},
+			"title": "Role Information: {roleName}",
+			"role_not_found": "Role not found. Please mention a valid role or provide a valid role ID.",
+			"role_id": "Role ID:",
+			"yes": "Yes",
+			"no": "No",
+			"managed": "Managed by an integration:",
+			"hoisted": "Hoisted:",
+			"dj_role": "DJ Role:",
+			"members": "Member Count:",
+			"creation_date": "Creation Date:",
+			"mentionable": "Mentionable:",
+			"position": "Position:",
+			"color": "Color:"
+		},
+		"help": {
+			"description": "Displays the help menu.",
+			"options": {
+				"command": "The command you want information about."
+			},
+			"content": "Hi! I'm <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command. \n\n`👍` Vote for the bot to unlock features! [Vote here](https://top.gg/bot/{client}/vote)",
+			"title": "📖 Help Menu",
+			"not_found": "That command `{cmdName}` doesn't exist.",
+			"help_cmd": "**Description:** {description}\n**Usage:** {usage}\n**Examples:** {examples}\n**Alias:** {aliases}\n**Category:** {category}\n**Cooldown:** {cooldown} seconds\n\n**User Permissions:** {premUser}\n**Bot Permissions:** {premBot}\n**Developer Only:** {dev}\n**Slash Command:** {slash}\n**Arguments:** {args}\n\n**Player:** {player}\n**DJ:** {dj}\n**DJ Permissions:** {djPerm}\n**Voice:** {voice}",
+			"footer": "Use {prefix}help <command> for more information about a command."
+		},
+		"botinfo": {
+			"description": "Information about the bot.",
+			"content": "Bot Information:\n- **Operating System:** {osInfo}\n- **Uptime:** {osUptime}\n- **Hostname:** {osHostname}\n- **CPU Architecture:** {cpuInfo}\n- **CPU Usage:** {cpuUsed}%\n- **Memory Usage:** {memUsed}MB / {memTotal}GB\n- **Node Version:** {nodeVersion}\n- **Discord.js Version:** {discordJsVersion}\n- **Connected to:** {guilds} servers, {channels} channels, and {users} users\n- **Total Commands:** {commands}"
 		},
 		"dj": {
 			"description": "Manage DJ mode and roles.",
+			"errors": {
+				"provide_role": "`❌` | Please provide a role.",
+				"no_roles": "`❌` | The DJ role is empty.",
+				"invalid_subcommand": "`❌` | Please provide a valid subcommand."
+			},
+			"messages": {
+				"role_exists": "The DJ role <@&{roleId}> is already added.",
+				"role_added": "`🎧` | The DJ role <@&{roleId}> has been added.",
+				"role_not_found": "The DJ role <@&{roleId}> is not added.",
+				"role_removed": "`🗑️` | The DJ role <@&{roleId}> has been removed.",
+				"all_roles_cleared": "`🧹` | All DJ roles have been cleared.",
+				"toggle": "`🎤` | DJ mode has been {status}."
+			},
 			"options": {
 				"add": "The DJ role you want to add.",
 				"remove": "The DJ role you want to remove.",
 				"clear": "Clears all DJ roles.",
 				"toggle": "Toggle DJ role.",
 				"role": "The DJ role."
-			}
+			},
+			"subcommands": "Subcommands"
 		},
 		"language": {
 			"description": "Set the bot's language.",
+			"invalid_language": "Please provide a valid language. Example: `EnglishUS` for English (United States)\n\nYou can find the list of supported languages [here](https://discord.com/developers/docs/reference#locales)\n\n**Available Languages:**\n{languages}",
+			"already_set": "The language is already set to `{language}`.",
+			"not_set": "The language is not set.",
+			"set": "`✅` | The language has been set to `{language}`.",
+			"reset": "`✅` | The language has been reset.",
 			"options": {
 				"set": "Set the bot's language.",
-				"reset": "Reset the language to the default language.",
-				"language": "The language you want to set."
+				"language": "The language you want to set.",
+				"reset": "Reset the language to the default language."
 			}
 		},
 		"prefix": {
 			"description": "Displays or sets the bot's prefix.",
+			"errors": {
+				"prefix_too_long": "`❌` | The prefix cannot be longer than 3 characters."
+			},
+			"messages": {
+				"current_prefix": "The prefix for this server is `{prefix}`.",
+				"prefix_set": "The prefix for this server is now `{prefix}`.",
+				"prefix_reset": "The prefix for this server is now `{prefix}`."
+			},
 			"options": {
 				"set": "Sets the prefix.",
-				"reset": "Resets the prefix to the default one.",
-				"prefix": "The prefix you want to set."
+				"prefix": "The prefix you want to set.",
+				"reset": "Resets the prefix to the default one."
+			}
+		},
+		"theme": {
+			"description": "Changes the player theme.",
+			"currentTheme": "The current theme is **{currentTheme}**.",
+			"choice": "`❌` | Invalid theme. Available themes are `classic`, `modern`, and `modernpro`.",
+			"set_theme": "`✅` | The theme has been set to **{theme}**.",
+			"reset": "`✅` | The theme has been reset to **{defaultTheme}**.",
+			"default": "`❌` | The current theme is **{currentTheme}**.",
+			"options": {
+				"set": "Set the player theme.",
+				"theme": "The theme to set (classic, modern, or modernpro).",
+				"reset": "Reset the theme to the default."
 			}
 		},
 		"setup": {
 			"description": "Sets up the bot.",
+			"errors": {
+				"channel_exists": "`❌` | The song request channel already exists.",
+				"channel_not_exists": "`❌` | The song request channel does not exist.",
+				"channel_delete_fail": "`❌` | The song request channel has been deleted. If the channel is not deleted normally, please delete it yourself."
+			},
+			"messages": {
+				"channel_created": "`🎉` | The song request channel has been created in <#{channelId}>.",
+				"channel_deleted": "`🗑️` | The song request channel has been deleted.",
+				"channel_info": "`🎤` | The song request channel is <#{channelId}>."
+			},
 			"options": {
 				"create": "Creates the song request channel.",
 				"delete": "Deletes the song request channel.",
 				"info": "Displays the song request channel."
 			}
 		},
-		"theme": {
-			"description": "Changes the player theme.",
-			"options": {
-				"set": "Set the player theme.",
-				"reset": "Reset the theme to the default.",
-				"theme": "The theme to set (classic, modern, or modernpro)."
+		"8d": {
+			"description": "Enables/disables the 8d filter.",
+			"messages": {
+				"filter_enabled": "`✅` | 8D filter has been **enabled**.",
+				"filter_disabled": "`✅` | 8D filter has been **disabled**."
 			}
 		},
-		"8d": {
-			"description": "Enables/disables the 8d filter."
-		},
 		"bassboost": {
-			"description": "Enables/disables the bassboost filter."
+			"description": "Enables/disables the bassboost filter.",
+			"messages": {
+				"filter_enabled": "`✅` | Bassboost filter has been **enabled**.\n`⚠️` | Warning, listening too loud can damage your hearing!",
+				"filter_disabled": "`✅` | Bassboost filter has been **disabled**."
+			}
 		},
 		"distorsion": {
-			"description": "Enables/disables the distortion filter."
+			"description": "Enables/disables the distortion filter.",
+			"messages": {
+				"filter_enabled": "`✅` | Distortion filter has been **enabled**.",
+				"filter_disabled": "`✅` | Distortion filter has been **disabled**."
+			}
 		},
 		"karaoke": {
-			"description": "Enables/disables the karaoke filter."
+			"description": "Enables/disables the karaoke filter.",
+			"messages": {
+				"filter_enabled": "`✅` | Karaoke filter has been **enabled**.",
+				"filter_disabled": "`✅` | Karaoke filter has been **disabled**."
+			}
 		},
 		"lowpass": {
-			"description": "Enables/disables the lowpass filter."
+			"description": "Enables/disables the lowpass filter.",
+			"messages": {
+				"filter_enabled": "`✅` | Lowpass filter has been **enabled**.",
+				"filter_disabled": "`✅` | Lowpass filter has been **disabled**."
+			}
 		},
 		"nightcore": {
-			"description": "Enables/disables the nightcore filter."
+			"description": "Enables/disables the nightcore filter.",
+			"messages": {
+				"filter_enabled": "`✅` | Nightcore filter has been **enabled**.",
+				"filter_disabled": "`✅` | Nightcore filter has been **disabled**."
+			}
 		},
 		"pitch": {
 			"description": "Enables/disables the pitch filter.",
 			"options": {
 				"pitch": "The number you want to set the pitch to (between 0.5 and 5)."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
+			},
+			"messages": {
+				"pitch_set": "`✅` | Pitch has been set to **{pitch}**.`"
 			}
 		},
 		"rate": {
 			"description": "Changes the rate of the song.",
 			"options": {
 				"rate": "The number you want to set the rate to (between 0.5 and 5)."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
+			},
+			"messages": {
+				"rate_set": "`✅` | Rate has been set to **{rate}**."
 			}
 		},
 		"reset": {
-			"description": "Resets the active filters."
+			"description": "Resets the active filters.",
+			"messages": {
+				"filters_reset": "`✅` | Filters have been reset."
+			}
 		},
 		"rotation": {
-			"description": "Enables/disables the rotation filter."
+			"description": "Enables/disables the rotation filter.",
+			"messages": {
+				"enabled": "`✅` | Rotation filter has been **enabled**.",
+				"disabled": "`✅` | Rotation filter has been **disabled**."
+			}
 		},
 		"speed": {
 			"description": "Changes the speed of the song.",
 			"options": {
 				"speed": "The speed you want to set (between 0.5 and 5)."
+			},
+			"messages": {
+				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**.",
+				"set_speed": "`✅` | Speed has been set to **{speed}**."
 			}
 		},
 		"tremolo": {
-			"description": "Enables/disables the tremolo filter."
+			"description": "Enables/disables the tremolo filter.",
+			"messages": {
+				"enabled": "`✅` | Tremolo filter has been **enabled**.",
+				"disabled": "`✅` | Tremolo filter has been **disabled**."
+			}
 		},
 		"vibrato": {
-			"description": "Enables/disables the vibrato filter."
-		},
-		"botinfo": {
-			"description": "Information about the bot."
-		},
-		"clusters": {
-			"description": "Displays information about the shard clusters."
-		},
-		"help": {
-			"description": "Displays the help menu.",
-			"options": {
-				"command": "The command you want information about."
+			"description": "Enables/disables the vibrato filter.",
+			"messages": {
+				"enabled": "`✅` | Vibrato filter has been **enabled**.",
+				"disabled": "`✅` | Vibrato filter has been **disabled**."
 			}
-		},
-		"invite": {
-			"description": "Get the bot's invite link."
-		},
-		"lavalink": {
-			"description": "Displays current Lavalink statistics."
-		},
-		"ping": {
-			"description": "Displays the bot's ping."
-		},
-		"premium": {
-			"description": "Get the premium link."
-		},
-		"roleinfo": {
-			"description": "Displays information about a role.",
-			"options": {
-				"role": "Choose a role to get its information."
-			}
-		},
-		"support": {
-			"description": "Get the invite link for the support server."
-		},
-		"vote": {
-			"description": "Get the vote link."
 		},
 		"autoplay": {
-			"description": "Enables/disables the autoplay mode."
-		},
-		"clearqueue": {
-			"description": "Clears the queue."
-		},
-		"grab": {
-			"description": "Gets the currently playing song in your DMs."
-		},
-		"join": {
-			"description": "Join the voice channel."
-		},
-		"leave": {
-			"description": "Leave the voice channel."
-		},
-		"loop": {
-			"description": "Loop the current song or the queue."
-		},
-		"lyrics": {
-			"description": "Gets the lyrics of the currently playing song or a specified song.",
-			"options": {
-				"song": "The name of the song you want to search the lyrics for."
+			"description": "Enables/disables the autoplay mode.",
+			"messages": {
+				"enabled": "`✅` | Autoplay has been **enabled**.",
+				"disabled": "`✅` | Autoplay has been **disabled**."
 			}
 		},
+		"clearqueue": {
+			"description": "Clears the queue.",
+			"messages": {
+				"cleared": "`🗑️` | The queue has been cleared."
+			}
+		},
+		"grab": {
+			"loading": "`⏳` Loading...",
+			"description": "Gets the currently playing song in your DMs.",
+			"content": "**Title:** {title}\n**Duration:** {length}\n**Requested by:** <@{requester}>\n**Link:** [Click here]({uri})",
+			"check_dm": "`📨` | Please check your DMs.",
+			"dm_failed": "I couldn't send you a DM. Make sure you have direct messages enabled."
+		},
+		"join": {
+			"description": "Join the voice channel.",
+			"already_connected": "I'm already connected to <#{channelId}>.",
+			"no_voice_channel": "You need to be in a voice channel to use this command.",
+			"joined": "`🎤` | Voice channel <#{channelId}> joined successfully."
+		},
+		"leave": {
+			"description": "Leave the voice channel.",
+			"left": "`🚪` | Voice channel <#{channelId}> left successfully.",
+			"not_in_channel": "I'm not in a voice channel."
+		},
+		"loop": {
+			"description": "Loop the current song or the queue.",
+			"looping_song": "`🔂` | **Song loop enabled.**",
+			"looping_queue": "`🔁` | **Queue loop enabled.**",
+			"looping_off": "`🔕` | **Loop disabled.**"
+		},
 		"nowplaying": {
-			"description": "Displays the currently playing song."
+			"description": "Displays the currently playing song.",
+			"now_playing": "Now Playing:",
+			"track_info": "[{title}]({uri}) - Requested by: <@{requester}>\n\n`{bar}`"
 		},
 		"pause": {
-			"description": "Pauses the current song."
+			"description": "Pauses the current song.",
+			"successfully_paused": "`⏸️` | The song has been paused successfully."
 		},
 		"play": {
 			"description": "Play a song from YouTube, Spotify, or http.",
 			"options": {
 				"song": "The song you want to play."
-			}
+			},
+			"loading": "`⏳` Loading...",
+			"errors": {
+				"search_error": "`❌` | An error occurred while searching.",
+				"no_results": "`❌` | No results found.",
+				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
+				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
+			},
+			"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue.",
+			"added_playlist_to_queue": "`🎶` | Added {length} songs to the queue."
 		},
 		"playnext": {
 			"description": "Add the song to play next in the queue.",
 			"options": {
 				"song": "The song you want to play."
-			}
+			},
+			"loading": "`⏳` Loading...",
+			"errors": {
+				"search_error": "`❌` | An error occurred while searching.",
+				"no_results": "`❌` | No results found.",
+				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
+				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
+			},
+			"added_to_play_next": "`🎶` | Added [{title}]({uri}) to play next in the queue.",
+			"added_playlist_to_play_next": "`🎶` | Added {length} songs to play next in the queue."
 		},
 		"queue": {
-			"description": "Displays the current queue."
+			"description": "Displays the current queue.",
+			"now_playing": "Now Playing: [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
+			"live": "LIVE",
+			"track_info": "{index}. [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
+			"title": "📃 Queue",
+			"page_info": "Page {index} of {total}"
 		},
 		"remove": {
 			"description": "Removes a song from the queue.",
 			"options": {
 				"song": "The number of the song you want to remove."
+			},
+			"errors": {
+				"no_songs": "`❌` | There are no songs in the queue.",
+				"invalid_number": "`❌` | Please provide a valid song number."
+			},
+			"messages": {
+				"removed": "`🗑️` | Song number {songNumber} removed from the queue."
 			}
 		},
 		"replay": {
-			"description": "Replays the current song."
+			"description": "Replays the current song.",
+			"errors": {
+				"not_seekable": "`❌` | Unable to replay this song as it is not seekable."
+			},
+			"messages": {
+				"replaying": "`🔁` | Replaying the current song.`"
+			}
+		},
+		"lyrics": {
+			"description": "Gets the lyrics of the currently playing song or a specified song.",
+			"options": {
+				"song": "The name of the song you want to search the lyrics for."
+			},
+			"error": {
+				"loading": "`⏳` Loading...",
+				"no_lyrics_found": "`❌` | No lyrics found!",
+				"no_song": "No song provided or currently playing."
+			}
 		},
 		"resume": {
-			"description": "Resumes the current song."
+			"description": "Resumes the current song.",
+			"errors": {
+				"not_paused": "`❌` | The player is not paused."
+			},
+			"messages": {
+				"resumed": "`⏯️` | Player resumed."
+			}
 		},
 		"search": {
 			"description": "Searches for a song.",
 			"options": {
 				"song": "The song you want to search for."
+			},
+			"errors": {
+				"no_results": "`❌` | No results found.",
+				"search_error": "`❌` | An error occurred while searching."
+			},
+			"messages": {
+				"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue."
 			}
 		},
 		"seek": {
 			"description": "Seeks to a specific time in the song.",
 			"options": {
 				"duration": "The duration you want to seek to."
+			},
+			"errors": {
+				"invalid_format": "`❌` | Invalid time format. Examples: seek 1m, seek 1h 30m",
+				"not_seekable": "`❌` | This song is not seekable.",
+				"beyond_duration": "`❌` | Cannot seek beyond the song duration of {length}."
+			},
+			"messages": {
+				"seeked_to": "`🕐` | Seeked to {duration}."
 			}
 		},
 		"shuffle": {
-			"description": "Shuffles the queue."
+			"description": "Shuffles the queue.",
+			"messages": {
+				"shuffled": "`🔀` | Queue shuffled."
+			}
 		},
 		"skip": {
-			"description": "Skips the current song."
+			"description": "Skips the current song.",
+			"messages": {
+				"skipped": "`⏭️` | Skipped song [{title}]({uri})."
+			}
 		},
 		"skipto": {
 			"description": "Skips to a specific song in the queue.",
 			"options": {
 				"number": "The number of the song you want to skip to."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Please provide a valid number."
+			},
+			"messages": {
+				"skipped_to": "`⏭️` | Skipped to song number {number}."
 			}
 		},
 		"stop": {
-			"description": "Stops the music and clears the queue."
+			"description": "Stops the music and clears the queue.",
+			"messages": {
+				"stopped": "`⏹️` | Music stopped and queue cleared."
+			}
 		},
 		"volume": {
 			"description": "Sets the player's volume.",
 			"options": {
 				"number": "The volume you want to set."
+			},
+			"messages": {
+				"invalid_number": "`❌` | Please provide a valid number.",
+				"too_low": "`❌` | The volume cannot be lower than 0.",
+				"too_high": "`❌` | The volume cannot be higher than 200. Do you want to damage your hearing or speakers? Hmmm, I don't think that's a good idea.",
+				"set": "`🔊` | Volume set to {volume}."
 			}
 		},
 		"addsong": {
@@ -224,30 +469,57 @@
 			"options": {
 				"playlist": "The playlist you want to add to.",
 				"song": "The song you want to add."
+			},
+			"messages": {
+				"no_playlist": "`❌` | Please provide a playlist.",
+				"no_song": "`❌` | Please provide a song.",
+				"playlist_not_found": "`❌` | That playlist doesn't exist.",
+				"no_songs_found": "`❌` | No songs found.",
+				"added": "`🎶` | Added {count} song(s) to {playlist}."
 			}
 		},
 		"create": {
 			"description": "Creates a playlist.",
 			"options": {
 				"name": "The name of the playlist."
+			},
+			"messages": {
+				"name_too_long": "`❌` | Playlist names cannot be longer than 50 characters.",
+				"playlist_exists": "`❌` | A playlist with that name already exists. Please use a different name.",
+				"playlist_created": "`🎶` | Playlist **{name}** created."
 			}
 		},
 		"delete": {
 			"description": "Deletes a playlist.",
 			"options": {
 				"playlist": "The playlist you want to delete."
+			},
+			"messages": {
+				"playlist_not_found": "`❌` | That playlist doesn't exist.",
+				"playlist_deleted": "`🗑️` | Playlist **{playlistName}** deleted.`"
 			}
 		},
 		"list": {
 			"description": "Gets all playlists from the user.",
 			"options": {
 				"user": "The user whose playlists you want to retrieve."
+			},
+			"messages": {
+				"no_playlists": "This user has no playlists.",
+				"your": "Your",
+				"playlists_title": "📃 {username}'s Playlists",
+				"error": "`❌` | An error occurred while retrieving playlists."
 			}
 		},
 		"load": {
 			"description": "Loads a playlist.",
 			"options": {
 				"playlist": "The playlist you want to load."
+			},
+			"messages": {
+				"playlist_not_exist": "`❌` | That playlist doesn't exist.",
+				"playlist_empty": "`❌` | This playlist is empty.",
+				"playlist_loaded": "`🎶` | Playlist `{name}` loaded with `{count}` songs."
 			}
 		},
 		"removesong": {
@@ -255,6 +527,14 @@
 			"options": {
 				"playlist": "The playlist you want to remove from.",
 				"song": "The song you want to remove."
+			},
+			"messages": {
+				"provide_playlist": "`❌` | Please provide a playlist.",
+				"provide_song": "`❌` | Please provide a song.",
+				"playlist_not_exist": "`❌` | That playlist doesn't exist.",
+				"song_not_found": "`❌` | No matching song found.",
+				"song_removed": "`🗑️` | Song {song} removed from {playlist}.",
+				"error_occurred": "`❌` | An error occurred while removing the song."
 			}
 		},
 		"steal": {
@@ -262,7 +542,150 @@
 			"options": {
 				"playlist": "The playlist you want to steal.",
 				"user": "The user you want to steal the playlist from."
+			},
+			"messages": {
+				"provide_playlist": "`❌` | Please provide a playlist name.",
+				"provide_user": "`❌` | Please mention a user.",
+				"playlist_not_exist": "`❌` | That playlist doesn't exist for the mentioned user.",
+				"playlist_stolen": "`😈` | Playlist `{playlist}` successfully stolen from {user}.",
+				"error_occurred": "`❌` | An error occurred while stealing the playlist."
 			}
+		}
+	},
+	"buttons": {
+		"invite": "Invite",
+		"support": "Support Server",
+		"vote": "Vote for me!",
+		"premium": "Premium",
+		"previous": "Previous",
+		"resume": "Resume",
+		"stop": "Stop",
+		"skip": "Skip",
+		"loop": "Loop",
+		"errors": {
+			"not_author": "`❌` | You can't use this button."
+		}
+	},
+	"structures": {
+		"dispatcher": {
+			"title": "Voice Channel Empty",
+			"description": "I left {client} because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features with Premium."
+		}
+	},
+	"player": {
+		"errors": {
+			"no_player": "`❌` | There is no active player in this server.",
+			"no_channel": "`❌` | You need to be in a voice channel to use this command.",
+			"queue_empty": "`❌` | The queue is empty.",
+			"no_previous": "`❌` | There is no previous song in the queue.",
+			"no_song": "`❌` | There is no song in the queue.",
+			"already_paused": "`❌` | The song is already paused."
+		},
+		"trackStart": {
+			"now_playing": "Now Playing:",
+			"author": "Author:",
+			"footer": "•  Loop: {loop}  •  Volume: {volume}%  •  Remaining Queue: {queue}",
+			"duration": "Duration:",
+			"requested": "Requested by:",
+			"not_connected_to_voice_channel": "You are not connected to <#{channel}> to use these buttons.",
+			"cooldown": "`❌` | Please wait {time} more second(s) before using a button.",
+			"need_dj_role": "You need to have the DJ role to use this command.",
+			"no_previous_song": "There is no previous song.",
+			"no_more_songs_in_queue": "There are no more songs in the queue.",
+			"no_replay_song": "Unable to replay this song as it is not seekable.",
+			"no_shuffle_song": "Queue is empty."
+		},
+		"setupStart": {
+			"now_playing": "`🎶` | Now Playing:",
+			"description": "[{title}]({uri}) by {author} • `[{length}]` - Requested by <@{requester}>",
+			"error_searching": "An error occurred while searching.",
+			"no_results": "No results found.",
+			"nothing_playing": "Nothing is currently playing.",
+			"queue_too_long": "The queue is too long. The maximum length is {maxQueueSize} songs.",
+			"playlist_too_long": "The playlist is too long. The maximum length is {maxPlaylistSize} songs.",
+			"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue.",
+			"added_playlist_to_queue": "`🎶` | Added [{length}] songs from the playlist to the queue."
+		}
+	},
+	"event": {
+		"interaction": {
+			"setup_channel": "You can't use this command in the setup channel.",
+			"no_send_message": "`❌` | I don't have **`SendMessage`** permission in `{guild}`\nchannel: {channel}.",
+			"no_embed_links": "`❌` | I don't have **`EmbedLinks`** permission.",
+			"no_permission": "`❌` | I don't have enough permissions to execute this command.",
+			"no_user_permission": "`⚠️` | You don't have enough permissions to use this command.",
+			"no_voice_channel": "`⚠️` | You need to be connected to a voice channel to use this command `{command}`.",
+			"no_connect_permission": "`❌` | I don't have `CONNECT` permission to execute this command `{command}`.",
+			"no_speak_permission": "`❌` | I don't have `SPEAK` permission to execute this command `{command}`.",
+			"no_request_to_speak": "`❌` | I don't have `REQUEST TO SPEAK` permission to execute this command `{command}`.",
+			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
+			"no_music_playing": "No music is currently playing.",
+			"no_vote": "`👍` | Hold on! Before using this command, you need to vote on top.gg. Thanks.",
+			"no_premium": "`✨` | This command is premium only.",
+			"no_dj_role": "`⚠️` | The DJ role is not set.",
+			"no_dj_permission": "`⚠️` | You need to have the DJ role to use this command.",
+			"cooldown": "`⏳` | Please wait {time} more second(s) before reusing the `{command}` command.",
+			"error": "`❌` | An error occurred: `{error}`"
+		},
+		"message": {
+			"prefix_mention": "Hi, my prefix for this server is `{prefix}`. Want more info? Then do `{prefix}help`\nStay safe, stay awesome!",
+			"no_send_message": "`❌` | I don't have **`SendMessage`** permission in `{guild}`\nchannel: {channel}.",
+			"no_embed_links": "`❌` | I don't have **`EmbedLinks`** permission.",
+			"no_permission": "`❌` | I don't have enough permissions to execute this command.",
+			"no_user_permission": "`⚠️` | You don't have enough permissions to use this command.",
+			"no_voice_channel": "`⚠️` | You need to be connected to a voice channel to use this command `{command}`.",
+			"no_connect_permission": "`❌` | I don't have `CONNECT` permission to execute this command `{command}`.",
+			"no_speak_permission": "`❌` | I don't have `SPEAK` permission to execute this command `{command}`.",
+			"no_request_to_speak": "`❌` | I don't have `REQUEST TO SPEAK` permission to execute this command `{command}`.",
+			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
+			"no_music_playing": "No music is currently playing.",
+			"no_dj_role": "`⚠️` | The DJ role is not set.",
+			"no_vote": "`👍` | Hold on! Before using this command, you need to vote on top.gg. Thanks.",
+			"no_premium": "`✨` | This command is premium only.",
+			"no_dj_permission": "`⚠️` | You need to have the DJ role to use this command.",
+			"missing_arguments": "`⚠️` | Missing Arguments",
+			"missing_arguments_description": "Please provide the required arguments for the `{command}` command.\n\nExamples:\n{examples}",
+			"syntax_footer": "Syntax: [] = optional, <> = required",
+			"cooldown": "`❌` | Please wait {time} more second(s) before reusing the `{command}` command.",
+			"no_mention_everyone": "`⏳` | You can't use this command with @everyone or @here.",
+			"error": "`❌` | An error occurred: `{error}`",
+			"no_voice_channel_queue": "`⚠️` | You are not connected to a voice channel to queue songs.",
+			"no_permission_connect_speak": "`❌` | I don't have enough permissions to connect/speakin <#{channel}>.",
+			"different_voice_channel_queue": "`⚠️` | You are not connected to <#{channel}> to queue songs."
+		},
+		"setupButton": {
+			"no_voice_channel_button": "`⚠️` | You are not connected to a voice channel to use this button.",
+			"different_voice_channel_button": "`⚠️` | You are not connected to {channel} to use these buttons.",
+			"now_playing": "`🎶` Now Playing:",
+			"live": "LIVE",
+			"requested_by": "Requested by: {requester}",
+			"no_dj_permission": "You need to have the DJ role to use this button.",
+			"volume_set": "`🔊` | Volume set to {vol}%.",
+			"volume_footer": "Volume: {vol}%",
+			"paused": "Paused",
+			"resumed": "Resumed",
+			"pause_resume": "{name} the music.",
+			"pause_resume_footer": "{name} by {displayName}",
+			"no_music_to_skip": "There is no music to skip.",
+			"skipped": "`⏭️` | Music skipped.",
+			"skipped_footer": "Skipped by {displayName}",
+			"stopped": "`⏹️` | Music stopped.",
+			"stopped_footer": "Stopped by {displayName}",
+			"nothing_playing": "No music is currently playing.",
+			"loop_set": "Loop set to {loop}.",
+			"loop_footer": "Loop set to {loop} by {displayName}",
+			"shuffled": "`🔀` | Queue shuffled.",
+			"no_previous_track": "There is no previous track.",
+			"playing_previous": "`⏮️` | Playing the previous song.",
+			"previous_footer": "Playing the previous song by {displayName}",
+			"rewind_limit": "`⚠️` | You can't rewind the music more than the song duration.",
+			"rewinded": "`⏪` | Music rewinded.",
+			"rewind_footer": "Rewinded by {displayName}",
+			"forward_limit": "`⚠️` | You can't forward the music more than the song duration.",
+			"forwarded": "`⏩` | Music forwarded.",
+			"forward_footer": "Forwarded by {displayName}",
+			"button_not_available": "`❌` | This button is not available.",
+			"no_music_playing": "There is no music playing on this server."
 		}
 	}
 }
