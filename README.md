@@ -1,11 +1,5 @@
 # 🌍 Multilanguage Support for Panais 🎶
 
-## 🌟 How to Add a New Language
-
-1. 📁 Create a new file in the `locales` directory with the name of the language in the format `language_code.json`. For example, `EnglishUS.json` for English, `SpanishES.json` for Spanish, etc.
-2. 📋 Copy the contents of the `EnglishUS.json` file into the new file.
-3. 🌐 Translate the strings in the new file to the desired language.
-
 ### 📚 Available Translations
 
 - [x] English (US) - `EnglishUS.json` (Default)
