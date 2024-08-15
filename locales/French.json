@@ -148,6 +148,22 @@
 				"reset": "Réinitialiser le thème par défaut."
 			}
 		},
+		"defaultvolume": {
+			"description": "Définit ou réinitialise le volume par défaut pour le serveur.",
+			"options": {
+				"set": "Définir le volume par défaut.",
+				"reset": "Réinitialiser le volume par défaut au niveau par défaut.",
+				"volume": "Le niveau de volume à définir (0-200)."
+			},
+			"messages": {
+				"set": "`🔊` | Le volume par défaut a été réglé à {volume}.",
+				"invalid_number": "`❌` | Le volume que vous avez entré n'est pas un nombre valide.",
+				"too_low": "`❌` | Le volume est trop bas. Il doit être d'au moins 0.",
+				"too_high": "`❌` | Le volume est trop élevé. Il ne peut pas dépasser 200.",
+				"reset": "Le volume par défaut a été réinitialisé à {volume}.",
+				"current": "`🔊` | Le volume par défaut actuel est {volume}."
+			}
+		},
 		"setup": {
 			"description": "Configure le bot.",
 			"errors": {
