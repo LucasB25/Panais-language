@@ -1,0 +1,691 @@
+{
+	"cmd": {
+		"247": {
+			"description": "Configure le bot pour qu'il reste dans le salon vocal.",
+			"errors": {
+				"not_in_voice": "`❌` | Vous devez être dans un salon vocal pour utiliser cette commande.",
+				"generic": "`❌` | Une erreur s'est produite lors de l'exécution de cette commande."
+			},
+			"messages": {
+				"disabled": "`✅` | Le mode 24/7 a été **désactivé**.",
+				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` | Le bot restera dans le salon vocal, même s'il n'y a plus personne."
+			}
+		},
+		"ping": {
+			"description": "Affiche le ping du bot.",
+			"content": "`🏓` | En train de pinger...",
+			"bot_latency": "Latence du Bot :",
+			"api_latency": "Latence de l'API :",
+			"requested_by": "Demandé par : {author}"
+		},
+		"lavalink": {
+			"description": "Affiche les statistiques actuelles de Lavalink.",
+			"title": "⚙️ Statistiques Lavalink",
+			"content": "Joueurs : {players}\nJoueurs en cours : {playingPlayers}\nTemps de fonctionnement : {uptime}\nNoyaux : {cores} Noyau(x)\nUtilisation de la mémoire : {used} / {reservable}\nCharge du système : {systemLoad}%\nCharge de Lavalink : {lavalinkLoad}%"
+		},
+		"invite": {
+			"description": "Obtenez le lien d'invitation du bot.",
+			"content": "Vous pouvez m'inviter en cliquant sur le bouton ci-dessous !\nDes bugs ou des pannes ? Rejoignez le serveur d'assistance !"
+		},
+		"vote": {
+			"description": "Obtenez le lien de vote.",
+			"content": "`👍` | Vous voulez voter pour Panais ? Cliquez sur le bouton ci-dessous !"
+		},
+		"premium": {
+			"description": "Obtenez le lien premium.",
+			"content": "`✨` | Passez à premium pour débloquer des fonctionnalités supplémentaires et soutenir le bot !"
+		},
+		"support": {
+			"description": "Obtenez le lien d'invitation pour le serveur d'assistance.",
+			"content": "Besoin d'aide ? Rejoignez le serveur d'assistance en cliquant sur le bouton ci-dessous !"
+		},
+		"clusters": {
+			"description": "Affiche des informations sur les clusters de shards.",
+			"content": "Le serveur est sur le Shard : **{shard}**",
+			"author": "🌐 Informations sur les Shards de Panais",
+			"fields": "Statistiques Totales",
+			"shardname": "Shard {index}",
+			"shardvalue": "Serveurs : {guildCount} \nUtilisateurs : {memberCounts} \nSalons : {channelCounts} \nTemps de fonctionnement : {uptimes} \nLatence : {pings} ms",
+			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
+		},
+		"roleinfo": {
+			"description": "Affiche des informations sur un rôle.",
+			"options": {
+				"role": "Choisissez un rôle pour avoir ses informations."
+			},
+			"title": "Informations sur le rôle : {roleName}",
+			"role_not_found": "Rôle non trouvé. Veuillez mentionner un rôle valide ou fournir un ID de rôle valide.",
+			"role_id": "ID du rôle :",
+			"yes": "Oui",
+			"no": "Non",
+			"managed": "Géré par une intégration :",
+			"hoisted": "Épinglé :",
+			"dj_role": "Rôle DJ :",
+			"members": "Nombre de membres :",
+			"creation_date": "Date de création :",
+			"mentionable": "Mentionnable :",
+			"position": "Position :",
+			"color": "Couleur :"
+		},
+		"help": {
+			"description": "Affiche le menu d'aide.",
+			"options": {
+				"command": "La commande sur laquelle vous souhaitez obtenir des informations."
+			},
+			"content": "Salut ! Je suis <@{bot}>, un bot musical. Vous pouvez utiliser `{prefix}help <command>` pour obtenir plus d'informations sur une commande.\n\n`👍` Votez pour le bot pour débloquer des fonctionnalités ! [Votez ici](https://top.gg/bot/{client}/vote)",
+			"title": "📖 Menu d'aide",
+			"not_found": "Cette commande `{cmdName}` n'existe pas.",
+			"help_cmd": "**Description :** {description}\n**Utilisation :** {usage}\n**Exemples :** {examples}\n**Alias :** {aliases}\n**Catégorie :** {category}\n**Temps de rechargement :** {cooldown} secondes\n\n**Permissions utilisateur :** {premUser}\n**Permissions du bot :** {premBot}\n**Développeur uniquement :** {dev}\n**Commande Slash :** {slash}\n**Arguments :** {args}\n\n**Lecteur :** {player}\n**DJ :** {dj}\n**Permissions DJ :** {djPerm}\n**Vocal :** {voice}",
+			"footer": "Utilisez {prefix}help <command> pour plus d'informations sur une commande."
+		},
+		"botinfo": {
+			"description": "Informations sur le bot.",
+			"content": "Informations sur le bot :\n- **Système d'exploitation :** {osInfo}\n- **Temps de fonctionnement :** {osUptime}\n- **Nom d'hôte :** {osHostname}\n- **Architecture du processeur :** {cpuInfo}\n- **Utilisation du processeur :** {cpuUsed}%\n- **Utilisation de la mémoire :** {memUsed}MB / {memTotal}GB\n- **Version de Node :** {nodeVersion}\n- **Version de Discord.js :** {discordJsVersion}\n- **Connecté à :** {guilds} serveurs, {channels} salons, et {users} utilisateurs\n- **Total des commandes :** {commands}"
+		},
+		"dj": {
+			"description": "Gérer le mode DJ et les rôles associés.",
+			"errors": {
+				"provide_role": "`❌` | Veuillez fournir un rôle.",
+				"no_roles": "`❌` | Le rôle DJ est vide.",
+				"invalid_subcommand": "`❌` | Veuillez fournir une sous-commande valide."
+			},
+			"messages": {
+				"role_exists": "Le rôle DJ <@&{roleId}> est déjà ajouté.",
+				"role_added": "`🎧` | Le rôle DJ <@&{roleId}> a été ajouté.",
+				"role_not_found": "Le rôle DJ <@&{roleId}> n'est pas ajouté.",
+				"role_removed": "`🗑️` | Le rôle DJ <@&{roleId}> a été supprimé.",
+				"all_roles_cleared": "`🧹` | Tous les rôles DJ ont été supprimés.",
+				"toggle": "`🎤` | Le mode DJ a été {status}."
+			},
+			"options": {
+				"add": "Le rôle DJ que vous souhaitez ajouter.",
+				"remove": "Le rôle DJ que vous souhaitez supprimer.",
+				"clear": "Efface tous les rôles DJ.",
+				"toggle": "Active/Désactive le rôle DJ.",
+				"role": "Le rôle DJ."
+			},
+			"subcommands": "Sous-commandes"
+		},
+		"language": {
+			"description": "Définir la langue du bot.",
+			"invalid_language": "Veuillez fournir une langue valide. Exemple : `EnglishUS` pour l'anglais (États-Unis)\n\nVous pouvez trouver la liste des langues prises en charge [ici](https://discord.com/developers/docs/reference#locales)\n\n**Langues disponibles :**\n{languages}",
+			"already_set": "La langue est déjà définie à `{language}`.",
+			"not_set": "La langue n'est pas définie.",
+			"set": "`✅` | La langue a été définie à `{language}`.",
+			"reset": "`✅` | La langue a été réinitialisée.",
+			"options": {
+				"set": "Définir la langue du bot.",
+				"language": "La langue que vous souhaitez définir.",
+				"reset": "Remettre la langue à la langue par défaut."
+			}
+		},
+		"prefix": {
+			"description": "Affiche ou définit le préfixe du bot.",
+			"errors": {
+				"prefix_too_long": "`❌` | Le préfixe ne peut pas dépasser 3 caractères."
+			},
+			"messages": {
+				"current_prefix": "Le préfixe pour ce serveur est `{prefix}`.",
+				"prefix_set": "Le préfixe pour ce serveur est maintenant `{prefix}`.",
+				"prefix_reset": "Le préfixe pour ce serveur est maintenant `{prefix}`."
+			},
+			"options": {
+				"set": "Définit le préfixe.",
+				"prefix": "Le préfixe que vous souhaitez définir.",
+				"reset": "Réinitialise le préfixe à celui par défaut."
+			}
+		},
+		"theme": {
+			"description": "Change le thème du lecteur.",
+			"currentTheme": "Le thème actuel est **{currentTheme}**.",
+			"choice": "`❌` | Thème invalide. Les thèmes disponibles sont `classic`, `modern` et `modernpro`.",
+			"set_theme": "`✅` | Le thème a été défini sur **{theme}**.",
+			"reset": "`✅` | Le thème a été réinitialisé sur **{defaultTheme}**.",
+			"default": "`❌` | Le thème actuel est **{currentTheme}**.",
+			"options": {
+				"set": "Définir le thème du lecteur.",
+				"theme": "Le thème à définir (classic, modern ou modernpro).",
+				"reset": "Réinitialiser le thème par défaut."
+			}
+		},
+		"setup": {
+			"description": "Configure le bot.",
+			"errors": {
+				"channel_exists": "`❌` | Le salon de demande de chanson existe déjà.",
+				"channel_not_exists": "`❌` | Le salon de demande de chanson n'existe pas.",
+				"channel_delete_fail": "`❌` | Le salon de demande de chanson a été supprimé. Si le salon n'est pas supprimé normalement, veuillez le supprimer vous-même."
+			},
+			"messages": {
+				"channel_created": "`🎉` | Le salon de demande de chanson a été créé dans <#{channelId}>.",
+				"channel_deleted": "`🗑️` | Le salon de demande de chanson a été supprimé.",
+				"channel_info": "`🎤` | Le salon de demande de chanson est <#{channelId}>."
+			},
+			"options": {
+				"create": "Crée le salon de demande de chanson.",
+				"delete": "Supprime le salon de demande de chanson.",
+				"info": "Affiche le salon de demande de chanson."
+			}
+		},
+		"8d": {
+			"description": "Active/désactive le filtre 8d.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre 8D a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre 8D a été **désactivé**."
+			}
+		},
+		"bassboost": {
+			"description": "Active/désactive le filtre de renforcement des basses.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre de renforcement des basses a été **activé**.\n`⚠️` | Attention, écouter trop fort peut endommager votre audition !",
+				"filter_disabled": "`✅` | Le filtre de renforcement des basses a été **désactivé**."
+			}
+		},
+		"distorsion": {
+			"description": "Active/désactive le filtre de distorsion.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre de distorsion a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre de distorsion a été **désactivé**."
+			}
+		},
+		"karaoke": {
+			"description": "Active/désactive le filtre karaoké.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre karaoké a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre karaoké a été **désactivé**."
+			}
+		},
+		"lowpass": {
+			"description": "Active/désactive le filtre passe-bas.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre passe-bas a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre passe-bas a été **désactivé**."
+			}
+		},
+		"nightcore": {
+			"description": "Active/désactive le filtre nightcore.",
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre nightcore a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre nightcore a été **désactivé**."
+			}
+		},
+		"pitch": {
+			"description": "Active/désactive le filtre de hauteur.",
+			"options": {
+				"pitch": "Le nombre auquel vous souhaitez définir la hauteur (entre 0.5 et 5)."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Veuillez fournir un nombre valide entre **0.5** et **5**."
+			},
+			"messages": {
+				"pitch_set": "`✅` | La hauteur a été définie à **{pitch}**.`"
+			}
+		},
+		"rate": {
+			"description": "Modifie le rythme de la chanson.",
+			"options": {
+				"rate": "Le nombre auquel vous souhaitez définir le rythme (entre 0.5 et 5)."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Veuillez fournir un nombre valide entre **0.5** et **5**."
+			},
+			"messages": {
+				"rate_set": "`✅` | Le rythme a été défini à **{rate}**."
+			}
+		},
+		"reset": {
+			"description": "Réinitialise les filtres actifs.",
+			"messages": {
+				"filters_reset": "`✅` | Les filtres ont été réinitialisés."
+			}
+		},
+		"rotation": {
+			"description": "Active/désactive le filtre de rotation.",
+			"messages": {
+				"enabled": "`✅` | Le filtre de rotation a été **activé**.",
+				"disabled": "`✅` | Le filtre de rotation a été **désactivé**."
+			}
+		},
+		"speed": {
+			"description": "Modifie la vitesse de la chanson.",
+			"options": {
+				"speed": "La vitesse que vous souhaitez définir (entre 0.5 et 5)."
+			},
+			"messages": {
+				"invalid_number": "`❌` | Veuillez fournir un nombre valide entre **0.5** et **5**.",
+				"set_speed": "`✅` | La vitesse a été définie à **{speed}**."
+			}
+		},
+		"tremolo": {
+			"description": "Active/désactive le filtre tremolo.",
+			"messages": {
+				"enabled": "`✅` | Le filtre tremolo a été **activé**.",
+				"disabled": "`✅` | Le filtre tremolo a été **désactivé**."
+			}
+		},
+		"vibrato": {
+			"description": "Active/désactive le filtre vibrato.",
+			"messages": {
+				"enabled": "`✅` | Le filtre vibrato a été **activé**.",
+				"disabled": "`✅` | Le filtre vibrato a été **désactivé**."
+			}
+		},
+		"autoplay": {
+			"description": "Active/désactive le mode lecture automatique.",
+			"messages": {
+				"enabled": "`✅` | La lecture automatique a été **activée**.",
+				"disabled": "`✅` | La lecture automatique a été **désactivée**."
+			}
+		},
+		"clearqueue": {
+			"description": "Efface la file d'attente.",
+			"messages": {
+				"cleared": "`🗑️` | La file d'attente a été effacée."
+			}
+		},
+		"grab": {
+			"loading": "`⏳` Chargement...",
+			"description": "Obtient la chanson en cours de lecture dans vos DM.",
+			"content": "**Titre :** {title}\n**Durée :** {length}\n**Demandé par :** <@{requester}>\n**Lien :** [Cliquez ici]({uri})",
+			"check_dm": "`📨` | Veuillez vérifier vos DM.",
+			"dm_failed": "Je n'ai pas pu vous envoyer de DM. Assurez-vous que le message direct est activé."
+		},
+		"join": {
+			"description": "Rejoindre le salon vocal.",
+			"already_connected": "Je suis déjà connecté à <#{channelId}>.",
+			"no_voice_channel": "Vous devez être dans un salon vocal pour utiliser cette commande.",
+			"joined": "`🎤` | Salon vocal <#{channelId}> rejoint avec succès."
+		},
+		"leave": {
+			"description": "Quitter le salon vocal.",
+			"left": "`🚪` | Salon vocal <#{channelId}> quitté avec succès.",
+			"not_in_channel": "Je ne suis pas dans un salon vocal."
+		},
+		"loop": {
+			"description": "Boucler la chanson actuelle ou la file d'attente.",
+			"looping_song": "`🔂` | **Boucle de la chanson activée.**",
+			"looping_queue": "`🔁` | **Boucle de la file d'attente activée.**",
+			"looping_off": "`🔕` | **Boucle désactivée.**"
+		},
+		"nowplaying": {
+			"description": "Affiche la chanson en cours de lecture.",
+			"now_playing": "En cours de lecture :",
+			"track_info": "[{title}]({uri}) - Demandé par : <@{requester}>\n\n`{bar}`"
+		},
+		"pause": {
+			"description": "Met en pause la chanson actuelle.",
+			"successfully_paused": "`⏸️` | La chanson a été mise en pause avec succès."
+		},
+		"play": {
+			"description": "Lire une chanson depuis YouTube, Spotify ou http.",
+			"options": {
+				"song": "La chanson que vous souhaitez lire."
+			},
+			"loading": "`⏳` Chargement...",
+			"errors": {
+				"search_error": "`❌` | Une erreur s'est produite lors de la recherche.",
+				"no_results": "`❌` | Aucun résultat trouvé.",
+				"queue_too_long": "`❌` | La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
+				"playlist_too_long": "`❌` | La playlist est trop longue. La longueur maximale est de {maxPlaylistSize} chansons."
+			},
+			"added_to_queue": "`🎶` | Ajout de [{title}]({uri}) à la file d'attente.",
+			"added_playlist_to_queue": "`🎶` | Ajout de {length} chansons à la file d'attente."
+		},
+		"playnext": {
+			"description": "Ajouter la chanson à jouer ensuite dans la file d'attente.",
+			"options": {
+				"song": "La chanson que vous souhaitez lire."
+			},
+			"loading": "`⏳` Chargement...",
+			"errors": {
+				"search_error": "`❌` | Une erreur s'est produite lors de la recherche.",
+				"no_results": "`❌` | Aucun résultat trouvé.",
+				"queue_too_long": "`❌` | La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
+				"playlist_too_long": "`❌` | La playlist est trop longue. La longueur maximale est de {maxPlaylistSize} chansons."
+			},
+			"added_to_play_next": "`🎶` | Ajout de [{title}]({uri}) à jouer ensuite dans la file d'attente.",
+			"added_playlist_to_play_next": "`🎶` | Ajout de {length} chansons à jouer ensuite dans la file d'attente."
+		},
+		"queue": {
+			"description": "Affiche la file d'attente actuelle.",
+			"now_playing": "En cours de lecture : [{title}]({uri}) - Demandé par : <@{requester}> - Durée : `{duration}`",
+			"live": "EN DIRECT",
+			"track_info": "{index}. [{title}]({uri}) - Demandé par : <@{requester}> - Durée : `{duration}`",
+			"title": "📃 File d'attente",
+			"page_info": "Page {index} sur {total}"
+		},
+		"remove": {
+			"description": "Supprime une chanson de la file d'attente.",
+			"options": {
+				"song": "Le numéro de la chanson que vous souhaitez supprimer."
+			},
+			"errors": {
+				"no_songs": "`❌` | Il n'y a aucune chanson dans la file d'attente.",
+				"invalid_number": "`❌` | Veuillez fournir un numéro de chanson valide."
+			},
+			"messages": {
+				"removed": "`🗑️` | Chanson numéro {songNumber} supprimée de la file d'attente."
+			}
+		},
+		"replay": {
+			"description": "Relance la chanson actuelle.",
+			"errors": {
+				"not_seekable": "`❌` | Impossible de rejouer cette chanson car elle n'est pas consultable."
+			},
+			"messages": {
+				"replaying": "`🔁` | Relance de la chanson actuelle.`"
+			}
+		},
+		"lyrics": {
+			"description": "Récupère les paroles de la chanson en cours de lecture ou d'une chanson spécifiée.",
+			"options": {
+				"song": "Le nom de la chanson pour laquelle vous souhaitez rechercher les paroles."
+			},
+			"error": {
+				"loading": "`⏳` Chargement...",
+				"no_lyrics_found": "`❌` | Aucune chanson n’a été trouvée !",
+				"no_song": "Aucune chanson n’est fournie ou en cours de lecture."
+			}
+		},
+		"resume": {
+			"description": "Reprend la chanson actuelle.",
+			"errors": {
+				"not_paused": "`❌` | Le lecteur n'est pas en pause."
+			},
+			"messages": {
+				"resumed": "`⏯️` | Lecteur repris."
+			}
+		},
+		"search": {
+			"description": "Recherche une chanson.",
+			"options": {
+				"song": "La chanson que vous souhaitez rechercher."
+			},
+			"errors": {
+				"no_results": "`❌` | Aucun résultat trouvé.",
+				"search_error": "`❌` | Une erreur s'est produite lors de la recherche."
+			},
+			"messages": {
+				"added_to_queue": "`🎶` | Ajout de [{title}]({uri}) à la file d'attente."
+			}
+		},
+		"seek": {
+			"description": "Se déplace à un moment précis dans la chanson.",
+			"options": {
+				"duration": "La durée à laquelle vous souhaitez vous déplacer."
+			},
+			"errors": {
+				"invalid_format": "`❌` | Format de temps invalide. Exemples : seek 1m, seek 1h 30m",
+				"not_seekable": "`❌` | Cette chanson n'est pas consultable.",
+				"beyond_duration": "`❌` | Impossible de se déplacer au-delà de la durée de la chanson de {length}."
+			},
+			"messages": {
+				"seeked_to": "`🕐` | Déplacement à {duration}."
+			}
+		},
+		"shuffle": {
+			"description": "Mélange la file d'attente.",
+			"messages": {
+				"shuffled": "`🔀` | File d'attente mélangée."
+			}
+		},
+		"skip": {
+			"description": "Passe la chanson actuelle.",
+			"messages": {
+				"skipped": "`⏭️` | Chanson [{title}]({uri}) passée."
+			}
+		},
+		"skipto": {
+			"description": "Passe à une chanson spécifique dans la file d'attente.",
+			"options": {
+				"number": "Le numéro de la chanson à laquelle vous souhaitez passer."
+			},
+			"errors": {
+				"invalid_number": "`❌` | Veuillez fournir un numéro valide."
+			},
+			"messages": {
+				"skipped_to": "`⏭️` | Passé à la chanson numéro {number}."
+			}
+		},
+		"stop": {
+			"description": "Arrête la musique et efface la file d'attente.",
+			"messages": {
+				"stopped": "`⏹️` | Musique arrêtée et file d'attente effacée."
+			}
+		},
+		"volume": {
+			"description": "Définit le volume du lecteur.",
+			"options": {
+				"number": "Le volume que vous souhaitez définir."
+			},
+			"messages": {
+				"invalid_number": "`❌` | Veuillez fournir un nombre valide.",
+				"too_low": "`❌` | Le volume ne peut pas être inférieur à 0.",
+				"too_high": "`❌` | Le volume ne peut pas être supérieur à 200. Voulez-vous endommager votre audition ou vos haut-parleurs ? Hmmm, je ne pense pas que ce soit une bonne idée.",
+				"set": "`🔊` | Volume défini à {volume}."
+			}
+		},
+		"addsong": {
+			"description": "Ajoute une chanson à la playlist.",
+			"options": {
+				"playlist": "La playlist à laquelle vous souhaitez ajouter.",
+				"song": "La chanson que vous souhaitez ajouter."
+			},
+			"messages": {
+				"no_playlist": "`❌` | Veuillez fournir une playlist.",
+				"no_song": "`❌` | Veuillez fournir une chanson.",
+				"playlist_not_found": "`❌` | Cette playlist n'existe pas.",
+				"no_songs_found": "`❌` | Aucune chanson trouvée.",
+				"added": "`🎶` | Ajout de {count} chanson(s) à {playlist}."
+			}
+		},
+		"create": {
+			"description": "Crée une playlist.",
+			"options": {
+				"name": "Le nom de la playlist."
+			},
+			"messages": {
+				"name_too_long": "`❌` | Les noms de playlist ne peuvent pas dépasser 50 caractères.",
+				"playlist_exists": "`❌` | Une playlist avec ce nom existe déjà. Veuillez utiliser un nom différent.",
+				"playlist_created": "`🎶` | Playlist **{name}** créée."
+			}
+		},
+		"delete": {
+			"description": "Supprime une playlist.",
+			"options": {
+				"playlist": "La playlist que vous souhaitez supprimer."
+			},
+			"messages": {
+				"playlist_not_found": "`❌` | Cette playlist n'existe pas.",
+				"playlist_deleted": "`🗑️` | Playlist **{playlistName}** supprimée.`"
+			}
+		},
+		"list": {
+			"description": "Récupère toutes les playlists de l'utilisateur.",
+			"options": {
+				"user": "L'utilisateur dont vous souhaitez récupérer les playlists."
+			},
+			"messages": {
+				"no_playlists": "Cet utilisateur n'a aucune playlist.",
+				"your": "Vos",
+				"playlists_title": "📃 Playlists de {username}",
+				"error": "`❌` | Une erreur s'est produite lors de la récupération des playlists."
+			}
+		},
+		"load": {
+			"description": "Charge une playlist.",
+			"options": {
+				"playlist": "La playlist que vous souhaitez charger."
+			},
+			"messages": {
+				"playlist_not_exist": "`❌` | Cette playlist n'existe pas.",
+				"playlist_empty": "`❌` | Cette playlist est vide.",
+				"playlist_loaded": "`🎶` | Playlist `{name}` chargée avec `{count}` chansons."
+			}
+		},
+		"removesong": {
+			"description": "Supprime une chanson de la playlist.",
+			"options": {
+				"playlist": "La playlist à laquelle vous souhaitez supprimer.",
+				"song": "La chanson que vous souhaitez supprimer."
+			},
+			"messages": {
+				"provide_playlist": "`❌` | Veuillez fournir une playlist.",
+				"provide_song": "`❌` | Veuillez fournir une chanson.",
+				"playlist_not_exist": "`❌` | Cette playlist n'existe pas.",
+				"song_not_found": "`❌` | Aucune chanson correspondante trouvée.",
+				"song_removed": "`🗑️` | Chanson {song} supprimée de {playlist}.",
+				"error_occurred": "`❌` | Une erreur s'est produite lors de la suppression de la chanson."
+			}
+		},
+		"steal": {
+			"description": "Vole une playlist à un autre utilisateur et l'ajoute à vos playlists.",
+			"options": {
+				"playlist": "La playlist que vous souhaitez voler.",
+				"user": "L'utilisateur à qui vous souhaitez voler la playlist."
+			},
+			"messages": {
+				"provide_playlist": "`❌` | Veuillez fournir un nom de playlist.",
+				"provide_user": "`❌` | Veuillez mentionner un utilisateur.",
+				"playlist_not_exist": "`❌` | Cette playlist n'existe pas pour l'utilisateur mentionné.",
+				"playlist_stolen": "`😈` | Playlist `{playlist}` volée avec succès à {user}.",
+				"error_occurred": "`❌` | Une erreur s'est produite lors du vol de la playlist."
+			}
+		}
+	},
+	"buttons": {
+		"invite": "Inviter",
+		"support": "Serveur d'assistance",
+		"vote": "Vote pour moi !",
+		"premium": "Premium",
+		"previous": "Précédent",
+		"resume": "Reprendre",
+		"stop": "Arrêter",
+		"skip": "Passer",
+		"loop": "Boucle",
+		"errors": {
+			"not_author": "`❌` | Vous ne pouvez pas utiliser ce bouton."
+		}
+	},
+	"structures": {
+		"dispatcher": {
+			"title": "Voice Channel Empty",
+			"description": "I left {client} because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features with Premium."
+		}
+	},
+	"player": {
+		"errors": {
+			"no_player": "`❌` | Il n'y a aucun lecteur actif dans ce serveur.",
+			"no_channel": "`❌` | Vous devez être dans un salon vocal pour utiliser cette commande.",
+			"queue_empty": "`❌` | La file d'attente est vide.",
+			"no_previous": "`❌` | Il n'y a aucune chanson précédente dans la file d'attente.",
+			"no_song": "`❌` | Il n'y a aucune chanson dans la file d'attente.",
+			"already_paused": "`❌` | La chanson est déjà en pause."
+		},
+		"trackStart": {
+			"now_playing": "En cours de lecture :",
+			"author": "Auteur :",
+			"footer": "•  Boucle : {loop}  •  Volume : {volume}%  •  File d'attente restante : {queue}",
+			"duration": "Durée :",
+			"requested": "Demandé par :",
+			"not_connected_to_voice_channel": "Vous n'êtes pas connecté à <#{channel}> pour utiliser ces boutons.",
+			"cooldown": "`❌` | Veuillez attendre {time} seconde(s) de plus avant d'utiliser un bouton.",
+			"need_dj_role": "Vous devez avoir le rôle DJ pour utiliser cette commande.",
+			"no_previous_song": "Il n'y a pas de chanson précédente.",
+			"no_more_songs_in_queue": "Il n'y a plus de chanson dans la file d'attente.",
+			"no_replay_song": "Impossible de rejouer cette chanson car elle n'est pas recherchable.",
+			"no_shuffle_song": "La file d’attente est vide."
+		},
+		"setupStart": {
+			"now_playing": "`🎶` | En cours de lecture :",
+			"description": "[{title}]({uri}) par {author} • `[{length}]` - Demandé par <@{requester}>",
+			"error_searching": "Une erreur s'est produite lors de la recherche.",
+			"no_results": "Aucun résultat trouvé.",
+			"nothing_playing": "Rien ne joue actuellement.",
+			"queue_too_long": "La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
+			"playlist_too_long": "La playlist est trop longue. La longueur maximale est de {maxPlaylistSize} chansons.",
+			"added_to_queue": "`🎶` | Ajouté [{title}]({uri}) à la file d'attente.",
+			"added_playlist_to_queue": "`🎶` | Ajouté [{length}] chansons de la playlist à la file d'attente."
+		}
+	},
+	"event": {
+		"interaction": {
+			"setup_channel": "Vous ne pouvez pas utiliser cette commande dans le salon de configuration.",
+			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`** dans `{guild}`\nsalon : {channel}.",
+			"no_embed_links": "`❌` | Je n'ai pas la permission **`EmbedLinks`**.",
+			"no_permission": "`❌` | Je n'ai pas suffisamment de permissions pour exécuter cette commande.",
+			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
+			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
+			"no_connect_permission": "`❌` | Je n'ai pas la permission `CONNECT` pour exécuter cette commande `{command}`.",
+			"no_speak_permission": "`❌` | Je n'ai pas la permission `SPEAK` pour exécuter cette commande `{command}`.",
+			"no_request_to_speak": "`❌` | Je n'ai pas la permission `REQUEST TO SPEAK` pour exécuter cette commande `{command}`.",
+			"different_voice_channel": "`⚠️` | Vous n'êtes pas connecté à {channel} pour utiliser cette commande `{command}`.",
+			"no_music_playing": "Aucune musique n'est en cours de lecture.",
+			"no_vote": "`👍` | Attendez ! Avant d’utiliser cette commande, vous devez voter sur top.gg. Merci.",
+			"no_premium": "`✨` | Cette commande est premium uniquement.",
+			"no_dj_role": "`⚠️` | Le rôle DJ n'est pas défini.",
+			"no_dj_permission": "`⚠️` | Vous devez avoir le rôle DJ pour utiliser cette commande.",
+			"cooldown": "`⏳` | Veuillez attendre {time} seconde(s) de plus avant de réutiliser la commande `{command}`.",
+			"error": "`❌` | Une erreur s'est produite : `{error}`"
+		},
+		"message": {
+			"prefix_mention": "Salut, mon préfixe pour ce serveur est `{prefix}`. Vous voulez plus d'infos ? Alors faites `{prefix}help`\nRestez en sécurité, restez génial !",
+			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`** dans `{guild}`\nsalon : {channel}.",
+			"no_embed_links": "`❌` | Je n'ai pas la permission **`EmbedLinks`**.",
+			"no_permission": "`❌` | Je n'ai pas suffisamment de permissions pour exécuter cette commande.",
+			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
+			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
+			"no_connect_permission": "`❌` | Je n'ai pas la permission `CONNECT` pour exécuter cette commande `{command}`.",
+			"no_speak_permission": "`❌` | Je n'ai pas la permission `SPEAK` pour exécuter cette commande `{command}`.",
+			"no_request_to_speak": "`❌` | Je n'ai pas la permission `REQUEST TO SPEAK` pour exécuter cette commande `{command}`.",
+			"different_voice_channel": "`⚠️` | Vous n'êtes pas connecté à {channel} pour utiliser cette commande `{command}`.",
+			"no_music_playing": "Aucune musique n'est en cours de lecture.",
+			"no_dj_role": "`⚠️` | Le rôle DJ n'est pas défini.",
+			"no_vote": "`👍` | Attendez ! Avant d’utiliser cette commande, vous devez voter sur top.gg. Merci.",
+			"no_premium": "`✨` | Cette commande est premium uniquement.",
+			"no_dj_permission": "`⚠️` | Vous devez avoir le rôle DJ pour utiliser cette commande.",
+			"missing_arguments": "`⚠️` | Arguments manquants",
+			"missing_arguments_description": "Veuillez fournir les arguments requis pour la commande `{command}`.\n\nExemples :\n{examples}",
+			"syntax_footer": "Syntaxe : [] = facultatif, <> = requis",
+			"cooldown": "`❌` | Veuillez attendre {time} seconde(s) de plus avant de réutiliser la commande `{command}`.",
+			"no_mention_everyone": "`⏳` | Vous ne pouvez pas utiliser cette commande avec @everyone ou @here.",
+			"error": "`❌` | Une erreur s'est produite : `{error}`",
+			"no_voice_channel_queue": "`⚠️` | Vous n'êtes pas connecté à un salon vocal pour mettre des chansons en file d'attente.",
+			"no_permission_connect_speak": "`❌` | Je n'ai pas suffisamment de permissions pour me connecter/parler dans <#{channel}>.",
+			"different_voice_channel_queue": "`⚠️` | Vous n'êtes pas connecté à <#{channel}> pour mettre des chansons en file d'attente."
+		},
+		"setupButton": {
+			"no_voice_channel_button": "`⚠️` | Vous n'êtes pas connecté à un salon vocal pour utiliser ce bouton.",
+			"different_voice_channel_button": "`⚠️` | Vous n'êtes pas connecté à {channel} pour utiliser ces boutons.",
+			"now_playing": "`🎶` En cours de lecture :",
+			"live": "EN DIRECT",
+			"requested_by": "Demandé par : {requester}",
+			"no_dj_permission": "Vous devez avoir le rôle DJ pour utiliser ce bouton.",
+			"volume_set": "`🔊` | Volume défini à {vol}%.",
+			"volume_footer": "Volume : {vol}%",
+			"paused": "En pause",
+			"resumed": "Repris",
+			"pause_resume": "{name} la musique.",
+			"pause_resume_footer": "{name} par {displayName}",
+			"no_music_to_skip": "Il n'y a pas de musique à passer.",
+			"skipped": "`⏭️` | Musique passée.",
+			"skipped_footer": "Passé par {displayName}",
+			"stopped": "`⏹️` | Musique arrêtée.",
+			"stopped_footer": "Arrêté par {displayName}",
+			"nothing_playing": "Aucune musique n'est en cours de lecture.",
+			"loop_set": "Boucle définie à {loop}.",
+			"loop_footer": "Boucle définie à {loop} par {displayName}",
+			"shuffled": "`🔀` | File d'attente mélangée.",
+			"no_previous_track": "Il n'y a pas de chanson précédente.",
+			"playing_previous": "`⏮️` | Lecture de la chanson précédente.",
+			"previous_footer": "Lecture de la chanson précédente par {displayName}",
+			"rewind_limit": "`⚠️` | Vous ne pouvez pas rembobiner la musique plus que la durée de la chanson.",
+			"rewinded": "`⏪` | Musique rembobinée.",
+			"rewind_footer": "Rembobiné par {displayName}",
+			"forward_limit": "`⚠️` | Vous ne pouvez pas avancer la musique plus que la durée de la chanson.",
+			"forwarded": "`⏩` | Musique avancée.",
+			"forward_footer": "Avancé par {displayName}",
+			"button_not_available": "`❌` | Ce bouton n'est pas disponible.",
+			"no_music_playing": "Il n'y a pas de musique en cours de lecture sur ce serveur."
+		}
+	}
+}
