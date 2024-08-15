@@ -596,7 +596,7 @@
 			"no_shuffle_song": "Queue is empty."
 		},
 		"setupStart": {
-			"now_playing": "`🎶` | Now Playing:",
+			"now_playing": "Now Playing:",
 			"description": "[{title}]({uri}) by {author} • `[{length}]` - Requested by <@{requester}>",
 			"error_searching": "An error occurred while searching.",
 			"no_results": "No results found.",
