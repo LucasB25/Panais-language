@@ -1,0 +1,268 @@
+{
+	"cmd": {
+		"247": {
+			"description": "Configure the bot to stay in the voice channel."
+		},
+		"dj": {
+			"description": "Manage DJ mode and roles.",
+			"options": {
+				"add": "The DJ role you want to add.",
+				"remove": "The DJ role you want to remove.",
+				"clear": "Clears all DJ roles.",
+				"toggle": "Toggle DJ role.",
+				"role": "The DJ role."
+			}
+		},
+		"language": {
+			"description": "Set the bot's language.",
+			"options": {
+				"set": "Set the bot's language.",
+				"reset": "Reset the language to the default language.",
+				"language": "The language you want to set."
+			}
+		},
+		"prefix": {
+			"description": "Displays or sets the bot's prefix.",
+			"options": {
+				"set": "Sets the prefix.",
+				"reset": "Resets the prefix to the default one.",
+				"prefix": "The prefix you want to set."
+			}
+		},
+		"setup": {
+			"description": "Sets up the bot.",
+			"options": {
+				"create": "Creates the song request channel.",
+				"delete": "Deletes the song request channel.",
+				"info": "Displays the song request channel."
+			}
+		},
+		"theme": {
+			"description": "Changes the player theme.",
+			"options": {
+				"set": "Set the player theme.",
+				"reset": "Reset the theme to the default.",
+				"theme": "The theme to set (classic, modern, or modernpro)."
+			}
+		},
+		"8d": {
+			"description": "Enables/disables the 8d filter."
+		},
+		"bassboost": {
+			"description": "Enables/disables the bassboost filter."
+		},
+		"distorsion": {
+			"description": "Enables/disables the distortion filter."
+		},
+		"karaoke": {
+			"description": "Enables/disables the karaoke filter."
+		},
+		"lowpass": {
+			"description": "Enables/disables the lowpass filter."
+		},
+		"nightcore": {
+			"description": "Enables/disables the nightcore filter."
+		},
+		"pitch": {
+			"description": "Enables/disables the pitch filter.",
+			"options": {
+				"pitch": "The number you want to set the pitch to (between 0.5 and 5)."
+			}
+		},
+		"rate": {
+			"description": "Changes the rate of the song.",
+			"options": {
+				"rate": "The number you want to set the rate to (between 0.5 and 5)."
+			}
+		},
+		"reset": {
+			"description": "Resets the active filters."
+		},
+		"rotation": {
+			"description": "Enables/disables the rotation filter."
+		},
+		"speed": {
+			"description": "Changes the speed of the song.",
+			"options": {
+				"speed": "The speed you want to set (between 0.5 and 5)."
+			}
+		},
+		"tremolo": {
+			"description": "Enables/disables the tremolo filter."
+		},
+		"vibrato": {
+			"description": "Enables/disables the vibrato filter."
+		},
+		"botinfo": {
+			"description": "Information about the bot."
+		},
+		"clusters": {
+			"description": "Displays information about the shard clusters."
+		},
+		"help": {
+			"description": "Displays the help menu.",
+			"options": {
+				"command": "The command you want information about."
+			}
+		},
+		"invite": {
+			"description": "Get the bot's invite link."
+		},
+		"lavalink": {
+			"description": "Displays current Lavalink statistics."
+		},
+		"ping": {
+			"description": "Displays the bot's ping."
+		},
+		"premium": {
+			"description": "Get the premium link."
+		},
+		"roleinfo": {
+			"description": "Displays information about a role.",
+			"options": {
+				"role": "Choose a role to get its information."
+			}
+		},
+		"support": {
+			"description": "Get the invite link for the support server."
+		},
+		"vote": {
+			"description": "Get the vote link."
+		},
+		"autoplay": {
+			"description": "Enables/disables the autoplay mode."
+		},
+		"clearqueue": {
+			"description": "Clears the queue."
+		},
+		"grab": {
+			"description": "Gets the currently playing song in your DMs."
+		},
+		"join": {
+			"description": "Join the voice channel."
+		},
+		"leave": {
+			"description": "Leave the voice channel."
+		},
+		"loop": {
+			"description": "Loop the current song or the queue."
+		},
+		"lyrics": {
+			"description": "Gets the lyrics of the currently playing song or a specified song.",
+			"options": {
+				"song": "The name of the song you want to search the lyrics for."
+			}
+		},
+		"nowplaying": {
+			"description": "Displays the currently playing song."
+		},
+		"pause": {
+			"description": "Pauses the current song."
+		},
+		"play": {
+			"description": "Play a song from YouTube, Spotify, or http.",
+			"options": {
+				"song": "The song you want to play."
+			}
+		},
+		"playnext": {
+			"description": "Add the song to play next in the queue.",
+			"options": {
+				"song": "The song you want to play."
+			}
+		},
+		"queue": {
+			"description": "Displays the current queue."
+		},
+		"remove": {
+			"description": "Removes a song from the queue.",
+			"options": {
+				"song": "The number of the song you want to remove."
+			}
+		},
+		"replay": {
+			"description": "Replays the current song."
+		},
+		"resume": {
+			"description": "Resumes the current song."
+		},
+		"search": {
+			"description": "Searches for a song.",
+			"options": {
+				"song": "The song you want to search for."
+			}
+		},
+		"seek": {
+			"description": "Seeks to a specific time in the song.",
+			"options": {
+				"duration": "The duration you want to seek to."
+			}
+		},
+		"shuffle": {
+			"description": "Shuffles the queue."
+		},
+		"skip": {
+			"description": "Skips the current song."
+		},
+		"skipto": {
+			"description": "Skips to a specific song in the queue.",
+			"options": {
+				"number": "The number of the song you want to skip to."
+			}
+		},
+		"stop": {
+			"description": "Stops the music and clears the queue."
+		},
+		"volume": {
+			"description": "Sets the player's volume.",
+			"options": {
+				"number": "The volume you want to set."
+			}
+		},
+		"addsong": {
+			"description": "Adds a song to the playlist.",
+			"options": {
+				"playlist": "The playlist you want to add to.",
+				"song": "The song you want to add."
+			}
+		},
+		"create": {
+			"description": "Creates a playlist.",
+			"options": {
+				"name": "The name of the playlist."
+			}
+		},
+		"delete": {
+			"description": "Deletes a playlist.",
+			"options": {
+				"playlist": "The playlist you want to delete."
+			}
+		},
+		"list": {
+			"description": "Gets all playlists from the user.",
+			"options": {
+				"user": "The user whose playlists you want to retrieve."
+			}
+		},
+		"load": {
+			"description": "Loads a playlist.",
+			"options": {
+				"playlist": "The playlist you want to load."
+			}
+		},
+		"removesong": {
+			"description": "Removes a song from the playlist.",
+			"options": {
+				"playlist": "The playlist you want to remove from.",
+				"song": "The song you want to remove."
+			}
+		},
+		"steal": {
+			"description": "Steals a playlist from another user and adds it to your playlists.",
+			"options": {
+				"playlist": "The playlist you want to steal.",
+				"user": "The user you want to steal the playlist from."
+			}
+		}
+	}
+}
