@@ -376,14 +376,14 @@
 			}
 		},
 		"lyrics": {
+			"loading": "`⏳` Loading...",
 			"description": "Gets the lyrics of the currently playing song or a specified song.",
 			"options": {
 				"song": "The name of the song you want to search the lyrics for."
 			},
 			"error": {
-				"loading": "`⏳` Loading...",
 				"no_lyrics_found": "`❌` | No lyrics found!",
-				"no_song": "No song provided or currently playing."
+				"no_song": "`❌` | No song provided or currently playing."
 			}
 		},
 		"resume": {
@@ -598,7 +598,7 @@
 		"setupStart": {
 			"now_playing": "Now Playing:",
 			"description": "[{title}]({uri}) by {author} • `[{length}]` - Requested by <@{requester}>",
-			"error_searching": "An error occurred while searching.",
+			"error_searching": "`❌` | An error occurred while searching.",
 			"no_results": "No results found.",
 			"nothing_playing": "Nothing is currently playing.",
 			"queue_too_long": "The queue is too long. The maximum length is {maxQueueSize} songs.",

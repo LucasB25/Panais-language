@@ -376,14 +376,14 @@
 			}
 		},
 		"lyrics": {
+			"loading": "`⏳` Chargement...",
 			"description": "Récupère les paroles de la chanson en cours de lecture ou d'une chanson spécifiée.",
 			"options": {
 				"song": "Le nom de la chanson pour laquelle vous souhaitez rechercher les paroles."
 			},
 			"error": {
-				"loading": "`⏳` Chargement...",
 				"no_lyrics_found": "`❌` | Aucune chanson n’a été trouvée !",
-				"no_song": "Aucune chanson n’est fournie ou en cours de lecture."
+				"no_song": "`❌` | Aucune chanson n’est fournie ou en cours de lecture."
 			}
 		},
 		"resume": {
@@ -598,7 +598,7 @@
 		"setupStart": {
 			"now_playing": "En cours de lecture :",
 			"description": "[{title}]({uri}) par {author} • `[{length}]` - Demandé par <@{requester}>",
-			"error_searching": "Une erreur s'est produite lors de la recherche.",
+			"error_searching": "`❌` | Une erreur s'est produite lors de la recherche.",
 			"no_results": "Aucun résultat trouvé.",
 			"nothing_playing": "Rien ne joue actuellement.",
 			"queue_too_long": "La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
