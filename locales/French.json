@@ -626,9 +626,8 @@
 	"event": {
 		"interaction": {
 			"setup_channel": "Vous ne pouvez pas utiliser cette commande dans le salon de configuration.",
-			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`** dans `{guild}`\nsalon : {channel}.",
-			"no_embed_links": "`❌` | Je n'ai pas la permission **`EmbedLinks`**.",
-			"no_permission": "`❌` | Je n'ai pas suffisamment de permissions pour exécuter cette commande.",
+			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** ou **`ReadMessageHistory`** dans `{guild}`\nsalon : {channel}.",
+			"no_permission": "`❌` | Je n'ai pas la permission {permissions}.",
 			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
 			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
 			"no_connect_permission": "`❌` | Je n'ai pas la permission `CONNECT` pour exécuter cette commande `{command}`.",
@@ -645,9 +644,8 @@
 		},
 		"message": {
 			"prefix_mention": "Salut, mon préfixe pour ce serveur est `{prefix}`. Vous voulez plus d'infos ? Alors faites `{prefix}help`\nRestez en sécurité, restez génial !",
-			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`** dans `{guild}`\nsalon : {channel}.",
-			"no_embed_links": "`❌` | Je n'ai pas la permission **`EmbedLinks`**.",
-			"no_permission": "`❌` | Je n'ai pas suffisamment de permissions pour exécuter cette commande.",
+			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** ou **`ReadMessageHistory`** dans `{guild}`\nsalon : {channel}.",
+			"no_permission": "`❌` | Je n'ai pas la permission {permissions}.",
 			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
 			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
 			"no_connect_permission": "`❌` | Je n'ai pas la permission `CONNECT` pour exécuter cette commande `{command}`.",
