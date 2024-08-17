@@ -29,7 +29,7 @@
 		},
 		"vote": {
 			"description": "Get the vote link.",
-			"content": "`👍` | Want to vote for Parsnip? Click the button below!"
+			"content": "`👍` | Want to vote for Panais? Click the button below!"
 		},
 		"premium": {
 			"description": "Get the premium link.",
@@ -42,7 +42,7 @@
 		"clusters": {
 			"description": "Displays information about the shard clusters.",
 			"content": "The server is on Shard: **{shard}**",
-			"author": "🌐 Parsnip Shard Information",
+			"author": "🌐 Panais Shard Information",
 			"fields": "Total Stats",
 			"shardname": "Shard {index}",
 			"shardvalue": "Servers: {guildCount} \nUsers: {memberCounts} \nChannels: {channelCounts} \nUptime: {uptimes} \nLatency: {pings} ms",
