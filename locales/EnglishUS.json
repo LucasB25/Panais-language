@@ -46,7 +46,7 @@
 			"fields": "Total Stats",
 			"shardname": "Shard {index}",
 			"shardvalue": "Servers: {guildCount} \nUsers: {memberCounts} \nChannels: {channelCounts} \nUptime: {uptimes} \nLatency: {pings} ms",
-			"totalinfo": "Total Servers: {totalGuilds} \nTotal Users: {totalUsers} \nTotal Channels: {totalChannels} \nUptime: {totalUptime} \nAverage Ping: {avgPing} ms"
+			"totalinfo": "Total Servers: {totalGuilds} \nTotal Users: {totalUsers} \nTotal Channels: {totalChannels} \nTotal Song Played: {totalPlaySong} \nUptime: {totalUptime} \nAverage Ping: {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Displays information about a role.",

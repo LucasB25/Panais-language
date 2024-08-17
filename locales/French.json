@@ -46,7 +46,7 @@
 			"fields": "Statistiques Totales",
 			"shardname": "Shard {index}",
 			"shardvalue": "Serveurs : {guildCount} \nUtilisateurs : {memberCounts} \nSalons : {channelCounts} \nTemps de fonctionnement : {uptimes} \nLatence : {pings} ms",
-			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
+			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTotal de chanson jouée: {totalPlaySong} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Affiche des informations sur un rôle.",
