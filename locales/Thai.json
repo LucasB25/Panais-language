@@ -643,7 +643,7 @@
 			"error": "`❌` | An error occurred: `{error}`"
 		},
 		"message": {
-			"prefix_mention": "Hi, my prefix for this server is `{prefix}`. Want more info? Then do `{prefix}help`\nStay safe, stay awesome!",
+			"prefix_mention": "Hi, You can use `{prefix}`, `panais` as my prefix(es). To discover my commands, type `/help`.",
 			"no_send_message": "`❌` | I don't have **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** or **`ReadMessageHistory`**  permission in `{guild}`\nchannel: {channel}.",
 			"no_permission": "`❌` | I don't have {permissions} permission.",
 			"no_user_permission": "`⚠️` | You don't have enough permissions to use this command.",
