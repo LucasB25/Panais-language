@@ -67,6 +67,27 @@
 			"position": "Position:",
 			"color": "Color:"
 		},
+		"userinfo": {
+			"description": "Displays information about a user.",
+			"options": {
+				"user": "The user to get information about."
+			},
+			"title": "User Information: {username}",
+			"footer": "Don't forget to vote! Thanks!",
+			"user_not_found": "User not found.",
+			"user_id": "User ID:",
+			"username": "Username:",
+			"created_at": "Account Created At:",
+			"joined_at": "Joined at:",
+			"roles": "Roles:",
+			"voted_topgg": "Voted:",
+			"yes": "Yes",
+			"no": "No",
+			"no_timeout": "No Timeout",
+			"not_boosting": "Not Boosting",
+			"timeout": "Timeout until:",
+			"boosting_since": "Boosting Since:"
+		},
 		"help": {
 			"description": "Displays the help menu.",
 			"options": {
@@ -672,7 +693,7 @@
 			"different_voice_channel_button": "`⚠️` | You are not connected to {channel} to use these buttons.",
 			"now_playing": "Now Playing:",
 			"live": "LIVE",
-			"requested_by": "Requested by: {requester}",
+			"requested_by": "Requested by: <@{requester}>",
 			"no_dj_permission": "You need to have the DJ role to use this button.",
 			"volume_set": "`🔊` | Volume set to {vol}%.",
 			"volume_footer": "Volume: {vol}%",
