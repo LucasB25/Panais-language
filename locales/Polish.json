@@ -364,6 +364,7 @@
 				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
 				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
 			},
+			"not_in_voice_channel": "`❌` | You need to be in a voice channel to use this command.",
 			"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue.",
 			"added_playlist_to_queue": "`🎶` | Added {length} songs to the queue."
 		},
@@ -379,6 +380,7 @@
 				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
 				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
 			},
+			"not_in_voice_channel": "`❌` | You need to be in a voice channel to use this command.",
 			"added_to_play_next": "`🎶` | Added [{title}]({uri}) to play next in the queue.",
 			"added_playlist_to_play_next": "`🎶` | Added {length} songs to play next in the queue."
 		},
@@ -434,6 +436,7 @@
 		},
 		"search": {
 			"description": "Searches for a song.",
+			"not_in_voice_channel": "`❌` | You need to be in a voice channel to use this command.",
 			"options": {
 				"song": "The song you want to search for."
 			},
@@ -550,6 +553,7 @@
 		},
 		"load": {
 			"description": "Loads a playlist.",
+			"not_in_voice_channel": "`❌` | You need to be in a voice channel to use this command.",
 			"options": {
 				"playlist": "The playlist you want to load."
 			},

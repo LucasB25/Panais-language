@@ -364,6 +364,7 @@
 				"queue_too_long": "`❌` | La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
 				"playlist_too_long": "`❌` | La playlist est trop longue. La longueur maximale est de {maxPlaylistSize} chansons."
 			},
+			"not_in_voice_channel": "Vous devez être dans un salon vocal pour utiliser cette commande.",
 			"added_to_queue": "`🎶` | Ajout de [{title}]({uri}) à la file d'attente.",
 			"added_playlist_to_queue": "`🎶` | Ajout de {length} chansons à la file d'attente."
 		},
@@ -379,6 +380,7 @@
 				"queue_too_long": "`❌` | La file d'attente est trop longue. La longueur maximale est de {maxQueueSize} chansons.",
 				"playlist_too_long": "`❌` | La playlist est trop longue. La longueur maximale est de {maxPlaylistSize} chansons."
 			},
+			"not_in_voice_channel": "Vous devez être dans un salon vocal pour utiliser cette commande.",
 			"added_to_play_next": "`🎶` | Ajout de [{title}]({uri}) à jouer ensuite dans la file d'attente.",
 			"added_playlist_to_play_next": "`🎶` | Ajout de {length} chansons à jouer ensuite dans la file d'attente."
 		},
@@ -434,6 +436,7 @@
 		},
 		"search": {
 			"description": "Recherche une chanson.",
+			"not_in_voice_channel": "Vous devez être dans un salon vocal pour utiliser cette commande.",
 			"options": {
 				"song": "La chanson que vous souhaitez rechercher."
 			},
@@ -550,6 +553,7 @@
 		},
 		"load": {
 			"description": "Charge une playlist.",
+			"not_in_voice_channel": "Vous devez être dans un salon vocal pour utiliser cette commande.",
 			"options": {
 				"playlist": "La playlist que vous souhaitez charger."
 			},
