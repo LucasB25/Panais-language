@@ -254,7 +254,7 @@
 				"invalid_number": "`❌` | Veuillez fournir un nombre valide entre **0.5** et **5**."
 			},
 			"messages": {
-				"pitch_set": "`✅` | La hauteur a été définie à **{pitch}**.`"
+				"pitch_set": "`✅` | La hauteur a été définie à **{pitch}**."
 			}
 		},
 		"rate": {
@@ -411,7 +411,7 @@
 				"not_seekable": "`❌` | Impossible de rejouer cette chanson car elle n'est pas consultable."
 			},
 			"messages": {
-				"replaying": "`🔁` | Relance de la chanson actuelle.`"
+				"replaying": "`🔁` | Relance de la chanson actuelle."
 			}
 		},
 		"lyrics": {
@@ -536,7 +536,7 @@
 			},
 			"messages": {
 				"playlist_not_found": "`❌` | Cette playlist n'existe pas.",
-				"playlist_deleted": "`🗑️` | Playlist **{playlistName}** supprimée.`"
+				"playlist_deleted": "`🗑️` | Playlist **{playlistName}** supprimée."
 			}
 		},
 		"list": {
