@@ -21,7 +21,8 @@
 		"lavalink": {
 			"description": "Affiche les statistiques actuelles de Lavalink.",
 			"title": "⚙️ Statistiques Lavalink",
-			"content": "Joueurs : {players}\nJoueurs en cours : {playingPlayers}\nTemps de fonctionnement : {uptime}\nNoyaux : {cores} Noyau(x)\nUtilisation de la mémoire : {used} / {reservable}\nCharge du système : {systemLoad}%\nCharge de Lavalink : {lavalinkLoad}%"
+			"content": "Joueurs : {players}\nJoueurs en cours : {playingPlayers}\nTemps de fonctionnement : {uptime}\nNoyaux : {cores} Noyau(x)\nUtilisation de la mémoire : {usedMemory} / {reservableMemory}\nCharge du système : {systemLoad}%\nCharge de Lavalink : {lavalinkLoad}%",
+			"page_info": "Page {index} de {total}"
 		},
 		"invite": {
 			"description": "Obtenez le lien d'invitation du bot.",
@@ -49,44 +50,74 @@
 			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTotal de chanson jouée: {totalPlaySong} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
 		},
 		"roleinfo": {
-			"description": "Affiche des informations sur un rôle.",
+			"description": "Affiche les informations sur un rôle.",
 			"options": {
-				"role": "Choisissez un rôle pour avoir ses informations."
+			  	"role": "Choisissez un rôle pour obtenir ses informations."
 			},
-			"title": "Informations sur le rôle : {roleName}",
 			"role_not_found": "Rôle non trouvé. Veuillez mentionner un rôle valide ou fournir un ID de rôle valide.",
-			"role_id": "ID du rôle :",
 			"yes": "Oui",
 			"no": "Non",
-			"managed": "Géré par une intégration :",
-			"hoisted": "Épinglé :",
-			"dj_role": "Rôle DJ :",
-			"members": "Nombre de membres :",
-			"creation_date": "Date de création :",
-			"mentionable": "Mentionnable :",
-			"position": "Position :",
-			"color": "Couleur :"
-		},
-		"userinfo": {
+			"title": "Informations sur le rôle : {roleName}",
+			"fields": {
+				"managed": "Géré par une intégration :",
+				"hoisted": "Affiché séparément :",
+				"dj_role": "Rôle DJ :",
+				"members": "Nombre de membres :",
+				"creation_date": "Date de création :",
+				"mentionable": "Mentionnable :",
+				"position": "Position :",
+				"color": "Couleur :",
+				"role_id": "ID du rôle :",
+				"top_members": "Meilleurs membres :",
+				"permissions": "Permissions :"
+			},
+			"no_permissions": "Aucune permission"
+		  },
+		  "serverinfo": {
+			"description": "Affiche les informations sur le serveur.",
+			"boost_no_boosts": "Aucun Boost",
+			"boost_level_1": "Niveau 1 (2 - 14 boosts)",
+			"boost_level_2": "Niveau 2 (15 - 29 boosts)",
+			"boost_level_3": "Niveau 3 (30+ boosts)",
+			"boost_unknown": "Inconnu",
+			"online": "en ligne",
+			"fields": {
+				"server_id": "ID du serveur :",
+				"owner": "Propriétaire :",
+				"created_at": "Créé le :",
+				"members": "Membres :",
+				"online": "en ligne",
+				"roles": "Rôles :",
+				"emojis": "Emojis :",
+				"boosts": "Boosts :",
+				"stickers": "Stickers :"
+			},
+			"offline": "Hors ligne",
+			"bots": "bots"
+		  },
+		  "userinfo": {
 			"description": "Affiche les informations sur un utilisateur.",
 			"options": {
-				"user": "L'utilisateur sur lequel obtenir des informations."
+			  	"user": "L'utilisateur sur lequel obtenir des informations."
 			},
-			"title": "Informations Utilisateur : {username}",
-			"footer": "N'oubliez pas de voter ! Merci !",
-			"user_not_found": "Utilisateur introuvable.", 
-			"user_id": "ID de l'utilisateur :", 
-			"username": "Nom d'utilisateur :",
-			"created_at": "Compte créé le :",
-			"joined_at": "Rejoint le :",
-			"roles": "Rôles :",
-			"voted_topgg": "A voté :",
 			"yes": "Oui",
 			"no": "Non",
-			"no_timeout": "Pas de Timeout",
-			"not_boosting": "Pas de Boost",
-			"timeout": "Timeout jusqu'à:",
-			"boosting_since": "Boost depuis:"
+			"user_not_found": "Utilisateur non trouvé.",
+			"no_timeout": "Pas d'exclusion",
+			"not_boosting": "Ne booste pas",
+			"footer": "N'oubliez pas de voter ! Merci !",
+			"fields": {
+				"user_id": "ID de l'utilisateur :",
+				"username": "Nom d'utilisateur :",
+				"created_at": "Compte créé le :",
+				"joined_at": "Rejoint le :",
+				"roles": "Rôles :",
+				"voted_topgg": "A voté :",
+				"no_timeout": "Pas d'exclusion",
+				"not_boosting": "Ne booste pas",
+				"timeout": "Exclusion jusqu'à :",
+				"boosting_since": "Booste depuis :"
+			}
 		},
 		"help": {
 			"description": "Affiche le menu d'aide.",
@@ -139,6 +170,43 @@
 				"language": "La langue que vous souhaitez définir.",
 				"reset": "Remettre la langue à la langue par défaut."
 			}
+		},
+		"settings": {
+			"description": "Gérer les paramètres du serveur.",
+			"options": {
+				"view": "Affiche les paramètres actuels du serveur.",
+				"reset": "Réinitialise les paramètres du serveur aux valeurs par défaut.",
+				"parameter": {
+					"description": "Le paramètre à réinitialiser.",
+					"choices": {
+						"volume": "Volume",
+						"dj": "DJ",
+						"247": "Mode 24/7",
+						"language": "Langue",
+						"prefix": "Préfixe",
+						"setup": "Setup",
+						"theme": "Thème"
+					}
+				}
+			},
+			"no": "Non",
+			"yes": "Oui",
+			"messages": {
+				"view_title": "Paramètres du serveur",
+				"reset_success": "`✅` | Le paramètre `{parameter}` a été réinitialisé avec succès.",
+				"reset_error": "`❌` | Le paramètre `{parameter}` n'a pas pu être réinitialisé. Veuillez vérifier le nom du paramètre.",
+				"reset_missing": "`❌` | Vous devez spécifier un paramètre à réinitialiser."
+			},
+			"fields": {
+				"default_volume": "Volume par défaut :",
+				"dj_enabled": "DJ activé :",
+				"mode_247": "Mode 24/7 :",
+				"language": "Langue :",
+				"prefix": "Préfixe :",
+				"setup": "Setup :",
+				"theme": "Thème :"
+			},
+			"footer": "Demandé par {username}"
 		},
 		"prefix": {
 			"description": "Affiche ou définit le préfixe du bot.",
@@ -548,7 +616,9 @@
 				"no_playlists": "Cet utilisateur n'a aucune playlist.",
 				"your": "Vos",
 				"playlists_title": "📃 Playlists de {username}",
-				"error": "`❌` | Une erreur s'est produite lors de la récupération des playlists."
+				"error": "`❌` | Une erreur s'est produite lors de la récupération des playlists.",
+				"invalid_username": "`❌` | Nom d'utilisateur invalide ou utilisateur introuvable.",
+				"invalid_userid": "`❌` | Impossible de résoudre un ID utilisateur valide."
 			}
 		},
 		"load": {
@@ -589,7 +659,9 @@
 				"provide_user": "`❌` | Veuillez mentionner un utilisateur.",
 				"playlist_not_exist": "`❌` | Cette playlist n'existe pas pour l'utilisateur mentionné.",
 				"playlist_stolen": "`😈` | Playlist `{playlist}` volée avec succès à {user}.",
-				"error_occurred": "`❌` | Une erreur s'est produite lors du vol de la playlist."
+				"error_occurred": "`❌` | Une erreur s'est produite lors du vol de la playlist.",
+				"playlist_exists": "`❌` | Une playlist nommée **{playlist}** existe déjà dans votre collection.",
+				"invalid_username": "`❌` | Nom d'utilisateur invalide ou utilisateur introuvable."
 			}
 		}
 	},

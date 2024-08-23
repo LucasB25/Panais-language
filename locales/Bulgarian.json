@@ -21,7 +21,8 @@
 		"lavalink": {
 			"description": "Displays current Lavalink statistics.",
 			"title": "⚙️ Lavalink Stats",
-			"content": "Players: {players}\nPlaying Players: {playingPlayers}\nUptime: {uptime}\nCores: {cores} Core(s)\nMemory Usage: {used} / {reservable}\nSystem Load: {systemLoad}%\nLavalink Load: {lavalinkLoad}%"
+			"content": "Players: {players}\nPlaying Players: {playingPlayers}\nUptime: {uptime}\nCores: {cores} Core(s)\nMemory Usage: {usedMemory} / {reservableMemory}\nSystem Load: {systemLoad}%\nLavalink Load: {lavalinkLoad}%",
+			"page_info": "Page {index} of {total}"
 		},
 		"invite": {
 			"description": "Get the bot's invite link.",
@@ -53,40 +54,70 @@
 			"options": {
 				"role": "Choose a role to get its information."
 			},
-			"title": "Role Information: {roleName}",
 			"role_not_found": "Role not found. Please mention a valid role or provide a valid role ID.",
-			"role_id": "Role ID:",
 			"yes": "Yes",
 			"no": "No",
-			"managed": "Managed by an integration:",
-			"hoisted": "Hoisted:",
-			"dj_role": "DJ Role:",
-			"members": "Member Count:",
-			"creation_date": "Creation Date:",
-			"mentionable": "Mentionable:",
-			"position": "Position:",
-			"color": "Color:"
+			"title": "Role Information: {roleName}",
+			"fields": {
+				"managed": "Managed by an integration:",
+				"hoisted": "Hoisted:",
+				"dj_role": "DJ Role:",
+				"members": "Member Count:",
+				"creation_date": "Creation Date:",
+				"mentionable": "Mentionable:",
+				"position": "Position:",
+				"color": "Color:",
+				"role_id": "Role ID:",
+				"top_members": "Top members:",
+				"permissions": "Permissions:"
+			},
+			"no_permissions": "No permissions"
+		},
+		"serverinfo": {
+			"description": "Displays information about the server.",
+			"boost_no_boosts": "No Boosts",
+			"boost_level_1": "Level 1 (2 - 14 boosts)",
+			"boost_level_2": "Level 2 (15 - 29 boosts)",
+			"boost_level_3": "Level 3 (30+ boosts)",
+			"boost_unknown": "Unknown",
+			"online": "online",
+			"fields": {
+				"server_id": "Server ID:",
+				"owner": "Owner:",
+				"created_at": "Created At:",
+				"members": "Members:",
+				"online": "online",
+				"roles": "Roles:",
+				"emojis": "Emojis:",
+				"boosts": "Boosts:",
+				"stickers": "Stickers:"
+			},
+			"offline": "offline",
+			"bots": "bots"
 		},
 		"userinfo": {
 			"description": "Displays information about a user.",
 			"options": {
 				"user": "The user to get information about."
 			},
-			"title": "User Information: {username}",
-			"footer": "Don't forget to vote! Thanks!",
-			"user_not_found": "User not found.",
-			"user_id": "User ID:",
-			"username": "Username:",
-			"created_at": "Account Created At:",
-			"joined_at": "Joined at:",
-			"roles": "Roles:",
-			"voted_topgg": "Voted:",
 			"yes": "Yes",
 			"no": "No",
+			"user_not_found": "User not found.",
 			"no_timeout": "No Timeout",
 			"not_boosting": "Not Boosting",
-			"timeout": "Timeout until:",
-			"boosting_since": "Boosting Since:"
+			"footer": "Don't forget to vote! Thanks!",
+			"fields": {
+				"user_id": "User ID:",
+				"username": "Username:",
+				"created_at": "Account Created At:",
+				"joined_at": "Joined at:",
+				"roles": "Roles:",
+				"voted_topgg": "Voted:",
+				"no_timeout": "No Timeout",
+				"not_boosting": "Not Boosting",
+				"timeout": "Timeout until:",
+				"boosting_since": "Boosting Since:"
+			}
 		},
 		"help": {
 			"description": "Displays the help menu.",
@@ -139,6 +170,43 @@
 				"language": "The language you want to set.",
 				"reset": "Reset the language to the default language."
 			}
+		},
+		"settings": {
+			"description": "Manage server settings.",
+			"options": {
+				"view": "Displays the current server settings.",
+				"reset": "Resets server settings to their default values.",
+				"parameter": {
+					"description": "The setting to reset.",
+					"choices": {
+						"247": "24/7 Mode",
+						"volume": "Volume",
+						"dj": "DJ",
+						"language": "Language",
+						"prefix": "Prefix",
+						"setup": "Setup",
+						"theme": "Theme"
+					}
+				}
+			},
+			"no": "No",
+			"yes": "Yes",
+			"messages": {
+				"view_title": "Server Settings",
+				"reset_success": "`✅` | The `{parameter}` setting has been successfully reset.",
+				"reset_error": "`❌` | The `{parameter}` setting could not be reset. Please check the parameter name.",
+				"reset_missing": "`❌` | You must specify a setting to reset."
+			},
+			"fields": {
+				"default_volume": "Default Volume:",
+				"dj_enabled": "DJ Enabled:",
+				"mode_247": "24/7 Mode:",
+				"language": "Language:",
+				"prefix": "Prefix:",
+				"setup": "Setup:",
+				"theme": "Theme:"
+			},
+			"footer": "Requested by {username}"
 		},
 		"prefix": {
 			"description": "Displays or sets the bot's prefix.",
@@ -548,7 +616,9 @@
 				"no_playlists": "This user has no playlists.",
 				"your": "Your",
 				"playlists_title": "📃 {username}'s Playlists",
-				"error": "`❌` | An error occurred while retrieving playlists."
+				"error": "`❌` | An error occurred while retrieving playlists.",
+				"invalid_username": "`❌` | Invalid username or user not found.",
+				"invalid_userid": "`❌` | Could not resolve a valid user ID."
 			}
 		},
 		"load": {
@@ -589,7 +659,9 @@
 				"provide_user": "`❌` | Please mention a user.",
 				"playlist_not_exist": "`❌` | That playlist doesn't exist for the mentioned user.",
 				"playlist_stolen": "`😈` | Playlist `{playlist}` successfully stolen from {user}.",
-				"error_occurred": "`❌` | An error occurred while stealing the playlist."
+				"error_occurred": "`❌` | An error occurred while stealing the playlist.",
+				"playlist_exists": "`❌` | A playlist named **{playlist}** already exists in your collection.",
+				"invalid_username": "`❌` | Invalid username or user not found."
 			}
 		}
 	},
