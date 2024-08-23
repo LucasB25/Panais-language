@@ -8,12 +8,12 @@
 			},
 			"messages": {
 				"disabled": "`✅` | Le mode 24/7 a été **désactivé**.",
-				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` | Le bot restera dans le salon vocal, même s'il n'y a plus personne."
+				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` Le bot restera dans le salon vocal, même s'il n'y a plus personne."
 			}
 		},
 		"ping": {
 			"description": "Affiche le ping du bot.",
-			"content": "`🏓` | En train de pinger...",
+			"content": "`🏓` Calcul du ping...",
 			"bot_latency": "Latence du Bot :",
 			"api_latency": "Latence de l'API :",
 			"requested_by": "Demandé par : {author}"
@@ -22,32 +22,32 @@
 			"description": "Affiche les statistiques actuelles de Lavalink.",
 			"title": "⚙️ Statistiques Lavalink",
 			"content": "Joueurs : {players}\nJoueurs en cours : {playingPlayers}\nTemps de fonctionnement : {uptime}\nNoyaux : {cores} Noyau(x)\nUtilisation de la mémoire : {usedMemory} / {reservableMemory}\nCharge du système : {systemLoad}%\nCharge de Lavalink : {lavalinkLoad}%",
-			"page_info": "Page {index} de {total}"
+			"page_info": "Page {index} sur {total}"
 		},
 		"invite": {
 			"description": "Obtenez le lien d'invitation du bot.",
-			"content": "Vous pouvez m'inviter en cliquant sur le bouton ci-dessous !\nDes bugs ou des pannes ? Rejoignez le serveur d'assistance !"
+			"content": "Invitez-moi sur votre serveur en cliquant sur le bouton ci-dessous !\nEn cas de bugs ou de problèmes, rejoignez le serveur d'assistance !"
 		},
 		"vote": {
 			"description": "Obtenez le lien de vote.",
-			"content": "`👍` | Vous voulez voter pour Panais ? Cliquez sur le bouton ci-dessous !"
+			"content": "`👍` | Soutenez Panais en votant ! Cliquez sur le bouton ci-dessous !"
 		},
 		"premium": {
 			"description": "Obtenez le lien premium.",
-			"content": "`✨` | Passez à premium pour débloquer des fonctionnalités supplémentaires et soutenir le bot !"
+			"content": "`✨` | Débloquez des fonctionnalités exclusives et soutenez le développement du bot en passant Premium !"
 		},
 		"support": {
 			"description": "Obtenez le lien d'invitation pour le serveur d'assistance.",
-			"content": "Besoin d'aide ? Rejoignez le serveur d'assistance en cliquant sur le bouton ci-dessous !"
+			"content": "Besoin d'aide ? Rejoignez notre serveur d'assistance en cliquant sur le bouton ci-dessous !"
 		},
 		"clusters": {
 			"description": "Affiche des informations sur les clusters de shards.",
-			"content": "Le serveur est sur le Shard : **{shard}**",
+			"content": "Ce serveur est sur le Shard : **{shard}**",
 			"author": "🌐 Informations sur les Shards de Panais",
 			"fields": "Statistiques Totales",
 			"shardname": "Shard {index}",
 			"shardvalue": "Serveurs : {guildCount} \nUtilisateurs : {memberCounts} \nSalons : {channelCounts} \nTemps de fonctionnement : {uptimes} \nLatence : {pings} ms",
-			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTotal de chanson jouée: {totalPlaySong} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
+			"totalinfo": "Total Serveurs : {totalGuilds} \nTotal Utilisateurs : {totalUsers} \nTotal Salons : {totalChannels} \nTotal de chansons jouées : {totalPlaySong} \nTemps de fonctionnement : {totalUptime} \nLatence Moyenne : {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Affiche les informations sur un rôle.",
@@ -68,7 +68,7 @@
 				"position": "Position :",
 				"color": "Couleur :",
 				"role_id": "ID du rôle :",
-				"top_members": "Meilleurs membres :",
+				"top_members": "Membres principaux :",
 				"permissions": "Permissions :"
 			},
 			"no_permissions": "Aucune permission"
@@ -489,8 +489,8 @@
 				"song": "Le nom de la chanson pour laquelle vous souhaitez rechercher les paroles."
 			},
 			"error": {
-				"no_lyrics_found": "`❌` | Aucune chanson n’a été trouvée !",
-				"no_song": "`❌` | Aucune chanson n’est fournie ou en cours de lecture."
+				"no_lyrics_found": "`❌` | Aucune parole trouvée pour cette chanson !",
+				"no_song": "`❌` | Aucune chanson n'est fournie ou en cours de lecture."
 			}
 		},
 		"resume": {
@@ -668,7 +668,7 @@
 	"buttons": {
 		"invite": "Inviter",
 		"support": "Serveur d'assistance",
-		"vote": "Vote pour moi !",
+		"vote": "Voter",
 		"premium": "Premium",
 		"previous": "Précédent",
 		"resume": "Reprendre",
@@ -681,8 +681,8 @@
 	},
 	"structures": {
 		"dispatcher": {
-			"title": "Voice Channel Empty",
-			"description": "I left {client} because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features with Premium."
+			"title": "Salon Vocal Vide",
+			"description": "J'ai quitté {client} car j'étais seul. \n\nPour activer le mode 24/7, utilisez la commande `24/7`. Débloquez plus de fonctionnalités avec Premium."
 		}
 	},
 	"player": {
