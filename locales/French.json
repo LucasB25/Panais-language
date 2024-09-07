@@ -13,7 +13,7 @@
 		},
 		"ping": {
 			"description": "Affiche le ping du bot.",
-			"content": "`🏓` Calcul du ping...",
+			"loading": "`🏓` Calcul du ping...",
 			"bot_latency": "Latence du Bot :",
 			"api_latency": "Latence de l'API :",
 			"requested_by": "Demandé par : {author}"
@@ -90,7 +90,8 @@
 				"roles": "Rôles :",
 				"emojis": "Emojis :",
 				"boosts": "Boosts :",
-				"stickers": "Stickers :"
+				"stickers": "Stickers :",
+				"premium_end_date": "Fin du premium :"
 			},
 			"offline": "Hors ligne",
 			"bots": "bots"
@@ -127,7 +128,7 @@
 			"content": "Salut ! Je suis <@{bot}>, un bot musical. Vous pouvez utiliser `{prefix}help <command>` pour obtenir plus d'informations sur une commande.\n\n`👍` Votez pour le bot pour débloquer des fonctionnalités ! [Votez ici](https://top.gg/bot/{client}/vote)",
 			"title": "📖 Menu d'aide",
 			"not_found": "Cette commande `{cmdName}` n'existe pas.",
-			"help_cmd": "**Description :** {description}\n**Utilisation :** {usage}\n**Exemples :** {examples}\n**Alias :** {aliases}\n**Catégorie :** {category}\n**Temps de rechargement :** {cooldown} secondes\n\n**Permissions utilisateur :** {premUser}\n**Permissions du bot :** {premBot}\n**Développeur uniquement :** {dev}\n**Commande Slash :** {slash}\n**Arguments :** {args}\n\n**Lecteur :** {player}\n**DJ :** {dj}\n**Permissions DJ :** {djPerm}\n**Vocal :** {voice}",
+			"help_cmd": "**Description :** {description}\n**Utilisation :** {usage}\n**Exemples :** {examples}\n**Alias :** {aliases}\n**Catégorie :** {category}\n**Vote :** {vote}\n**Premium :** {premium}\n**Temps de rechargement :** {cooldown} secondes\n\n**Permissions utilisateur :** {premUser}\n**Permissions du bot :** {premBot}\n**Développeur uniquement :** {dev}\n**Commande Slash :** {slash}\n**Arguments :** {args}\n\n**Lecteur :** {player}\n**DJ :** {dj}\n**Permissions DJ :** {djPerm}\n**Vocal :** {voice}",
 			"footer": "Utilisez {prefix}help <command> pour plus d'informations sur une commande."
 		},
 		"botinfo": {
@@ -177,16 +178,7 @@
 				"view": "Affiche les paramètres actuels du serveur.",
 				"reset": "Réinitialise les paramètres du serveur aux valeurs par défaut.",
 				"parameter": {
-					"description": "Le paramètre à réinitialiser.",
-					"choices": {
-						"volume": "Volume",
-						"dj": "DJ",
-						"247": "Mode 24/7",
-						"language": "Langue",
-						"prefix": "Préfixe",
-						"setup": "Setup",
-						"theme": "Thème"
-					}
+					"description": "Le paramètre à réinitialiser."
 				}
 			},
 			"no": "Non",
@@ -488,7 +480,7 @@
 			"options": {
 				"song": "Le nom de la chanson pour laquelle vous souhaitez rechercher les paroles."
 			},
-			"error": {
+			"errors": {
 				"no_lyrics_found": "`❌` | Aucune parole trouvée pour cette chanson !",
 				"no_song": "`❌` | Aucune chanson n'est fournie ou en cours de lecture."
 			}
@@ -679,12 +671,6 @@
 			"not_author": "`❌` | Vous ne pouvez pas utiliser ce bouton."
 		}
 	},
-	"structures": {
-		"dispatcher": {
-			"title": "Salon Vocal Vide",
-			"description": "J'ai quitté {client} car j'étais seul. \n\nPour activer le mode 24/7, utilisez la commande `24/7`. Débloquez plus de fonctionnalités avec Premium."
-		}
-	},
 	"player": {
 		"errors": {
 			"no_player": "`❌` | Il n'y a aucun lecteur actif dans ce serveur.",
@@ -732,8 +718,8 @@
 			"no_request_to_speak": "`❌` | Je n'ai pas la permission `REQUEST TO SPEAK` pour exécuter cette commande `{command}`.",
 			"different_voice_channel": "`⚠️` | Vous n'êtes pas connecté à {channel} pour utiliser cette commande `{command}`.",
 			"no_music_playing": "Aucune musique n'est en cours de lecture.",
-			"no_vote": "`👍` | Attendez ! Avant d’utiliser cette commande, vous devez voter sur top.gg. Merci.",
 			"no_premium": "`✨` | Cette commande est premium uniquement.",
+			"no_premium_or_vote": "`✨` | Cette commande est réservée aux utilisateurs premium ou à ceux ayant voté pour Panais. Pour débloquer cette commande, abonnez-vous au service premium pour bénéficier de fonctionnalités supplémentaires ou votez pour nous sur top.gg. Votre soutien est grandement apprécié !",
 			"no_dj_role": "`⚠️` | Le rôle DJ n'est pas défini.",
 			"no_dj_permission": "`⚠️` | Vous devez avoir le rôle DJ pour utiliser cette commande.",
 			"cooldown": "`⏳` | Veuillez attendre {time} seconde(s) de plus avant de réutiliser la commande `{command}`.",
@@ -751,8 +737,8 @@
 			"different_voice_channel": "`⚠️` | Vous n'êtes pas connecté à {channel} pour utiliser cette commande `{command}`.",
 			"no_music_playing": "Aucune musique n'est en cours de lecture.",
 			"no_dj_role": "`⚠️` | Le rôle DJ n'est pas défini.",
-			"no_vote": "`👍` | Attendez ! Avant d’utiliser cette commande, vous devez voter sur top.gg. Merci.",
 			"no_premium": "`✨` | Cette commande est premium uniquement.",
+			"no_premium_or_vote": "`✨` | Cette commande est réservée aux utilisateurs premium ou à ceux ayant voté pour Panais. Pour débloquer cette commande, abonnez-vous au service premium pour bénéficier de fonctionnalités supplémentaires ou votez pour nous sur top.gg. Votre soutien est grandement apprécié !",
 			"no_dj_permission": "`⚠️` | Vous devez avoir le rôle DJ pour utiliser cette commande.",
 			"missing_arguments": "`⚠️` | Arguments manquants",
 			"missing_arguments_description": "Veuillez fournir les arguments requis pour la commande `{command}`.\n\nExemples :\n{examples}",
@@ -797,6 +783,10 @@
 			"forward_footer": "Avancé par {displayName}",
 			"button_not_available": "`❌` | Ce bouton n'est pas disponible.",
 			"no_music_playing": "Il n'y a pas de musique en cours de lecture sur ce serveur."
+		},
+		"voiceStateUpdate": {
+			"title": "Salon Vocal Vide",
+			"description": "J'ai quitté <#{voiceChannel}> parce que j'étais seul. \n\nPour activer le mode 24/7, utilisez la commande `24/7`. Débloquez plus de fonctionnalités en votant."
 		}
 	}
 }

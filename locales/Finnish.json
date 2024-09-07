@@ -13,7 +13,7 @@
 		},
 		"ping": {
 			"description": "Displays the bot's ping.",
-			"content": "`🏓` Calculating ping...",
+			"loading": "`🏓` Calculating ping...",
 			"bot_latency": "Bot Latency:",
 			"api_latency": "API Latency:",
 			"requested_by": "Requested by: {author}"
@@ -90,7 +90,8 @@
 				"roles": "Roles:",
 				"emojis": "Emojis:",
 				"boosts": "Boosts:",
-				"stickers": "Stickers:"
+				"stickers": "Stickers:",
+				"premium_end_date": "End of premium:"
 			},
 			"offline": "Offline",
 			"bots": "Bots"
@@ -127,7 +128,7 @@
 			"content": "Hello! I am <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command.\n\n`👍` Vote for the bot to unlock features! [Vote Here](https://top.gg/bot/{client}/vote)",
 			"title": "📖 Help Menu",
 			"not_found": "This command `{cmdName}` does not exist.",
-			"help_cmd": "**Description:** {description}\n**Usage:** {usage}\n**Examples:** {examples}\n**Alias:** {aliases}\n**Category:** {category}\n**Cooldown:** {cooldown} seconds\n\n**User Permissions:** {premUser}\n**Bot Permissions:** {premBot}\n**Developer Only:** {dev}\n**Slash Command:** {slash}\n**Arguments:** {args}\n\n**Player:** {player}\n**DJ:** {dj}\n**DJ Permissions:** {djPerm}\n**Voice:** {voice}",
+			"help_cmd": "**Description:** {description}\n**Usage:** {usage}\n**Examples:** {examples}\n**Alias:** {aliases}\n**Category:** {category}\n**Vote:** {vote}\n**Premium:** {premium}\n**Cooldown:** {cooldown} seconds\n\n**User Permissions:** {premUser}\n**Bot Permissions:** {premBot}\n**Developer Only:** {dev}\n**Slash Command:** {slash}\n**Arguments:** {args}\n\n**Player:** {player}\n**DJ:** {dj}\n**DJ Permissions:** {djPerm}\n**Voice:** {voice}",
 			"footer": "Use {prefix}help <command> for more information about a command."
 		},
 		"botinfo": {
@@ -177,16 +178,7 @@
 				"view": "View the current server settings.",
 				"reset": "Reset the server settings to default.",
 				"parameter": {
-					"description": "The parameter to reset.",
-					"choices": {
-						"volume": "Volume",
-						"dj": "DJ",
-						"247": "24/7 Mode",
-						"language": "Language",
-						"prefix": "Prefix",
-						"setup": "Setup",
-						"theme": "Theme"
-					}
+					"description": "The parameter to reset."
 				}
 			},
 			"no": "No",
@@ -488,7 +480,7 @@
 			"options": {
 				"song": "The name of the song you want to search the lyrics for."
 			},
-			"error": {
+			"errors": {
 				"no_lyrics_found": "`❌` | No lyrics found for this song!",
 				"no_song": "`❌` | No song provided or currently playing."
 			}
@@ -682,7 +674,7 @@
 	"structures": {
 		"dispatcher": {
 			"title": "Empty Voice Channel",
-			"description": "I left {client} because I was alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features with Premium."
+			"description": "I left <#{voiceChannel}> because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features by voting."
 		}
 	},
 	"player": {
@@ -732,8 +724,8 @@
 			"no_request_to_speak": "`❌` | I don't have the `REQUEST TO SPEAK` permission to execute this command `{command}`.",
 			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
 			"no_music_playing": "No music is playing.",
-			"no_vote": "`👍` | Hold on! Before using this command, you must vote on top.gg. Thank you.",
 			"no_premium": "`✨` | This command is premium only.",
+			"no_premium_or_vote": "`✨` | This command is exclusive to premium users or those who have voted for Panais. To unlock this command, either subscribe to premium for additional features or vote for us on top.gg. Your support is greatly appreciated!",
 			"no_dj_role": "`⚠️` | The DJ role is not set.",
 			"no_dj_permission": "`⚠️` | You need to have the DJ role to use this command.",
 			"cooldown": "`⏳` | Please wait {time} more second(s) before reusing the `{command}` command.",
@@ -751,8 +743,8 @@
 			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
 			"no_music_playing": "No music is playing.",
 			"no_dj_role": "`⚠️` | The DJ role is not set.",
-			"no_vote": "`👍` | Hold on! Before using this command, you must vote on top.gg. Thank you.",
 			"no_premium": "`✨` | This command is premium only.",
+			"no_premium_or_vote": "`✨` | This command is exclusive to premium users or those who have voted for Panais. To unlock this command, either subscribe to premium for additional features or vote for us on top.gg. Your support is greatly appreciated!",
 			"no_dj_permission": "`⚠️` | You need to have the DJ role to use this command.",
 			"missing_arguments": "`⚠️` | Missing Arguments",
 			"missing_arguments_description": "Please provide the required arguments for the command `{command}`.\n\nExamples:\n{examples}",
@@ -797,6 +789,10 @@
 			"forward_footer": "Forwarded by {displayName}",
 			"button_not_available": "`❌` | This button is not available.",
 			"no_music_playing": "There is no music playing on this server."
+		},
+		"voiceStateUpdate": {
+			"title": "Empty Voice Channel",
+			"description": "I left <#{voiceChannel}> because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features by voting."
 		}
 	}
 }
