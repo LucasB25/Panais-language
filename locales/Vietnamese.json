@@ -1,16 +1,5 @@
 {
 	"cmd": {
-		"247": {
-			"description": "Configures the bot to stay in the voice channel.",
-			"errors": {
-				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
-				"generic": "`❌` | An error occurred while executing this command."
-			},
-			"messages": {
-				"disabled": "`✅` | 24/7 mode has been **disabled**.",
-				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` The bot will stay in the voice channel, even if there is no one left."
-			}
-		},
 		"ping": {
 			"description": "Displays the bot's ping.",
 			"loading": "`🏓` Calculating ping...",
@@ -26,19 +15,19 @@
 		},
 		"invite": {
 			"description": "Get the bot's invite link.",
-			"content": "Invite me to your server by clicking the button below! \nIn case of bugs or issues, join the support server!"
+			"content": "`👋` **Invite me to your server!**\n\nClick the button below to add me to your server!\nIn case of bugs or issues, join the support server! `💖`"
 		},
 		"vote": {
 			"description": "Get the vote link.",
-			"content": "`👍` | Support Panais by voting! Click the button below!"
+			"content": "`👍` **Support Panais by voting!**\n\nClick the button below to vote for me! `😊`"
 		},
 		"premium": {
 			"description": "Get the premium link.",
-			"content": "`✨` | Unlock exclusive features and support the bot's development by going Premium!"
+			"content": "`✨` **Unlock exclusive features and support the bot's development!**\n\nClick the button below to go Premium! `🚀`"
 		},
 		"support": {
 			"description": "Get the invite link for the support server.",
-			"content": "Need help? Join our support server by clicking the button below!"
+			"content": "`💡` **Need help?**\n\nJoin our support server by clicking the button below! `😄`"
 		},
 		"clusters": {
 			"description": "Displays information about the shard clusters.",
@@ -46,97 +35,110 @@
 			"author": "🌐 Panais's Shards Information",
 			"fields": "Total Stats",
 			"shardname": "Shard {index}",
-			"shardvalue": "Servers: {guildCount} \nUsers: {memberCounts} \nChannels: {channelCounts} \nUptime: {uptimes} \nLatency: {pings} ms",
-			"totalinfo": "Total Servers: {totalGuilds} \nTotal Users: {totalUsers} \nTotal Channels: {totalChannels} \nTotal Songs Played: {totalPlaySong} \nUptime: {totalUptime} \nAverage Latency: {avgPing} ms"
+			"shardvalue": "Servers: {guildCount}\nUsers: {memberCounts}\nChannels: {channelCounts}\nUptime: {uptimes}\nLatency: {pings} ms",
+			"totalinfo": "Total Servers: {totalGuilds}\nTotal Users: {totalUsers}\nTotal Channels: {totalChannels}\nTotal Songs Played: {totalPlaySong}\nUptime: {totalUptime}\nAverage Latency: {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Displays information about a role.",
 			"options": {
 				"role": "Choose a role to get information about it."
 			},
-			"role_not_found": "Role not found. Please mention a valid role or provide a valid role ID.",
-			"yes": "Yes",
-			"no": "No",
-			"title": "Role Information: {roleName}",
-			"fields": {
-				"managed": "Managed by an integration:",
-				"hoisted": "Displayed separately:",
-				"dj_role": "DJ Role:",
-				"members": "Number of members:",
-				"creation_date": "Creation Date:",
-				"mentionable": "Mentionable:",
-				"position": "Position:",
-				"color": "Color:",
-				"role_id": "Role ID:",
-				"top_members": "Top Members:",
-				"permissions": "Permissions:"
+			"errors": {
+				"role_not_found": "`❌` | Role not found. Please mention a valid role or provide a valid role ID."
 			},
+			"title": "🔎 Role Information: {roleName}",
+			"managed": "Managed by an integration:",
+			"hoisted": "Displayed separately:",
+			"dj_role": "DJ Role:",
+			"members": "Number of members:",
+			"creation_date": "Creation Date:",
+			"mentionable": "Mentionable:",
+			"position": "Position:",
+			"color": "Color:",
+			"role_id": "Role ID:",
+			"top_members": "Top Members:",
+			"permissions": "Permissions:",
 			"no_permissions": "No Permissions"
 		},
 		"serverinfo": {
 			"description": "Displays information about the server.",
-			"boost_no_boosts": "No Boosts",
-			"boost_level_1": "Level 1 (2 - 14 boosts)",
-			"boost_level_2": "Level 2 (15 - 29 boosts)",
-			"boost_level_3": "Level 3 (30+ boosts)",
-			"boost_unknown": "Unknown",
-			"online": "Online",
-			"fields": {
-				"server_id": "Server ID:",
-				"owner": "Owner:",
-				"created_at": "Created At:",
-				"members": "Members:",
-				"online": "Online",
-				"roles": "Roles:",
-				"emojis": "Emojis:",
-				"boosts": "Boosts:",
-				"stickers": "Stickers:",
-				"premium_end_date": "End of premium:"
+			"boost_content": {
+				"boost_no_boosts": "No Boosts",
+				"boost_level_1": "Level 1 (2 - 14 boosts)",
+				"boost_level_2": "Level 2 (15 - 29 boosts)",
+				"boost_level_3": "Level 3 (30+ boosts)",
+				"boost_unknown": "Unknown"
 			},
+			"server_id": "Server ID:",
+			"owner": "Owner:",
+			"created_at": "Created At:",
+			"members": "Members:",
+			"online": "Online",
 			"offline": "Offline",
-			"bots": "Bots"
+			"bots": "Bots",
+			"roles": "Roles:",
+			"emojis": "Emojis:",
+			"boosts": "Boosts:",
+			"stickers": "Stickers:",
+			"premium_end_date": "End of premium:"
 		},
 		"userinfo": {
 			"description": "Displays information about a user.",
 			"options": {
 				"user": "The user to get information about."
 			},
-			"yes": "Yes",
-			"no": "No",
-			"user_not_found": "User not found.",
+			"errors": {
+				"user_not_found": "`❌` | User not found."
+			},
+			"footer": "Don't forget to vote! Thank you!",
+			"user_id": "User ID:",
+			"username": "Username:",
+			"created_at": "Account Created At:",
+			"joined_at": "Joined At:",
+			"roles": "Roles:",
+			"voted_topgg": "Voted:",
 			"no_timeout": "No Timeout",
 			"not_boosting": "Not Boosting",
-			"footer": "Don't forget to vote! Thank you!",
-			"fields": {
-				"user_id": "User ID:",
-				"username": "Username:",
-				"created_at": "Account Created At:",
-				"joined_at": "Joined At:",
-				"roles": "Roles:",
-				"voted_topgg": "Voted:",
-				"no_timeout": "No Timeout",
-				"not_boosting": "Not Boosting",
-				"timeout": "Timeout Until:",
-				"boosting_since": "Boosting Since:"
-			}
+			"timeout": "Timeout Until:",
+			"boosting_since": "Boosting Since:"
 		},
 		"help": {
 			"description": "Displays the help menu.",
 			"options": {
 				"command": "The command you want to get information about."
 			},
-			"content": "Hello! I am <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command.\n\n`👍` Vote for the bot to unlock features! [Vote Here](https://top.gg/bot/{client}/vote)",
+			"errors": {
+				"not_found": "`❌` | This command `{cmdName}` does not exist."
+			},
+			"content": "`👋` Hello! I am <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command.\n\n`👍` Vote for the bot to unlock features! [Vote Here](https://top.gg/bot/{client}/vote)",
 			"title": "📖 Help Menu",
-			"not_found": "This command `{cmdName}` does not exist.",
 			"help_cmd": "**Description:** {description}\n**Usage:** {usage}\n**Examples:** {examples}\n**Alias:** {aliases}\n**Category:** {category}\n**Vote:** {vote}\n**Premium:** {premium}\n**Cooldown:** {cooldown} seconds\n\n**User Permissions:** {premUser}\n**Bot Permissions:** {premBot}\n**Developer Only:** {dev}\n**Slash Command:** {slash}\n**Arguments:** {args}\n\n**Player:** {player}\n**DJ:** {dj}\n**DJ Permissions:** {djPerm}\n**Voice:** {voice}",
 			"footer": "Use {prefix}help <command> for more information about a command."
 		},
 		"botinfo": {
 			"description": "Information about the bot.",
-			"content": "Bot Information:\n- **Operating System:** {osInfo}\n- **Uptime:** {osUptime}\n- **Hostname:** {osHostname}\n- **CPU Architecture:** {cpuInfo}\n- **CPU Usage:** {cpuUsed}%\n- **Memory Usage:** {memUsed}MB / {memTotal}GB\n- **Node Version:** {nodeVersion}\n- **Discord.js Version:** {discordJsVersion}\n- **Connected to:** {guilds} servers, {channels} channels, and {users} users\n- **Total Commands:** {commands}"
+			"content": "`🤖` **Bot Information**\n\n**Operating System:** {osInfo}\n**Uptime:** {osUptime}\n**Hostname:** {osHostname}\n**CPU Architecture:** {cpuInfo}\n**CPU Usage:** {cpuUsed}%\n**Memory Usage:** {memUsed}MB / {memTotal}GB\n**Node Version:** {nodeVersion}\n**Discord.js Version:** {discordJsVersion}\n**Connected to:** {guilds} servers, {channels} channels, and {users} users\n**Total Commands:** {commands}"
+		},
+		"247": {
+			"description": "Configures the bot to stay in the voice channel.",
+			"errors": {
+				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
+				"generic": "`❌` | An error occurred while executing this command."
+			},
+			"messages": {
+				"disabled": "`✅` | 24/7 mode has been **disabled**.",
+				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` The bot will stay in the voice channel, even if there is no one left."
+			}
 		},
 		"dj": {
 			"description": "Manage DJ mode and associated roles.",
+			"options": {
+				"add": "The DJ role you want to add.",
+				"remove": "The DJ role you want to remove.",
+				"clear": "Clears all DJ roles.",
+				"toggle": "Toggles the DJ role.",
+				"role": "The DJ role."
+			},
 			"errors": {
 				"provide_role": "`❌` | Please provide a role.",
 				"no_roles": "`❌` | The DJ role is empty.",
@@ -150,26 +152,23 @@
 				"all_roles_cleared": "`🧹` | All DJ roles have been cleared.",
 				"toggle": "`🎤` | DJ mode has been {status}."
 			},
-			"options": {
-				"add": "The DJ role you want to add.",
-				"remove": "The DJ role you want to remove.",
-				"clear": "Clears all DJ roles.",
-				"toggle": "Toggles the DJ role.",
-				"role": "The DJ role."
-			},
 			"subcommands": "Subcommands"
 		},
 		"language": {
 			"description": "Set the bot's language.",
-			"invalid_language": "Please provide a valid language. Example: `EnglishUS` for English (United States)\n\nYou can find the list of supported languages [here](https://discord.com/developers/docs/reference#locales)\n\n**Available Languages:**\n{languages}",
-			"already_set": "The language is already set to `{language}`.",
-			"not_set": "The language is not set.",
-			"set": "`✅` | The language has been set to `{language}`.",
-			"reset": "`✅` | The language has been reset.",
 			"options": {
 				"set": "Set the bot's language.",
 				"language": "The language you want to set.",
 				"reset": "Reset the language to the default language."
+			},
+			"errors": {
+				"invalid_language": "`❌` | Please provide a valid language. Example: `EnglishUS` for English (United States)\n\nYou can find the list of supported languages [here](https://discord.com/developers/docs/reference#locales)\n\n**Available Languages:**\n{languages}",
+				"not_set": "`❌` | The language is not set."
+			},
+			"messages": {
+				"already_set": "The language is already set to `{language}`.",
+				"set": "`✅` | The language has been set to `{language}`.",
+				"reset": "`✅` | The language has been reset."
 			}
 		},
 		"settings": {
@@ -181,27 +180,31 @@
 					"description": "The parameter to reset."
 				}
 			},
-			"no": "No",
-			"yes": "Yes",
-			"messages": {
-				"view_title": "Server Settings",
-				"reset_success": "`✅` | The `{parameter}` setting has been reset successfully.",
+			"errors": {
+				"invalid_subcommand": "`❌` | Please provide a valid subcommand.",
 				"reset_error": "`❌` | The `{parameter}` setting could not be reset. Please check the parameter name.",
 				"reset_missing": "`❌` | You must specify a parameter to reset."
 			},
-			"fields": {
-				"default_volume": "Default Volume:",
-				"dj_enabled": "DJ Enabled:",
-				"mode_247": "24/7 Mode:",
-				"language": "Language:",
-				"prefix": "Prefix:",
-				"setup": "Setup:",
-				"theme": "Theme:"
+			"messages": {
+				"reset_success": "`✅` | The `{parameter}` setting has been reset successfully."
 			},
+			"title": "⚙️ Server Settings",
+			"default_volume": "Default Volume:",
+			"dj_enabled": "DJ Enabled:",
+			"mode_247": "24/7 Mode:",
+			"language": "Language:",
+			"prefix": "Prefix:",
+			"setup": "Setup:",
+			"theme": "Theme:",
 			"footer": "Requested by {username}"
 		},
 		"prefix": {
 			"description": "Displays or sets the bot's prefix.",
+			"options": {
+				"set": "Sets the prefix.",
+				"prefix": "The prefix you want to set.",
+				"reset": "Resets the prefix to the default."
+			},
 			"errors": {
 				"prefix_too_long": "`❌` | The prefix cannot be longer than 3 characters."
 			},
@@ -209,25 +212,22 @@
 				"current_prefix": "The prefix for this server is `{prefix}`.",
 				"prefix_set": "The prefix for this server is now `{prefix}`.",
 				"prefix_reset": "The prefix for this server is now `{prefix}`."
-			},
-			"options": {
-				"set": "Sets the prefix.",
-				"prefix": "The prefix you want to set.",
-				"reset": "Resets the prefix to the default."
 			}
 		},
 		"theme": {
 			"description": "Changes the player theme.",
-			"currentTheme": "The current theme is **{currentTheme}**.",
-			"choice": "`❌` | Invalid theme. Available themes are `classic`, `modern` and `modernpro`.",
-			"set_theme": "`✅` | The theme has been set to **{theme}**.",
-			"reset": "`✅` | The theme has been reset to **{defaultTheme}**.",
-			"default": "`❌` | The current theme is **{currentTheme}**.",
 			"options": {
 				"set": "Set the player theme.",
 				"theme": "The theme to set (classic, modern or modernpro).",
 				"reset": "Reset the theme to default."
-			}
+			},
+			"errors": {
+				"default": "`❌` | The current theme is **{currentTheme}**.",
+				"choice": "`❌` | Invalid theme. Available themes are `classic`, `modern` and `modernpro`."
+			},
+			"currentTheme": "The current theme is **{currentTheme}**.",
+			"set_theme": "`✅` | The theme has been set to **{theme}**.",
+			"reset": "`✅` | The theme has been reset to **{defaultTheme}**."
 		},
 		"defaultvolume": {
 			"description": "Sets or resets the default volume for the server.",
@@ -236,52 +236,56 @@
 				"reset": "Reset the default volume to the default level.",
 				"volume": "The volume level to set (0-200)."
 			},
-			"messages": {
-				"set": "`🔊` | The default volume has been set to {volume}.",
+			"errors": {
 				"invalid_number": "`❌` | The volume you entered is not a valid number.",
 				"too_low": "`❌` | The volume is too low. It must be at least 0.",
-				"too_high": "`❌` | The volume is too high. It cannot exceed 200.",
+				"too_high": "`❌` | The volume is too high. It cannot exceed 200."
+			},
+			"messages": {
+				"set": "`🔊` | The default volume has been set to {volume}.",
 				"reset": "The default volume has been reset to {volume}.",
 				"current": "`🔊` | The current default volume is {volume}."
 			}
 		},
 		"setup": {
 			"description": "Sets up the bot.",
+			"options": {
+				"create": "Creates the song request channel.",
+				"delete": "Deletes the song request channel.",
+				"info": "Displays the song request channel."
+			},
 			"errors": {
 				"channel_exists": "`❌` | The song request channel already exists.",
 				"channel_not_exists": "`❌` | The song request channel does not exist.",
-				"channel_delete_fail": "`❌` | The song request channel has been deleted. If the channel is not deleted normally, please delete it yourself."
+				"channel_delete_fail": "`❌` | The song request channel has been deleted. If the channel is not deleted normally, please delete it yourself.",
+				"invalid_subcommand": "`❌` | Please provide a valid subcommand."
 			},
 			"messages": {
 				"channel_created": "`🎉` | The song request channel has been created in <#{channelId}>.",
 				"channel_deleted": "`🗑️` | The song request channel has been deleted.",
 				"channel_info": "`🎤` | The song request channel is <#{channelId}>."
-			},
-			"options": {
-				"create": "Creates the song request channel.",
-				"delete": "Deletes the song request channel.",
-				"info": "Displays the song request channel."
 			}
 		},
 		"8d": {
-			"description": "Toggles the 8d filter.",
+			"description": "Toggles the 8D filter.",
 			"messages": {
 				"filter_enabled": "`✅` | The 8D filter has been **enabled**.",
 				"filter_disabled": "`✅` | The 8D filter has been **disabled**."
 			}
 		},
 		"bassboost": {
-			"description": "Toggles the bassboost filter.",
+			"description": "Toggles the BassBoost filter.",
+			"options": {
+				"level": "The BassBoost level you want to set"
+			},
+			"errors": {
+				"invalid_subcommand": "`❌` | Please provide a valid subcommand."
+			},
 			"messages": {
-				"filter_enabled": "`✅` | The bassboost filter has been **enabled**.\n`⚠️` | Be careful, listening too loud can damage your hearing!",
-				"filter_disabled": "`✅` | The bassboost filter has been **disabled**."
-			}
-		},
-		"distorsion": {
-			"description": "Toggles the distortion filter.",
-			"messages": {
-				"filter_enabled": "`✅` | The distortion filter has been **enabled**.",
-				"filter_disabled": "`✅` | The distortion filter has been **disabled**."
+				"high": "`✅` | High Bass Boost filter is **enabled**.",
+				"low": "`✅` | Low Bass Boost Filter is **enabled**.",
+				"medium": "`✅` | Medium Bass Boost Filter is **enabled**.",
+				"off": "`✅` | Bass boost filter is **disabled**."
 			}
 		},
 		"karaoke": {
@@ -306,7 +310,7 @@
 			}
 		},
 		"pitch": {
-			"description": "Toggles the pitch filter.",
+			"description": "Changes the pitch of the song.",
 			"options": {
 				"pitch": "The number you want to set the pitch to (between 0.5 and 5)."
 			},
@@ -347,8 +351,10 @@
 			"options": {
 				"speed": "The speed you want to set (between 0.5 and 5)."
 			},
+			"errors": {
+				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
+			},
 			"messages": {
-				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**.",
 				"set_speed": "`✅` | The speed has been set to **{speed}**."
 			}
 		},
@@ -380,22 +386,29 @@
 			}
 		},
 		"grab": {
+			"errors": {
+				"dm_failed": "`❌` | I couldn't send you a DM. Make sure direct message is enabled."
+			},
 			"loading": "`⏳` Loading...",
 			"description": "Gets the currently playing song in your DMs.",
-			"content": "**Title:** {title}\n**Duration:** {length}\n**Requested by:** <@{requester}>\n**Link:** [Click Here]({uri})",
-			"check_dm": "`📨` | Please check your DMs.",
-			"dm_failed": "I couldn't send you a DM. Make sure direct message is enabled."
+			"content": "`🎧` **Current Song**\n\n**Title:** {title}\n**Duration:** {length}\n**Requested by:** <@{requester}>\n**Link:** [Click Here]({uri})",
+			"check_dm": "`📨` | Please check your DMs."
 		},
 		"join": {
 			"description": "Join the voice channel.",
-			"already_connected": "I am already connected to <#{channelId}>.",
-			"no_voice_channel": "You need to be in a voice channel to use this command.",
-			"joined": "`🎤` | Voice channel <#{channelId}> joined successfully."
+			"messages": {
+				"already_connected": "I am already connected to <#{channelId}>.",
+				"joined": "`🎤` | Voice channel <#{channelId}> joined successfully."
+			}
 		},
 		"leave": {
 			"description": "Leave the voice channel.",
-			"left": "`🚪` | Voice channel <#{channelId}> left successfully.",
-			"not_in_channel": "I am not in a voice channel."
+			"errors": {
+				"not_in_channel": "`❌` | I am not in a voice channel."
+			},
+			"messages": {
+				"left": "`🚪` | Voice channel <#{channelId}> left successfully."
+			}
 		},
 		"loop": {
 			"description": "Loop the current song or queue.",
@@ -410,45 +423,48 @@
 		},
 		"pause": {
 			"description": "Pauses the current song.",
-			"successfully_paused": "`⏸️` | The song has been paused successfully."
+			"errors": {
+				"already_paused": "`❌` | The song is already paused"
+			},
+			"messages": {
+				"successfully_paused": "`⏸️` | The song has been paused successfully."
+			}
 		},
 		"play": {
 			"description": "Play a song from YouTube, Spotify or http.",
 			"options": {
 				"song": "The song you want to play."
 			},
-			"loading": "`⏳` Loading...",
 			"errors": {
-				"search_error": "`❌` | An error occurred while searching.",
-				"no_results": "`❌` | No results found.",
-				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
-				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
+				"search_error": "`❌` | An error occurred while searching."
 			},
-			"not_in_voice_channel": "You need to be in a voice channel to use this command.",
-			"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue.",
-			"added_playlist_to_queue": "`🎶` | Adding {length} songs to the queue."
+			"messages": {
+				"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue.",
+				"added_playlist_to_queue": "`🎶` | Adding {length} songs to the queue."
+			},
+			"loading": "`⏳` Loading..."
 		},
 		"playnext": {
 			"description": "Add the song to play next in the queue.",
 			"options": {
 				"song": "The song you want to play."
 			},
-			"loading": "`⏳` Loading...",
 			"errors": {
-				"search_error": "`❌` | An error occurred while searching.",
-				"no_results": "`❌` | No results found.",
-				"queue_too_long": "`❌` | The queue is too long. The maximum length is {maxQueueSize} songs.",
-				"playlist_too_long": "`❌` | The playlist is too long. The maximum length is {maxPlaylistSize} songs."
+				"search_error": "`❌` | An error occurred while searching."
 			},
-			"not_in_voice_channel": "You need to be in a voice channel to use this command.",
-			"added_to_play_next": "`🎶` | Adding [{title}]({uri}) to play next in the queue.",
-			"added_playlist_to_play_next": "`🎶` | Adding {length} songs to play next in the queue."
+			"messages": {
+				"added_to_play_next": "`🎶` | Adding [{title}]({uri}) to play next in the queue.",
+				"added_playlist_to_play_next": "`🎶` | Adding {length} songs to play next in the queue."
+			},
+			"loading": "`⏳` Loading..."
 		},
 		"queue": {
 			"description": "Displays the current queue.",
-			"now_playing": "Now Playing: [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
+			"messages": {
+				"now_playing": "Now Playing: [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
+				"track_info": "{index}. [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`"
+			},
 			"live": "LIVE",
-			"track_info": "{index}. [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
 			"title": "📃 Queue",
 			"page_info": "Page {index} of {total}"
 		},
@@ -458,7 +474,6 @@
 				"song": "The number of the song you want to remove."
 			},
 			"errors": {
-				"no_songs": "`❌` | There are no songs in the queue.",
 				"invalid_number": "`❌` | Please provide a valid song number."
 			},
 			"messages": {
@@ -474,17 +489,6 @@
 				"replaying": "`🔁` | Replaying the current song."
 			}
 		},
-		"lyrics": {
-			"loading": "`⏳` Loading...",
-			"description": "Gets the lyrics of the currently playing song or a specified song.",
-			"options": {
-				"song": "The name of the song you want to search the lyrics for."
-			},
-			"errors": {
-				"no_lyrics_found": "`❌` | No lyrics found for this song!",
-				"no_song": "`❌` | No song provided or currently playing."
-			}
-		},
 		"resume": {
 			"description": "Resumes the current song.",
 			"errors": {
@@ -496,13 +500,11 @@
 		},
 		"search": {
 			"description": "Searches for a song.",
-			"not_in_voice_channel": "You need to be in a voice channel to use this command.",
 			"options": {
 				"song": "The song you want to search for."
 			},
 			"errors": {
-				"no_results": "`❌` | No results found.",
-				"search_error": "`❌` | An error occurred while searching."
+				"no_results": "`❌` | No results found."
 			},
 			"messages": {
 				"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue."
@@ -561,7 +563,8 @@
 				"invalid_number": "`❌` | Please provide a valid number.",
 				"too_low": "`❌` | The volume cannot be lower than 0.",
 				"too_high": "`❌` | The volume cannot be higher than 200. Do you want to damage your hearing or your speakers? Hmm, I don't think that's a good idea.",
-				"set": "`🔊` | Volume set to {volume}."
+				"set": "`🔊` | Volume set to {volume}.",
+				"no_player": "`❌` | There is no active player in this server."
 			}
 		},
 		"addsong": {
@@ -615,7 +618,6 @@
 		},
 		"load": {
 			"description": "Loads a playlist.",
-			"not_in_voice_channel": "You need to be in a voice channel to use this command.",
 			"options": {
 				"playlist": "The playlist you want to load."
 			},
@@ -671,6 +673,12 @@
 			"not_author": "`❌` | You cannot use this button."
 		}
 	},
+	"global": {
+		"enabled": "Enabled",
+		"disabled": "Disabled",
+		"yes": "Yes",
+		"no": "No"
+	},
 	"structures": {
 		"dispatcher": {
 			"title": "Empty Voice Channel",
@@ -702,14 +710,19 @@
 		},
 		"setupStart": {
 			"now_playing": "Now Playing:",
-			"description": "[{title}]({uri}) by {author} • `[{length}]` - Requested by <@{requester}>",
+			"description": "### **[{title}]({uri})**",
 			"error_searching": "`❌` | An error occurred while searching.",
 			"no_results": "No results found.",
 			"nothing_playing": "Nothing is currently playing.",
-			"queue_too_long": "The queue is too long. The maximum length is {maxQueueSize} songs.",
-			"playlist_too_long": "The playlist is too long. The maximum length is {maxPlaylistSize} songs.",
 			"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue.",
-			"added_playlist_to_queue": "`🎶` | Added [{length}] songs from the playlist to the queue."
+			"added_playlist_to_queue": "`🎶` | Added [{length}] songs from the playlist to the queue.",
+			"length": "Queue Track(s)",
+			"author": "Author",
+			"duration": "Duration",
+			"requested_by": "Requested by {requester}",
+			"volume": "Volume",
+			"autoplay": "Autoplay",
+			"loop": "Loop Mode"
 		}
 	},
 	"event": {
@@ -761,7 +774,6 @@
 			"different_voice_channel_button": "`⚠️` | You are not connected to {channel} to use these buttons.",
 			"now_playing": "Now Playing:",
 			"live": "LIVE",
-			"requested_by": "Requested by: <@{requester}>",
 			"no_dj_permission": "You need to have the DJ role to use this button.",
 			"volume_set": "`🔊` | Volume set to {vol}%.",
 			"volume_footer": "Volume: {vol}%",
@@ -780,7 +792,6 @@
 			"shuffled": "`🔀` | Queue shuffled.",
 			"no_previous_track": "There is no previous track.",
 			"playing_previous": "`⏮️` | Playing the previous song.",
-			"previous_footer": "Playing the previous song by {displayName}",
 			"rewind_limit": "`⚠️` | You cannot rewind the music more than the duration of the song.",
 			"rewinded": "`⏪` | Music rewinded.",
 			"rewind_footer": "Rewinded by {displayName}",
@@ -788,11 +799,18 @@
 			"forwarded": "`⏩` | Music forwarded.",
 			"forward_footer": "Forwarded by {displayName}",
 			"button_not_available": "`❌` | This button is not available.",
-			"no_music_playing": "There is no music playing on this server."
+			"no_music_playing": "There is no music playing on this server.",
+			"length": "Queue Track(s)",
+			"author": "Author",
+			"duration": "Duration",
+			"requested_by": "Requested by {requester}",
+			"volume": "Volume",
+			"autoplay": "Autoplay",
+			"loop": "Loop Mode"
 		},
 		"voiceStateUpdate": {
 			"title": "Empty Voice Channel",
-			"description": "I left <#{voiceChannel}> because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features by voting."
+			"description": "I left <#{voiceChannel}> because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features by voting, or gain access to exclusive features with our premium version."
 		}
 	}
 }
