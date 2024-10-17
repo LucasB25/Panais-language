@@ -1,5 +1,16 @@
 {
 	"cmd": {
+		"247": {
+			"description": "Configures the bot to stay in the voice channel.",
+			"errors": {
+				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
+				"generic": "`❌` | An error occurred while executing this command."
+			},
+			"messages": {
+				"disabled": "`✅` | 24/7 mode has been **disabled**.",
+				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` The bot will stay in the voice channel, even if there is no one left."
+			}
+		},
 		"ping": {
 			"description": "Displays the bot's ping.",
 			"loading": "`🏓` Calculating ping...",
@@ -117,18 +128,15 @@
 		},
 		"botinfo": {
 			"description": "Information about the bot.",
-			"content": "`🤖` **Bot Information**\n\n**Operating System:** {osInfo}\n**Uptime:** {osUptime}\n**Hostname:** {osHostname}\n**CPU Architecture:** {cpuInfo}\n**CPU Usage:** {cpuUsed}%\n**Memory Usage:** {memUsed}MB / {memTotal}GB\n**Node Version:** {nodeVersion}\n**Discord.js Version:** {discordJsVersion}\n**Connected to:** {guilds} servers, {channels} channels, and {users} users\n**Total Commands:** {commands}"
-		},
-		"247": {
-			"description": "Configures the bot to stay in the voice channel.",
-			"errors": {
-				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
-				"generic": "`❌` | An error occurred while executing this command."
-			},
-			"messages": {
-				"disabled": "`✅` | 24/7 mode has been **disabled**.",
-				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` The bot will stay in the voice channel, even if there is no one left."
-			}
+			"author": "🌐 Panais's Information",
+			"uptime": "Uptime:",
+			"cpu_usage": "CPU Usage (%):",
+			"memory_used": "Memory Used:",
+			"node_version": "Node Version:",
+			"discordjs_version": "Discord.js Version:",
+			"total_guilds": "Total Guilds:",
+			"total_users": "Total Users:",
+			"total_commands": "Total Commands:"
 		},
 		"dj": {
 			"description": "Manage DJ mode and associated roles.",
@@ -268,6 +276,9 @@
 		},
 		"8d": {
 			"description": "Toggles the 8D filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"filter_enabled": "`✅` | The 8D filter has been **enabled**.",
 				"filter_disabled": "`✅` | The 8D filter has been **disabled**."
@@ -279,6 +290,7 @@
 				"level": "The BassBoost level you want to set"
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_subcommand": "`❌` | Please provide a valid subcommand."
 			},
 			"messages": {
@@ -290,6 +302,9 @@
 		},
 		"karaoke": {
 			"description": "Toggles the karaoke filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"filter_enabled": "`✅` | The karaoke filter has been **enabled**.",
 				"filter_disabled": "`✅` | The karaoke filter has been **disabled**."
@@ -297,6 +312,9 @@
 		},
 		"lowpass": {
 			"description": "Toggles the lowpass filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"filter_enabled": "`✅` | The lowpass filter has been **enabled**.",
 				"filter_disabled": "`✅` | The lowpass filter has been **disabled**."
@@ -304,6 +322,9 @@
 		},
 		"nightcore": {
 			"description": "Toggles the nightcore filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"filter_enabled": "`✅` | The nightcore filter has been **enabled**.",
 				"filter_disabled": "`✅` | The nightcore filter has been **disabled**."
@@ -315,6 +336,7 @@
 				"pitch": "The number you want to set the pitch to (between 0.5 and 5)."
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
 			},
 			"messages": {
@@ -327,6 +349,7 @@
 				"rate": "The number you want to set the rate to (between 0.5 and 5)."
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
 			},
 			"messages": {
@@ -335,12 +358,18 @@
 		},
 		"reset": {
 			"description": "Resets the active filters.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"filters_reset": "`✅` | The filters have been reset."
 			}
 		},
 		"rotation": {
 			"description": "Toggles the rotation filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"enabled": "`✅` | The rotation filter has been **enabled**.",
 				"disabled": "`✅` | The rotation filter has been **disabled**."
@@ -352,6 +381,7 @@
 				"speed": "The speed you want to set (between 0.5 and 5)."
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_number": "`❌` | Please provide a valid number between **0.5** and **5**."
 			},
 			"messages": {
@@ -360,6 +390,9 @@
 		},
 		"tremolo": {
 			"description": "Toggles the tremolo filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"enabled": "`✅` | The tremolo filter has been **enabled**.",
 				"disabled": "`✅` | The tremolo filter has been **disabled**."
@@ -367,6 +400,9 @@
 		},
 		"vibrato": {
 			"description": "Toggles the vibrato filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"enabled": "`✅` | The vibrato filter has been **enabled**.",
 				"disabled": "`✅` | The vibrato filter has been **disabled**."
@@ -374,6 +410,9 @@
 		},
 		"autoplay": {
 			"description": "Toggles the autoplay mode.",
+			"errors": {
+				"no_song": "`❌` | There are no songs in the queue."
+			},
 			"messages": {
 				"enabled": "`✅` | Autoplay has been **enabled**.",
 				"disabled": "`✅` | Autoplay has been **disabled**."
@@ -381,13 +420,18 @@
 		},
 		"clearqueue": {
 			"description": "Clears the queue.",
+			"errors": {
+				"no_song": "`❌` | There are no songs in the queue.",
+				"no_player": "`❌` | There is no active player in this server."
+			},
 			"messages": {
 				"cleared": "`🗑️` | The queue has been cleared."
 			}
 		},
 		"grab": {
 			"errors": {
-				"dm_failed": "`❌` | I couldn't send you a DM. Make sure direct message is enabled."
+				"dm_failed": "`❌` | I couldn't send you a DM. Make sure direct message is enabled.",
+				"no_song": "`❌` | There are no songs in the queue."
 			},
 			"loading": "`⏳` Loading...",
 			"description": "Gets the currently playing song in your DMs.",
@@ -419,7 +463,10 @@
 		"nowplaying": {
 			"description": "Displays the currently playing song.",
 			"now_playing": "Now Playing:",
-			"track_info": "[{title}]({uri}) - Requested by: <@{requester}>\n\n`{bar}`"
+			"track_info": "[{title}]({uri}) - Requested by: <@{requester}>\n\n`{bar}`",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			}
 		},
 		"pause": {
 			"description": "Pauses the current song.",
@@ -436,6 +483,7 @@
 				"song": "The song you want to play."
 			},
 			"errors": {
+				"empty_query": "`❌` | You need to provide a valid query to search for a song!",
 				"search_error": "`❌` | An error occurred while searching."
 			},
 			"messages": {
@@ -450,6 +498,7 @@
 				"song": "The song you want to play."
 			},
 			"errors": {
+				"empty_query": "`❌` | You need to provide a valid query to search for a song!",
 				"search_error": "`❌` | An error occurred while searching."
 			},
 			"messages": {
@@ -460,6 +509,9 @@
 		},
 		"queue": {
 			"description": "Displays the current queue.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"now_playing": "Now Playing: [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`",
 				"track_info": "{index}. [{title}]({uri}) - Requested by: <@{requester}> - Duration: `{duration}`"
@@ -474,6 +526,8 @@
 				"song": "The number of the song you want to remove."
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
+				"no_songs": "`❌` | There are no songs in the queue.",
 				"invalid_number": "`❌` | Please provide a valid song number."
 			},
 			"messages": {
@@ -483,6 +537,7 @@
 		"replay": {
 			"description": "Replays the current song.",
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"not_seekable": "`❌` | Cannot replay this song because it is not seekable."
 			},
 			"messages": {
@@ -492,6 +547,7 @@
 		"resume": {
 			"description": "Resumes the current song.",
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"not_paused": "`❌` | The player is not paused."
 			},
 			"messages": {
@@ -526,13 +582,21 @@
 		},
 		"shuffle": {
 			"description": "Shuffles the queue.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
+				"no_songs": "`❌` | There are no songs in the queue."
+			},
 			"messages": {
 				"shuffled": "`🔀` | Queue shuffled."
 			}
 		},
 		"skip": {
 			"description": "Skips the current song.",
+			"errors": {
+				"no_songs": "`❌` | There are no songs in the queue."
+			},
 			"messages": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"skipped": "`⏭️` | Skipped song [{title}]({uri})."
 			}
 		},
@@ -542,6 +606,7 @@
 				"number": "The number of the song you want to skip to."
 			},
 			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_number": "`❌` | Please provide a valid number."
 			},
 			"messages": {
@@ -550,6 +615,9 @@
 		},
 		"stop": {
 			"description": "Stops the music and clears the queue.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
 			"messages": {
 				"stopped": "`⏹️` | Music stopped and queue cleared."
 			}
@@ -559,12 +627,14 @@
 			"options": {
 				"number": "The volume you want to set."
 			},
-			"messages": {
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing.",
 				"invalid_number": "`❌` | Please provide a valid number.",
 				"too_low": "`❌` | The volume cannot be lower than 0.",
-				"too_high": "`❌` | The volume cannot be higher than 200. Do you want to damage your hearing or your speakers? Hmm, I don't think that's a good idea.",
-				"set": "`🔊` | Volume set to {volume}.",
-				"no_player": "`❌` | There is no active player in this server."
+				"too_high": "`❌` | The volume cannot be higher than 200. Do you want to damage your hearing or your speakers? Hmm, I don't think that's a good idea."
+			},
+			"messages": {
+				"set": "`🔊` | Volume set to {volume}."
 			}
 		},
 		"addsong": {
@@ -573,11 +643,13 @@
 				"playlist": "The playlist you want to add to.",
 				"song": "The song you want to add."
 			},
-			"messages": {
+			"errors": {
 				"no_playlist": "`❌` | Please provide a playlist.",
 				"no_song": "`❌` | Please provide a song.",
 				"playlist_not_found": "`❌` | This playlist does not exist.",
-				"no_songs_found": "`❌` | No songs found.",
+				"no_songs_found": "`❌` | No songs found."
+			},
+			"messages": {
 				"added": "`🎶` | Added {count} song(s) to {playlist}."
 			}
 		},
@@ -586,9 +658,12 @@
 			"options": {
 				"name": "The name of the playlist."
 			},
-			"messages": {
+			"errors": {
+				"name_too_short": "`❌` | The playlist name must be at least 3 characters long.",
 				"name_too_long": "`❌` | Playlist names cannot exceed 50 characters.",
-				"playlist_exists": "`❌` | A playlist with this name already exists. Please use a different name.",
+				"playlist_exists": "`❌` | A playlist with this name already exists. Please use a different name."
+			},
+			"messages": {
 				"playlist_created": "`🎶` | Playlist **{name}** created."
 			}
 		},
@@ -597,8 +672,10 @@
 			"options": {
 				"playlist": "The playlist you want to delete."
 			},
+			"errors": {
+				"playlist_not_found": "`❌` | This playlist does not exist."
+			},
 			"messages": {
-				"playlist_not_found": "`❌` | This playlist does not exist.",
 				"playlist_deleted": "`🗑️` | Playlist **{playlistName}** deleted."
 			}
 		},
@@ -607,13 +684,12 @@
 			"options": {
 				"user": "The user you want to get the playlists of."
 			},
+			"errors": {
+				"provide_user": "`❌` | Please provide a valid user.",
+				"no_playlists": "`❌` | This user has no playlists."
+			},
 			"messages": {
-				"no_playlists": "This user has no playlists.",
-				"your": "Your",
-				"playlists_title": "📃 {username}'s Playlists",
-				"error": "`❌` | An error occurred while fetching playlists.",
-				"invalid_username": "`❌` | Invalid username or user not found.",
-				"invalid_userid": "`❌` | Unable to resolve a valid User ID."
+				"playlists_title": "📃 {username}'s Playlists"
 			}
 		},
 		"load": {
@@ -621,9 +697,11 @@
 			"options": {
 				"playlist": "The playlist you want to load."
 			},
-			"messages": {
+			"errors": {
 				"playlist_not_exist": "`❌` | This playlist does not exist.",
-				"playlist_empty": "`❌` | This playlist is empty.",
+				"playlist_empty": "`❌` | This playlist is empty."
+			},
+			"messages": {
 				"playlist_loaded": "`🎶` | Playlist `{name}` loaded with `{count}` songs."
 			}
 		},
@@ -633,13 +711,15 @@
 				"playlist": "The playlist you want to remove from.",
 				"song": "The song you want to remove."
 			},
-			"messages": {
+			"errors": {
 				"provide_playlist": "`❌` | Please provide a playlist.",
 				"provide_song": "`❌` | Please provide a song.",
 				"playlist_not_exist": "`❌` | This playlist does not exist.",
 				"song_not_found": "`❌` | No matching song found.",
-				"song_removed": "`🗑️` | Song {song} removed from {playlist}.",
 				"error_occurred": "`❌` | An error occurred while removing the song."
+			},
+			"messages": {
+				"song_removed": "`🗑️` | Song {song} removed from {playlist}."
 			}
 		},
 		"steal": {
@@ -648,14 +728,14 @@
 				"playlist": "The playlist you want to steal.",
 				"user": "The user you want to steal the playlist from."
 			},
-			"messages": {
+			"errors": {
+				"provide_user": "`❌` | Please provide a valid user.",
 				"provide_playlist": "`❌` | Please provide a playlist name.",
-				"provide_user": "`❌` | Please mention a user.",
 				"playlist_not_exist": "`❌` | This playlist does not exist for the mentioned user.",
-				"playlist_stolen": "`😈` | Playlist `{playlist}` successfully stolen from {user}.",
-				"error_occurred": "`❌` | An error occurred while stealing the playlist.",
-				"playlist_exists": "`❌` | A playlist named **{playlist}** already exists in your collection.",
-				"invalid_username": "`❌` | Invalid username or user not found."
+				"playlist_exists": "`❌` | A playlist named **{playlist}** already exists in your collection."
+			},
+			"messages": {
+				"playlist_stolen": "`😈` | Playlist `{playlist}` successfully stolen from {user}."
 			}
 		}
 	},
@@ -706,7 +786,8 @@
 			"no_previous_song": "There is no previous song.",
 			"no_more_songs_in_queue": "There are no more songs in the queue.",
 			"no_replay_song": "Cannot replay this song because it is not seekable.",
-			"no_shuffle_song": "The queue is empty."
+			"no_shuffle_song": "The queue is empty.",
+			"interaction_failed": "player.trackStart.interaction_failed"
 		},
 		"setupStart": {
 			"now_playing": "Now Playing:",
