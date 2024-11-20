@@ -1,14 +1,14 @@
 {
 	"cmd": {
 		"247": {
-			"description": "Configures the bot to stay in the voice channel.",
+			"description": "Configure le bot pour qu'il reste dans le salon vocal.",
 			"errors": {
-				"not_in_voice": "`❌` | You must be in a voice channel to use this command.",
-				"generic": "`❌` | An error occurred while executing this command."
+				"not_in_voice": "`❌` | Vous devez être dans un salon vocal pour utiliser cette commande.",
+				"generic": "`❌` | Une erreur s'est produite lors de l'exécution de cette commande."
 			},
 			"messages": {
-				"disabled": "`✅` | 24/7 mode has been **disabled**.",
-				"enabled": "`✅` | 24/7 mode has been **enabled**. \n`🎧` The bot will stay in the voice channel, even if there is no one left."
+				"disabled": "`✅` | Le mode 24/7 a été **désactivé**.",
+				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` Le bot restera dans le salon vocal, même s'il n'y a plus personne."
 			}
 		},
 		"ping": {
@@ -46,8 +46,8 @@
 			"author": "🌐 Panais's Shards Information",
 			"fields": "Total Stats",
 			"shardname": "Shard {index}",
-			"shardvalue": "Servers: {guildCount}\nUsers: {memberCounts}\nChannels: {channelCounts}\nUptime: {uptimes}\nLatency: {pings} ms",
-			"totalinfo": "Total Servers: {totalGuilds}\nTotal Users: {totalUsers}\nTotal Channels: {totalChannels}\nTotal Songs Played: {totalPlaySong}\nUptime: {totalUptime}\nAverage Latency: {avgPing} ms"
+			"shardvalue": "Servers: {guildCount}\nUsers: {memberCounts}\nUptime: {uptimes}\nLatency: {pings} ms",
+			"totalinfo": "Total Servers: {totalGuilds}\nTotal Users: {totalUsers}\nTotal Songs Played: {totalPlaySong}\nUptime: {totalUptime}\nAverage Latency: {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Displays information about a role.",
@@ -86,12 +86,17 @@
 			"members": "Members:",
 			"online": "Online",
 			"offline": "Offline",
+			"idle": "Idle",
+			"dnd": "Dnd",
 			"bots": "Bots",
 			"roles": "Roles:",
 			"emojis": "Emojis:",
 			"boosts": "Boosts:",
 			"stickers": "Stickers:",
-			"premium_end_date": "End of premium:"
+			"premium_status": "Premium Status:",
+			"no_description": "No description",
+			"premium_activated": "Activated",
+			"premium_not_activated": "Not activated"
 		},
 		"userinfo": {
 			"description": "Displays information about a user.",
@@ -128,6 +133,7 @@
 		},
 		"botinfo": {
 			"description": "Information about the bot.",
+			"loading": "`⏳` Loading...",
 			"author": "🌐 Panais's Information",
 			"uptime": "Uptime:",
 			"cpu_usage": "CPU Usage (%):",
@@ -274,6 +280,25 @@
 				"channel_info": "`🎤` | The song request channel is <#{channelId}>."
 			}
 		},
+		"captcha": {
+			"description": "Configure the captcha bot.",
+			"options": {
+				"create": "Creates a musical captcha channel for verification.",
+				"delete": "Deletes the existing musical captcha channel.",
+				"info": "Displays information about the musical captcha channel."
+			},
+			"errors": {
+				"channel_not_exists": "❌ | The musical captcha channel does not exist."
+			},
+			"messages": {
+				"channel_created": "🎉 | The musical captcha channel has been created in <#{channelId}>.",
+				"channel_deleted": "🗑️ | The musical captcha channel has been deleted.",
+				"channel_info": "🎤 | The musical captcha channel is <#{channelId}> and the assigned role ID is <@&{roleId}>."
+			},
+			"label": "Click to listen to the music",
+			"title": "🎧 Musical Captcha",
+			"tuto": "Welcome to the music captcha! To access the server, follow these steps:\n\n 1. Click the button below to listen to the song.\n 2. After listening to the song, reply in this channel with the exact title of the song.\n 3. If your answer is correct, you will gain access to the server!\n\n Note: You have 1 minute to respond with the exact title of the song.\n Good luck!"
+		},
 		"8d": {
 			"description": "Toggles the 8D filter.",
 			"errors": {
@@ -282,6 +307,16 @@
 			"messages": {
 				"filter_enabled": "`✅` | The 8D filter has been **enabled**.",
 				"filter_disabled": "`✅` | The 8D filter has been **disabled**."
+			}
+		},
+		"vaporwave": {
+			"description": "Toggles the Vaporwave  filter.",
+			"errors": {
+				"no_music_playing": "`❌` | No music is playing."
+			},
+			"messages": {
+				"filter_enabled": "`✅` | The Vaporwave filter has been **enabled**.",
+				"filter_disabled": "`✅` | The Vaporwave filter has been **disabled**."
 			}
 		},
 		"bassboost": {
@@ -411,7 +446,8 @@
 		"autoplay": {
 			"description": "Toggles the autoplay mode.",
 			"errors": {
-				"no_song": "`❌` | There are no songs in the queue."
+				"no_song": "`❌` | There are no songs in the queue.",
+				"no_player": "`❌` | There is no active player in this server."
 			},
 			"messages": {
 				"enabled": "`✅` | Autoplay has been **enabled**.",
@@ -454,11 +490,25 @@
 				"left": "`🚪` | Voice channel <#{channelId}> left successfully."
 			}
 		},
+		"lyrics": {
+			"loading": "`⏳` Loading...",
+			"description": "Gets the lyrics of the currently playing song or a specified song.",
+			"options": {
+				"song": "The name of the song you want to search the lyrics for."
+			},
+			"errors": {
+				"no_lyrics_found": "`❌` | No lyrics found for this song!",
+				"no_song": "`❌` | No song provided or currently playing."
+			}
+		},
 		"loop": {
 			"description": "Loop the current song or queue.",
 			"looping_song": "`🔂` | **Song loop enabled.**",
 			"looping_queue": "`🔁` | **Queue loop enabled.**",
 			"looping_off": "`🔕` | **Loop disabled.**"
+		},
+		"leavecleanup": {
+			"description": "Removes all the songs from users who are not in the voice channel."
 		},
 		"nowplaying": {
 			"description": "Displays the currently playing song.",
@@ -478,12 +528,11 @@
 			}
 		},
 		"play": {
-			"description": "Play a song from YouTube, Spotify or http.",
+			"description": "Play a song from Spotify, Deezer, Apple, SoundCloud or JioSaavn.",
 			"options": {
 				"song": "The song you want to play."
 			},
 			"errors": {
-				"empty_query": "`❌` | You need to provide a valid query to search for a song!",
 				"search_error": "`❌` | An error occurred while searching."
 			},
 			"messages": {
@@ -498,7 +547,6 @@
 				"song": "The song you want to play."
 			},
 			"errors": {
-				"empty_query": "`❌` | You need to provide a valid query to search for a song!",
 				"search_error": "`❌` | An error occurred while searching."
 			},
 			"messages": {
@@ -563,7 +611,9 @@
 				"no_results": "`❌` | No results found."
 			},
 			"messages": {
-				"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue."
+				"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue.",
+				"description": "`🔎` | Here are `{maxTracks}` tracks based on your search `{query}`. Please choose the one that suits you.",
+				"trackselect": "Choose a track"
 			}
 		},
 		"seek": {
@@ -809,7 +859,7 @@
 	"event": {
 		"interaction": {
 			"setup_channel": "You can't use this command in the setup channel.",
-			"no_send_message": "`❌` | I don't have the **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** or **`ReadMessageHistory`** permission in `{guild}`\nchannel: {channel}.",
+			"no_send_message": "`❌` | I don't have the {missingPermissions} permission in `{guild}`\nchannel: {channel}.",
 			"no_permission": "`❌` | I don't have the permission {permissions}.",
 			"no_user_permission": "`⚠️` | You don't have enough permissions to use this command.",
 			"no_voice_channel": "`⚠️` | You need to be connected to a voice channel to use this command `{command}`.",
@@ -827,7 +877,9 @@
 		},
 		"message": {
 			"prefix_mention": "Hello, you can use the prefix `{prefix}`, `panais` as my prefix(es). To discover my commands, type `/help`.",
-			"no_send_message": "`❌` | I don't have the **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** or **`ReadMessageHistory`** permission in `{guild}`\nchannel: {channel}.",
+			"captchaPassed": "`✅` | Correct answer! You have passed the captcha.",
+			"captchaFalse": "`❌` | Incorrect answer. Please try again.",
+			"no_send_message": "`❌` | I don't have the {missingPermissions} permission in `{guild}`\nchannel: {channel}.",
 			"no_permission": "`❌` | I don't have the permission {permissions}.",
 			"no_user_permission": "`⚠️` | You don't have enough permissions to use this command.",
 			"no_voice_channel": "`⚠️` | You need to be connected to a voice channel to use this command `{command}`.",
@@ -888,6 +940,10 @@
 			"volume": "Volume",
 			"autoplay": "Autoplay",
 			"loop": "Loop Mode"
+		},
+		"captchaSystem": {
+			"link": "`🎵` | Click [this link](<{randomSong}>) to listen to the music. Reply with the exact title to continue.",
+			"default": "`❌` | Action not recognized."
 		},
 		"voiceStateUpdate": {
 			"title": "Empty Voice Channel",

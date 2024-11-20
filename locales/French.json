@@ -1,5 +1,16 @@
 {
 	"cmd": {
+		"247": {
+			"description": "Configure le bot pour qu'il reste dans le salon vocal.",
+			"errors": {
+				"not_in_voice": "`❌` | Vous devez être dans un salon vocal pour utiliser cette commande.",
+				"generic": "`❌` | Une erreur s'est produite lors de l'exécution de cette commande."
+			},
+			"messages": {
+				"disabled": "`✅` | Le mode 24/7 a été **désactivé**.",
+				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` Le bot restera dans le salon vocal, même s'il n'y a plus personne."
+			}
+		},
 		"ping": {
 			"description": "Affiche le ping du bot.",
 			"loading": "`🏓` Calcul du ping en cours...",
@@ -35,8 +46,8 @@
 			"author": "🌐 Informations sur les Shards de Panais",
 			"fields": "Statistiques totales",
 			"shardname": "Shard {index}",
-			"shardvalue": "Serveurs : {guildCount}\nUtilisateurs : {memberCounts}\nSalons : {channelCounts}\nTemps de disponibilité : {uptimes}\nLatence : {pings} ms",
-			"totalinfo": "Total des serveurs : {totalGuilds}\nTotal des utilisateurs : {totalUsers}\nTotal des salons : {totalChannels}\nTotal des chansons jouées : {totalPlaySong}\nTemps de disponibilité total : {totalUptime}\nLatence moyenne : {avgPing} ms"
+			"shardvalue": "Serveurs : {guildCount}\nUtilisateurs : {memberCounts}\nTemps de disponibilité : {uptimes}\nLatence : {pings} ms",
+			"totalinfo": "Total des serveurs : {totalGuilds}\nTotal des utilisateurs : {totalUsers}\nTotal des chansons jouées : {totalPlaySong}\nTemps de disponibilité total : {totalUptime}\nLatence moyenne : {avgPing} ms"
 		},
 		"roleinfo": {
 			"description": "Affiche des informations sur un rôle.",
@@ -75,12 +86,17 @@
 			"members": "Membres :",
 			"online": "En ligne",
 			"offline": "Hors ligne",
+			"idle": "Inactif",
+			"dnd": "Ne pas déranger",
 			"bots": "Bots",
 			"roles": "Rôles :",
 			"emojis": "Emojis :",
 			"boosts": "Boosts :",
 			"stickers": "Stickers :",
-			"premium_end_date": "Fin du premium :"
+			"premium_status": "Statut Premium :",
+			"no_description": "Pas de description",
+			"premium_activated": "Activé",
+			"premium_not_activated": "Non activé"
 		},
 		"userinfo": {
 			"description": "Affiche des informations sur un utilisateur.",
@@ -117,6 +133,7 @@
 		},
 		"botinfo": {
 			"description": "Informations sur le bot.",
+			"loading": "`⏳` Chargement en cours...",
 			"author": "🌐 Informations de Panais",
 			"uptime": "Temps de fonctionnement :",
 			"cpu_usage": "Utilisation du CPU (%):",
@@ -126,17 +143,6 @@
 			"total_guilds": "Total de serveurs :",
 			"total_users": "Total d'utilisateurs :",
 			"total_commands": "Total de commandes :"
-		},
-		"247": {
-			"description": "Configure le bot pour qu'il reste dans le salon vocal.",
-			"errors": {
-				"not_in_voice": "`❌` | Vous devez être dans un salon vocal pour utiliser cette commande.",
-				"generic": "`❌` | Une erreur s'est produite lors de l'exécution de cette commande."
-			},
-			"messages": {
-				"disabled": "`✅` | Le mode 24/7 a été **désactivé**.",
-				"enabled": "`✅` | Le mode 24/7 a été **activé**. \n`🎧` Le bot restera dans le salon vocal, même s'il n'y a plus personne."
-			}
 		},
 		"dj": {
 			"description": "Gérer le mode DJ et les rôles associés.",
@@ -274,6 +280,25 @@
 				"channel_info": "`🎤` | Le salon de demande de chansons est <#{channelId}>."
 			}
 		},
+		"captcha": {
+			"description": "Configure le bot de captcha.",
+			"options": {
+				"create": "Crée un canal de captcha musical pour la vérification.",
+				"delete": "Supprime le canal de captcha musical existant.",
+				"info": "Affiche des informations sur le canal de captcha musical."
+			},
+			"errors": {
+				"channel_not_exists": "❌ | Le canal de captcha musical n'existe pas."
+			},
+			"messages": {
+				"channel_created": "🎉 | Le canal de captcha musical a été créé dans <#{channelId}>.",
+				"channel_deleted": "🗑️ | Le canal de captcha musical a été supprimé.",
+				"channel_info": "🎤 | Le canal de captcha musical est <#{channelId}> et l'ID du rôle assigné est <@&{roleId}>."
+			},
+			"label": "Cliquez pour écouter la musique",
+			"title": "🎧 Captcha Musical",
+			"tuto": "Bienvenue dans le captcha musical ! Pour accéder au serveur, suivez ces étapes :\n\n 1. Cliquez sur le bouton ci-dessous pour écouter la chanson.\n 2. Après avoir écouté la chanson, répondez dans ce canal en donnant le titre exact de la chanson.\n 3. Si votre réponse est correcte, vous aurez accès au serveur !\n\n Attention : Vous avez 1 minute pour répondre avec le titre exact de la chanson.\n Bonne chance !"
+		},
 		"8d": {
 			"description": "Active ou désactive le filtre 8D.",
 			"errors": {
@@ -282,6 +307,16 @@
 			"messages": {
 				"filter_enabled": "`✅` | Le filtre 8D a été **activé**.",
 				"filter_disabled": "`✅` | Le filtre 8D a été **désactivé**."
+			}
+		},
+		"vaporwave": {
+			"description": "Active ou désactive le filtre Vaporwave.",
+			"errors": {
+				"no_music_playing": "`❌` | Aucune musique n'est en cours de lecture."
+			},
+			"messages": {
+				"filter_enabled": "`✅` | Le filtre Vaporwave a été **activé**.",
+				"filter_disabled": "`✅` | Le filtre Vaporwave a été **désactivé**."
 			}
 		},
 		"bassboost": {
@@ -411,7 +446,8 @@
 		"autoplay": {
 			"description": "Active ou désactive le mode de lecture automatique.",
 			"errors": {
-				"no_song": "`❌` | Il n'y a aucune chanson dans la file d'attente."
+				"no_song": "`❌` | Il n'y a aucune chanson dans la file d'attente.",
+				"no_player": "`❌` | Il n'y a aucun lecteur actif dans ce serveur."
 			},
 			"messages": {
 				"enabled": "`✅` | La lecture automatique a été **activée**.",
@@ -454,11 +490,25 @@
 				"left": "`🚪` | Salon vocal <#{channelId}> quitté avec succès."
 			}
 		},
+		"lyrics": {
+			"loading": "`⏳` Chargement...",
+			"description": "Obtenez les paroles de la chanson en cours de lecture ou d'une chanson spécifiée.",
+			"options": {
+				"song": "Le nom de la chanson pour laquelle vous souhaitez rechercher les paroles."
+			},
+			"errors": {
+				"no_lyrics_found": "`❌` | Aucune parole trouvée pour cette chanson !",
+				"no_song": "`❌` | Aucune chanson fournie ou actuellement en lecture."
+			}
+		},
 		"loop": {
 			"description": "Lire en boucle la chanson ou la file d'attente actuelle.",
 			"looping_song": "`🔂` | **Boucle de la chanson activée.**",
 			"looping_queue": "`🔁` | **Boucle de la file d'attente activée.**",
 			"looping_off": "`🔕` | **Boucle désactivée.**"
+		},
+		"leavecleanup": {
+			"description": "Supprime toutes les chansons des utilisateurs qui ne sont pas dans le canal vocal."
 		},
 		"nowplaying": {
 			"description": "Affiche la chanson en cours de lecture.",
@@ -478,12 +528,11 @@
 			}
 		},
 		"play": {
-			"description": "Lire une chanson depuis YouTube, Spotify ou http.",
+			"description": "Lire une chanson depuis Spotify, Deezer, Apple, SoundCloud ou JioSaavn.",
 			"options": {
 				"song": "La chanson que vous souhaitez lire."
 			},
 			"errors": {
-				"empty_query": "`❌` | Vous devez fournir une requête valide pour rechercher une chanson !",
 				"search_error": "`❌` | Une erreur s'est produite lors de la recherche."
 			},
 			"messages": {
@@ -499,7 +548,6 @@
 			},
 			"loading": "`⏳` Chargement en cours...",
 			"errors": {
-				"empty_query": "`❌` | Vous devez fournir une requête valide pour rechercher une chanson !",
 				"search_error": "`❌` | Une erreur s'est produite lors de la recherche."
 			},
 			"messages": {
@@ -563,7 +611,9 @@
 				"no_results": "`❌` | No results found."
 			},
 			"messages": {
-				"added_to_queue": "`🎶` | Ajout de [{title}]({uri}) à la file d'attente."
+				"added_to_queue": "`🎶` | Ajout de [{title}]({uri}) à la file d'attente.",
+				"description": "`🔎` | Voici `{maxTracks}` pistes basées sur votre recherche `{query}`. Veuillez choisir celle qui vous convient.",
+				"trackselect": "Choose a track"
 			}
 		},
 		"seek": {
@@ -802,7 +852,7 @@
 	"event": {
 		"interaction": {
 			"setup_channel": "Vous ne pouvez pas utiliser cette commande dans le salon de configuration.",
-			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** ou **`ReadMessageHistory`** dans `{guild}`\nsalon : {channel}.",
+			"no_send_message": "`❌` | Je n'ai pas la permission {missingPermissions} dans `{guild}`\nsalon : {channel}.",
 			"no_permission": "`❌` | Je n'ai pas la permission {permissions}.",
 			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
 			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
@@ -820,7 +870,9 @@
 		},
 		"message": {
 			"prefix_mention": "Bonjour, vous pouvez utiliser le préfixe `{prefix}`, `panais` comme mon préfixe(s). Pour découvrir mes commandes, tapez `/help`.",
-			"no_send_message": "`❌` | Je n'ai pas la permission **`SendMessage`**, **`ViewChannel`**, **`EmbedLinks`** ou **`ReadMessageHistory`** dans `{guild}`\nsalon : {channel}.",
+			"captchaPassed": "`✅` | Bonne réponse ! Vous avez réussi le captcha.",
+			"captchaFalse": "`❌` | Réponse incorrecte. Essayez à nouveau.",
+			"no_send_message": "`❌` | Je n'ai pas la permission {missingPermissions} dans `{guild}`\nsalon : {channel}.",
 			"no_permission": "`❌` | Je n'ai pas la permission {permissions}.",
 			"no_user_permission": "`⚠️` | Vous n'avez pas suffisamment de permissions pour utiliser cette commande.",
 			"no_voice_channel": "`⚠️` | Vous devez être connecté à un salon vocal pour utiliser cette commande `{command}`.",
@@ -881,6 +933,10 @@
 			"volume": "Volume",
 			"autoplay": "Autoplay",
 			"loop": "Loop Mode"
+		},
+		"captchaSystem": {
+			"link": "`🎵` | Cliquez [sur ce lien](<{randomSong}>) pour écouter la musique. Répondez avec le titre exact pour continuer.",
+			"default": "`❌` | Action non reconnue."
 		},
 		"voiceStateUpdate": {
 			"title": "Salon vocal vide",
