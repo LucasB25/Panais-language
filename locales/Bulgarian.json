@@ -13,9 +13,9 @@
 		},
 		"ping": {
 			"description": "Displays the bot's ping.",
-			"loading": "`🏓` Calculating ping...",
-			"bot_latency": "Bot Latency:",
-			"api_latency": "API Latency:"
+			"embed": {
+				"description": "**Shard {shardCount}**\n```prolog\nBot: {bot} ms\nAPI: {api} ms\nShard: {shard} ms \nDatabase: {database} ms\n```\nLast heartbeat: <t:{heartbeat}:R>"
+			}
 		},
 		"invite": {
 			"description": "Get the bot's invite link.",
@@ -33,14 +33,6 @@
 			"description": "Get the invite link for the support server.",
 			"content": "`💡` **Need help?**\n\nJoin our support server by clicking the button below!"
 		},
-		"clusters": {
-			"description": "Displays information about the shard clusters.",
-			"content": "This server is on Shard: **{shard}**",
-			"fields": "Total Stats",
-			"shardname": "Shard {index}",
-			"shardvalue": "Servers: {guildCount}\nUsers: {memberCounts}\nUptime: {uptimes}\nLatency: {pings} ms",
-			"totalinfo": "Total Servers: {totalGuilds}\nTotal Users: {totalUsers}\nTotal Songs Played: {totalPlaySong}\nUptime: {totalUptime}\nAverage Latency: {avgPing} ms"
-		},
 		"roleinfo": {
 			"description": "Displays information about a role.",
 			"options": {
@@ -49,43 +41,45 @@
 			"errors": {
 				"role_not_found": "`❌` | Role not found. Please mention a valid role or provide a valid role ID."
 			},
-			"title": "Role Information: {roleName}",
-			"managed": "Managed by an integration:",
-			"hoisted": "Displayed separately:",
-			"dj_role": "DJ Role:",
-			"members": "Number of members:",
-			"creation_date": "Creation Date:",
-			"mentionable": "Mentionable:",
-			"position": "Position:",
-			"color": "Color:",
-			"role_id": "Role ID:",
-			"top_members": "Top Members:",
-			"permissions": "Permissions:",
-			"no_permissions": "No Permissions"
+			"embed": {
+				"title": "Role Information: {roleName}",
+				"fields_managed": "Managed by an integration:",
+				"fields_hoisted": "Displayed separately:",
+				"fields_dj_role": "DJ Role:",
+				"fields_members": "Number of members:",
+				"fields_creation_date": "Creation Date:",
+				"fields_mentionable": "Mentionable:",
+				"fields_position": "Position:",
+				"fields_color": "Color:",
+				"fields_role_id": "Role ID:",
+				"value_members": "({topMembers}{more})",
+				"value_more_members": ", ...and {count} more.",
+				"fields_permissions": "Permissions:"
+			}
 		},
 		"serverinfo": {
 			"description": "Displays information about the server.",
 			"boost_content": {
-				"boost_no_boosts": "No Boosts",
-				"boost_level_1": "Level 1 (2 - 14 boosts)",
-				"boost_level_2": "Level 2 (15 - 29 boosts)",
-				"boost_level_3": "Level 3 (30+ boosts)",
-				"boost_unknown": "Unknown"
+				"no_boosts": "No Boosts",
+				"level_1": "Level 1 (2 - 14 boosts)",
+				"level_2": "Level 2 (15 - 29 boosts)",
+				"level_3": "Level 3 (30+ boosts)"
 			},
-			"server_id": "Server ID:",
-			"owner": "Owner:",
-			"created_at": "Created At:",
-			"members": "Members:",
-			"online": "Online",
-			"offline": "Offline",
-			"idle": "Idle",
-			"dnd": "Dnd",
-			"bots": "Bots",
-			"boosts": "Boosts:",
-			"premium_status": "Premium Status:",
-			"top_roles": "Top roles:",
-			"no_description": "No description",
-			"premium_not_activated": "Not activated"
+			"embed": {
+				"description": "No description",
+				"fields_server_id": "Server ID:",
+				"fields_owner": "Owner:",
+				"value_owner": "`{userTag}` (<@{ownerId}>)",
+				"fields_created_at": "Created At:",
+				"fields_members": "Members:",
+				"value_members": "**{total}** (**{online}** online, **{idle}** idle, **{dnd}** do not disturb, **{offline}** offline, **{bots}** bots)",
+				"fields_top_roles": "Top Roles:",
+				"fields_boosts": "Boosts:",
+				"value_boosts": "{count} ({level})",
+				"fields_premium_status": "Premium Status:"
+			},
+			"premium_not_activated": "No active premium subscription.",
+			"premium_status": "{subscription} ({user})"
 		},
 		"userinfo": {
 			"description": "Displays information about a user.",
@@ -95,17 +89,19 @@
 			"errors": {
 				"user_not_found": "`❌` | User not found."
 			},
-			"footer": "Don't forget to vote! Thank you!",
-			"user_id": "User ID:",
-			"username": "Username:",
-			"created_at": "Account Created At:",
-			"joined_at": "Joined At:",
-			"roles": "Roles:",
-			"voted_topgg": "Voted:",
-			"no_timeout": "No Timeout",
-			"not_boosting": "Not Boosting",
-			"timeout": "Timeout Until:",
-			"boosting_since": "Boosting Since:"
+			"embed": {
+				"fields_user_id": "User ID:",
+				"fields_username": "Username:",
+				"fields_created_at": "Account Created At:",
+				"fields_joined_at": "Joined At:",
+				"fields_voted_topgg": "Voted:",
+				"fields_roles": "Roles:",
+				"fields_timeout": "Timeout Until:",
+				"value_no_timeout": "No Timeout",
+				"fields_boosting_since": "Boosting Since:",
+				"value_not_boosting": "Not Boosting",
+				"footer": "Don't forget to vote! Thank you!"
+			}
 		},
 		"help": {
 			"description": "Displays the help menu.",
@@ -115,9 +111,20 @@
 			"errors": {
 				"not_found": "`❌` | This command `{cmdName}` does not exist."
 			},
-			"content": "`👋` Hello! I am <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command.\n\n`👍` Vote for the bot to unlock features! [Vote Here](https://top.gg/bot/{client}/vote) \n\n**Categories**\n {categories}",
-			"command_info": "{description}\n\n**Usage**: {usage}\n**Cooldown**: {cooldown}\n**Alias**: {aliases}\n**User Permissions**: {userPerms}\n**Bot Permissions**: {botPerms}\n\n**Vote Required**: {vote}\n**Premium Required**: {premium}\n**DJ Required**: {dj}\n**DJ Permission**: {djPerm}\n\n**Subcommands** \n{subcommands}",
-			"footer": "Use {prefix}help <command> for more information about a command.",
+			"embed": {
+				"author": "{command} Commands",
+				"description2": "`👋` Hello! I am <@{bot}>, a music bot. You can use `{prefix}help <command>` to get more information about a command.\n\n**Categories:**\n {categories}",
+				"fields_cooldown": "Cooldown:",
+				"fields_usage": "Usage:",
+				"fields_alias": "Aliases:",
+				"fields_vote": "Vote Required:",
+				"fields_premium": "Premium Required:",
+				"fields_dj": "DJ Mode:",
+				"fields_user_permissions": "User Permissions:",
+				"fields_bot_permissions": "Bot Permissions:",
+				"fields_subcommands": "Options / Subcommands:",
+				"footer": "Use {prefix}help <command> for more information about a command."
+			},
 			"select_category": "Select a category"
 		},
 		"dj": {
@@ -186,7 +193,7 @@
 			"messages": {
 				"reset_success": "`✅` | The `{parameter}` setting has been reset successfully."
 			},
-			"title": "⚙️ Server Settings",
+			"title": "Server Settings",
 			"default_volume": "Default Volume:",
 			"dj_enabled": "DJ Enabled:",
 			"mode_247": "24/7 Mode:",
@@ -276,7 +283,7 @@
 		"8d": {
 			"description": "Toggles the 8D filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The 8D filter has been **enabled**.",
@@ -286,7 +293,7 @@
 		"vaporwave": {
 			"description": "Toggles the Vaporwave  filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The Vaporwave filter has been **enabled**.",
@@ -299,7 +306,7 @@
 				"level": "The BassBoost level you want to set"
 			},
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 				"invalid_subcommand": "`❌` | Please provide a valid subcommand."
 			},
 			"messages": {
@@ -313,7 +320,7 @@
 		"karaoke": {
 			"description": "Toggles the karaoke filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The karaoke filter has been **enabled**.",
@@ -323,7 +330,7 @@
 		"lowpass": {
 			"description": "Toggles the lowpass filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The lowpass filter has been **enabled**.",
@@ -333,7 +340,7 @@
 		"nightcore": {
 			"description": "Toggles the nightcore filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The nightcore filter has been **enabled**.",
@@ -343,11 +350,11 @@
 		"pitch": {
 			"description": "Changes the pitch of the song.",
 			"options": {
-				"pitch": "The number you want to set the pitch to (between 0.5 and 5)."
+				"pitch": "The number you want to set the pitch to (between 0.25 and 8)."
 			},
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
-				"invalid_number": "`❌` | Please provide a valid number between `0.5` and `5`."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
+				"invalid_number": "`❌` | Please provide a valid number between `0.25` and `8`."
 			},
 			"messages": {
 				"pitch_set": "`✅` | The pitch has been set to `{pitch}`."
@@ -356,11 +363,11 @@
 		"rate": {
 			"description": "Changes the rate of the song.",
 			"options": {
-				"rate": "The number you want to set the rate to (between 0.5 and 5)."
+				"rate": "The number you want to set the rate to (between 0.25 and 8)."
 			},
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
-				"invalid_number": "`❌` | Please provide a valid number between `0.5` and `5`."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
+				"invalid_number": "`❌` | Please provide a valid number between `0.25` and `8`."
 			},
 			"messages": {
 				"rate_set": "`✅` | The rate has been set to `{rate}`."
@@ -369,7 +376,7 @@
 		"reset": {
 			"description": "Resets the active filters.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filters_reset": "`✅` | The filters have been reset."
@@ -378,7 +385,7 @@
 		"rotation": {
 			"description": "Toggles the rotation filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The rotation filter has been **enabled**.",
@@ -388,11 +395,11 @@
 		"speed": {
 			"description": "Changes the speed of the song.",
 			"options": {
-				"speed": "The speed you want to set (between 0.5 and 5)."
+				"speed": "The speed you want to set (between 0.25 and 8)."
 			},
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
-				"invalid_number": "`❌` | Please provide a valid number between `0.5` and `5`."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
+				"invalid_number": "`❌` | Please provide a valid number between `0.25` and `8`."
 			},
 			"messages": {
 				"set_speed": "`✅` | The speed has been set to `{speed}`."
@@ -401,7 +408,7 @@
 		"tremolo": {
 			"description": "Toggles the tremolo filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The tremolo filter has been **enabled**.",
@@ -411,7 +418,7 @@
 		"vibrato": {
 			"description": "Toggles the vibrato filter.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"filter_enabled": "`✅` | The vibrato filter has been **enabled**.",
@@ -421,8 +428,7 @@
 		"autoplay": {
 			"description": "Toggles the autoplay mode.",
 			"errors": {
-				"no_song": "`❌` | There are no songs in the queue.",
-				"no_player": "`❌` | There is no active player in this server."
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"enabled": "`✅` | Autoplay has been **enabled**.",
@@ -432,8 +438,7 @@
 		"clearqueue": {
 			"description": "Clears the queue.",
 			"errors": {
-				"no_song": "`❌` | There are no songs in the queue.",
-				"no_player": "`❌` | There is no active player in this server."
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!"
 			},
 			"messages": {
 				"cleared": "`🗑️` | The queue has been cleared."
@@ -442,7 +447,7 @@
 		"grab": {
 			"errors": {
 				"dm_failed": "`❌` | I couldn't send you a DM. Make sure direct message is enabled.",
-				"no_song": "`❌` | There are no songs in the queue."
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!"
 			},
 			"loading": "`⏳` Loading...",
 			"description": "Gets the currently playing song in your DMs.",
@@ -452,9 +457,11 @@
 		},
 		"join": {
 			"description": "Join the voice channel.",
+			"errors": {
+				"already_connected": "`❌` | I am already connected to <#{channelId}>."
+			},
 			"messages": {
-				"already_connected": "I am already connected to <#{channelId}>.",
-				"joined": "`🎤` | Voice channel <#{channelId}> joined successfully."
+				"joined": "`🎤` | Joined your voice channel."
 			}
 		},
 		"leave": {
@@ -463,7 +470,7 @@
 				"not_in_channel": "`❌` | I am not in a voice channel."
 			},
 			"messages": {
-				"left": "`🚪` | Voice channel <#{channelId}> left successfully."
+				"left": "`🚪` | Left the voice channel."
 			}
 		},
 		"lyrics": {
@@ -474,7 +481,7 @@
 			},
 			"errors": {
 				"no_lyrics_found": "`❌` | No lyrics found for this song!",
-				"no_song": "`❌` | No song provided or currently playing."
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!"
 			}
 		},
 		"loop": {
@@ -486,7 +493,7 @@
 		"leavecleanup": {
 			"description": "Removes all the songs from users who are not in the voice channel.",
 			"errors": {
-				"no_song": "`❌` | There are no songs in the queue.",
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!",
 				"no_remove_song": "`❌` | No songs were removed. All requesters are still in the voice channel."
 			},
 			"messages": {
@@ -501,7 +508,7 @@
 			},
 			"errors": {
 				"invalid_positions": "`❌` | Please provide valid positions to move a track.",
-				"no_song": "`❌` | There are no songs in the queue.",
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!",
 				"same_position": "`❌` | You cannot move a song to the same position.",
 				"out_of_bounds": "`❌` | Positions must be between 1 and {length}."
 			},
@@ -511,12 +518,14 @@
 		},
 		"nowplaying": {
 			"description": "Displays the currently playing song.",
-			"now_playing": "Now Playing:",
-			"track_info": "[{title}]({uri}) - Requested by: <@{requester}>\n\n`{bar}`",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
-			"live": "LIVE"
+			"embed": {
+				"author": "Now Playing:",
+				"description": "[`{title}`]({uri}) - {author} \n\n`{bar}`",
+				"footer": "{requester}"
+			}
 		},
 		"pause": {
 			"description": "Pauses the current song.",
@@ -531,14 +540,18 @@
 			"description": "Play a song from Spotify, Deezer, Apple, SoundCloud or JioSaavn.",
 			"options": {
 				"song": "The song you want to play.",
-				"sources": "cmd.play.options.sources"
+				"sources": "The available sources to play music."
 			},
 			"errors": {
 				"search_error": "`❌` | An error occurred while searching."
 			},
-			"messages": {
-				"added_to_queue": "`🎶` | Adding [{title}]({uri}) to the queue.",
-				"added_playlist_to_queue": "`🎶` | Adding `{length}` songs to the queue."
+			"embed": {
+				"author_track": "Adding music to queue",
+				"author_playlist": "Adding the playlist to the queue",
+				"description_track": "`🎶` [`{title}`]({uri}) by `{author}` was added to the queue.",
+				"description_playlist": "`🎶` [`{title}`]({uri}) was added to the queue.",
+				"footer_track": "Duration: {duration}",
+				"footer_playlist": "Total length: {length} - Total Duration: {duration}"
 			},
 			"loading": "`⏳` Loading..."
 		},
@@ -550,24 +563,30 @@
 			"errors": {
 				"search_error": "`❌` | An error occurred while searching."
 			},
-			"messages": {
-				"added_to_play_next": "`🎶` | Adding [{title}]({uri}) to play next in the queue.",
-				"added_playlist_to_play_next": "`🎶` | Adding `{length}` songs to play next in the queue."
+			"embed": {
+				"author_track": "Adding music to queue",
+				"author_playlist": "Adding the playlist to the queue",
+				"description_track": "`🎶` [`{title}`]({uri}) by `{author}` was added to the queue.",
+				"description_playlist": "`🎶` [`{title}`]({uri}) was added to the queue.",
+				"footer_track": "Duration: {duration}",
+				"footer_playlist": "Total length: {length} - Total Duration: {duration}"
 			},
 			"loading": "`⏳` Loading..."
 		},
 		"queue": {
 			"description": "Displays the current queue.",
 			"errors": {
-				"no_song": "`❌` | There are no songs in the queue."
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
-				"now_playing": "`🎵` [{title}]({uri}) - Requested by: <@{requester}> - `{duration}`",
-				"track_info": "{index}. [{title}]({uri}) - Requested by: <@{requester}> - `{duration}`"
+				"now_playing": "`🎵` [`{title}`]({uri}) - `{duration}` - (<@{requester}>)",
+				"track_info": "{index}. [`{title}`]({uri}) - `{duration}` - (<@{requester}>)"
 			},
-			"live": "LIVE",
-			"title": "Queue",
-			"page_info": "Page {index} of {total}"
+			"embed": {
+				"title": "Queue",
+				"footer": "Total Tracks: {track} - Total Duration: {duration} - Page {index} of {total}"
+			},
+			"live": "LIVE"
 		},
 		"remove": {
 			"description": "Removes a song from the queue.",
@@ -590,7 +609,7 @@
 		"replay": {
 			"description": "Replays the current song.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
+				"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 				"not_seekable": "`❌` | Cannot replay this song because it is not seekable."
 			},
 			"messages": {
@@ -600,7 +619,7 @@
 		"resume": {
 			"description": "Resumes the current song.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 				"not_paused": "`❌` | The player is not paused."
 			},
 			"messages": {
@@ -613,7 +632,7 @@
 				"time": "Number of seconds to rewind."
 			},
 			"errors": {
-				"no_song": "`❌` | There is no song currently playing.",
+				"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!",
 				"not_seekable": "`❌` | This song is not seekable.",
 				"invalid_number": "`❌` | Please provide a valid number of seconds."
 			},
@@ -642,6 +661,7 @@
 				"time": "The time you want to seek to."
 			},
 			"errors": {
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 				"invalid_format": "`❌` | Invalid time format. Examples: `seek 1m`, `seek 1h 30m`",
 				"not_seekable": "`❌` | This song is not seekable.",
 				"beyond_duration": "`❌` | Cannot seek beyond the song duration of `{length}`."
@@ -674,8 +694,8 @@
 				"number": "The number of the song you want to skip to."
 			},
 			"errors": {
-				"invalid_number": "`❌` | Please provide a valid number.",
-				"no_songs": "`❌` | There are no songs in the queue."
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
+				"invalid_number": "`❌` | Please provide a valid number."
 			},
 			"messages": {
 				"skipped_to": "`⏭️` | Skipped to song number `{number}`."
@@ -684,7 +704,7 @@
 		"stop": {
 			"description": "Stops the music and clears the queue.",
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing."
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!"
 			},
 			"messages": {
 				"stopped": "`⏹️` | Music stopped and queue cleared."
@@ -696,7 +716,7 @@
 				"number": "The volume you want to set."
 			},
 			"errors": {
-				"no_music_playing": "`❌` | No music is playing.",
+				"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 				"invalid_number": "`❌` | Please provide a valid number.",
 				"too_low": "`❌` | The volume cannot be lower than `0`.",
 				"too_high": "`❌` | The volume cannot be higher than `200`. Do you want to damage your hearing or your speakers? Hmm, I don't think that's a good idea."
@@ -709,7 +729,7 @@
 		"addsong": {
 			"description": "Adds a song to the playlist.",
 			"options": {
-				"playlist": "The playlist you want to add to.",
+				"playlist": "Current playlist name",
 				"song": "The song you want to add."
 			},
 			"errors": {
@@ -783,12 +803,12 @@
 		"edit": {
 			"description": "Edit your playlist name or visibility.",
 			"options": {
-				"old_name": "Current playlist name",
+				"playlist": "Current playlist name",
 				"new_name": "New playlist name (optional)",
-				"visibility": "Set visibility (true = public, false = private)",
-				"no_old_name": "You must provide the current playlist name!"
+				"visibility": "Set visibility (true = public, false = private)"
 			},
 			"errors": {
+				"no_old_name": "`❌` | You must provide the current playlist name!",
 				"not_found": "`❌` | No playlist found with the name `{oldName}`.",
 				"invalid_name_length": "`❌` | The new name must be between {min} and {max} characters."
 			},
@@ -849,6 +869,15 @@
 			"messages": {
 				"playlist_stolen": "`😈` | Playlist `{playlist}` successfully stolen from {user}."
 			}
+		},
+		"serverplaylists": {
+			"description": "Displays public playlists from the server.",
+			"errors": {
+				"no_public_playlists": "`❌` | There are no public playlists on this server."
+			},
+			"playlists_title": "Server Public Playlists",
+			"page_footer": "Page {current} of {total}",
+			"playlist_entry": "**{index}. **{name}** — {owner}** - **{trackCount}** tracks - **Last updated**: <t:{lastUpdate}:R>"
 		}
 	},
 	"buttons": {
@@ -878,11 +907,11 @@
 	},
 	"player": {
 		"errors": {
-			"no_player": "`❌` | There is no active player in this server.",
+			"no_player": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 			"no_channel": "`❌` | You need to be in a voice channel to use this command.",
 			"queue_empty": "`❌` | The queue is empty.",
 			"no_previous": "`❌` | There is no previous song in the queue.",
-			"no_song": "`❌` | There is no song in the queue."
+			"no_song": "`❌` | The music queue is currently empty.\nUse the `/play` command to add some songs!"
 		},
 		"trackStart": {
 			"now_playing": "Now Playing:",
@@ -903,7 +932,7 @@
 			"description": "### **[{title}]({uri})**",
 			"error_searching": "`❌` | An error occurred while searching.",
 			"no_results": "No results found.",
-			"nothing_playing": "Nothing is currently playing.",
+			"nothing_playing": "Waiting for music...\nSend the name or link of a song",
 			"added_to_queue": "`🎶` | Added [{title}]({uri}) to the queue.",
 			"added_playlist_to_queue": "`🎶` | Added [{length}] songs from the playlist to the queue.",
 			"length": "Queue Track(s)",
@@ -926,7 +955,7 @@
 			"no_speak_permission": "`❌` | I don't have the `SPEAK` permission to execute this command `{command}`.",
 			"no_request_to_speak": "`❌` | I don't have the `REQUEST TO SPEAK` permission to execute this command `{command}`.",
 			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
-			"no_music_playing": "No music is playing.",
+			"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 			"no_premium": "`✨` | This command is premium only.",
 			"no_premium_or_vote": "`✨` | This command is exclusive to premium users or those who have voted for Panais. To unlock this command, either subscribe to premium for additional features or vote for us on top.gg. Your support is greatly appreciated!",
 			"no_dj_role": "`⚠️` | The DJ role is not set.",
@@ -945,7 +974,7 @@
 			"no_speak_permission": "`❌` | I don't have the `SPEAK` permission to execute this command `{command}`.",
 			"no_request_to_speak": "`❌` | I don't have the `REQUEST TO SPEAK` permission to execute this command `{command}`.",
 			"different_voice_channel": "`⚠️` | You are not connected to {channel} to use this command `{command}`.",
-			"no_music_playing": "No music is playing.",
+			"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 			"no_dj_role": "`⚠️` | The DJ role is not set.",
 			"no_premium": "`✨` | This command is premium only.",
 			"no_premium_or_vote": "`✨` | This command is exclusive to premium users or those who have voted for Panais. To unlock this command, either subscribe to premium for additional features or vote for us on top.gg. Your support is greatly appreciated!",
@@ -973,7 +1002,7 @@
 			"no_music_to_skip": "There is no music to skip.",
 			"skipped": "`⏭️` | Music skipped.",
 			"stopped": "`⏹️` | Music stopped.",
-			"nothing_playing": "No music is playing.",
+			"nothing_playing": "Waiting for music...\nSend the name or link of a song",
 			"loop_set": "Loop set to {loop}.",
 			"shuffled": "`🔀` | Queue shuffled.",
 			"no_previous_track": "There is no previous track.",
@@ -983,7 +1012,7 @@
 			"forward_limit": "`⚠️` | You cannot forward the music more than the duration of the song.",
 			"forwarded": "`⏩` | Music forwarded.",
 			"button_not_available": "`❌` | This button is not available.",
-			"no_music_playing": "There is no music playing on this server.",
+			"no_music_playing": "`❌` | No music is playing right now.\nUse the `/play` command to start adding songs!",
 			"length": "Queue Track(s)",
 			"author": "Author",
 			"duration": "Duration",
@@ -994,6 +1023,10 @@
 		"voiceStateUpdate": {
 			"title": "Empty Voice Channel",
 			"description": "I left <#{voiceChannel}> because I was left alone. \n\nTo enable 24/7 mode, use the `24/7` command. Unlock more features by voting, or gain access to exclusive features with our premium version."
+		},
+		"guildCreate": {
+			"title": "🎉 Thanks for adding me!",
+			"description": "🔹 My default prefix is `{prefix}`, but you can change it.\n\n📖 To get started, use `{prefix}help` in this server.\n🌍 Need to change the language? Try `{prefix}language set`.\n\n💡 If you have questions, join our [support server]({support})."
 		}
 	}
 }
